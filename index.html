@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="es" data-ui-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="gk-meta-desc" name="description" data-desc-es="Compra lingotes de oro GOLDKOIN Serie Sovereign — oro fino .9999, de 5 g a 100 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." data-desc-en="Buy GOLDKOIN Sovereign Series gold bars — .9999 fine, 5g to 100g. Florida dealer. Insured shipping, secure packaging, competitive pricing." content="Compra lingotes de oro GOLDKOIN Serie Sovereign — oro fino .9999, de 5 g a 100 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." />
+  <title id="gk-page-title" data-title-es="GOLDKOIN | Oro fino 999.9 — Serie Sovereign" data-title-en="GOLDKOIN | Fine Gold 999.9 — The Sovereign Series">GOLDKOIN | Oro fino 999.9 — Serie Sovereign</title>
+  <link rel="icon" href="assets/goldkoin-logo-navbar.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/goldkoin-logo-navbar.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1128;
+      --gold: #c5a040;
+      --gold-bright: #d4af37;
+      --ivory: #f8f9fa;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      /* Imágenes carrusel/hero: 70% del tamaño anterior (−30% alto y ancho proporcional) */
+      --gk-img-scale: 0.7;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Montserrat, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--ivory);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      z-index: 100;
+      padding: 0.5rem 1rem;
+      background: var(--gold-bright);
+      color: var(--navy);
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+    h1, h2, h3, .font-display {
+      font-family: Cinzel, Georgia, serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    a { color: #9a7b28; text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--gold-bright); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(197, 160, 64, 0.25);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      padding-left: calc(1.25rem + 10px);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 102;
+    }
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .lang-switch .lang-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 32px;
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+    .lang-switch .lang-btn:hover {
+      background: rgba(255,255,255,0.14);
+      transform: scale(1.04);
+    }
+    .lang-switch .lang-btn:focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 2px;
+    }
+    .lang-switch .lang-btn.is-active {
+      border-color: var(--gold-bright);
+      background: rgba(197, 160, 64, 0.2);
+    }
+    .lang-switch .flag {
+      width: 26px;
+      height: 18px;
+      display: block;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    html[data-ui-lang="es"] .gk-en { display: none !important; }
+    html[data-ui-lang="en"] .gk-es { display: none !important; }
+    .nav-drawer .lang-switch {
+      justify-content: center;
+      padding: 1rem 0 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 0.5rem;
+    }
+    .nav-drawer .lang-switch .lang-btn {
+      width: 48px;
+      height: 36px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #fff;
+      text-decoration: none;
+      z-index: 101;
+    }
+    .brand:hover { text-decoration: none; }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      flex-shrink: 0;
+      display: block;
+      /* Fondo negro del PNG se funde con la barra navy; el oro se mantiene */
+      mix-blend-mode: lighten;
+    }
+    .brand-text { display: flex; flex-direction: column; gap: 0.1rem; }
+    .brand-text span {
+      font-family: Cinzel, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+    }
+    .brand-text small {
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 0.35rem 1.1rem;
+      flex-wrap: wrap;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .nav-desktop a { color: rgba(255,255,255,0.88); text-decoration: none; }
+    .nav-desktop a:hover { color: var(--gold-bright); }
+    @media (min-width: 960px) {
+      .nav-desktop { display: flex; }
+      .nav-toggle { display: none !important; }
+      .nav-drawer { display: none !important; }
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 1px solid rgba(197, 160, 64, 0.35);
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 2px;
+      background: #fff;
+      border-radius: 1px;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-toggle span { transition: transform 0.2s, opacity 0.2s; }
+
+    .nav-drawer {
+      position: fixed;
+      inset: 0;
+      top: 61px;
+      background: rgba(10, 17, 40, 0.97);
+      padding: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      overflow-y: auto;
+    }
+    .nav-drawer.is-open { transform: translateX(0); }
+    .nav-drawer a {
+      display: block;
+      padding: 0.85rem 0;
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+    .nav-drawer a:hover { color: var(--gold-bright); }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
+      color: var(--navy);
+    }
+    .btn-gold:hover { filter: brightness(1.05); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(197, 160, 64, 0.6);
+    }
+    .btn-outline:hover { background: rgba(197, 160, 64, 0.12); text-decoration: none; }
+    .btn-dark {
+      background: var(--navy);
+      color: #fff;
+      border: 1px solid var(--navy);
+    }
+    .btn-dark:hover { background: #121a3a; text-decoration: none; }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 2.5rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(197, 160, 64, 0.12), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 2.5rem; }
+    }
+    .hero h1 {
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      letter-spacing: 0.06em;
+    }
+    .hero .tagline {
+      color: var(--gold-bright);
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .hero p.lead {
+      color: rgba(255,255,255,0.74);
+      font-weight: 300;
+      font-size: 0.98rem;
+      max-width: 36rem;
+      margin: 0 0 1.35rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .hero-media {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(197, 160, 64, 0.25);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+      background: linear-gradient(145deg, #1a1f35 0%, #0d1228 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      line-height: 0;
+    }
+    .hero-media img {
+      max-width: calc(100% * var(--gk-img-scale));
+      width: auto;
+      height: auto;
+      max-height: min(calc(85vh * var(--gk-img-scale)), calc(720px * var(--gk-img-scale)));
+      display: block;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .hero-fallback {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .hero-fallback .mono {
+      font-family: Cinzel, serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      color: var(--gold-bright);
+      margin-bottom: 0.5rem;
+    }
+    .hero-fallback .bar-shape {
+      width: 140px;
+      height: 72px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #d4af37, #8a7020, #c5a040);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 8px 24px rgba(0,0,0,0.4);
+      margin: 1rem 0;
+    }
+
+    /* Strip */
+    .strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (min-width: 640px) { .strip { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .strip { grid-template-columns: repeat(4, 1fr); } }
+    .strip div {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--gold-bright);
+    }
+    .strip strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    section { padding: 2.75rem 0; }
+    /* Aire entre bloques principales (~50px) */
+    main > section:not(#top) {
+      margin-top: 50px;
+    }
+    /* Cumplimiento: refuerzo — padding extra arriba (el margen a veces colapsa con Envío) */
+    section#florida {
+      margin-top: 50px;
+      padding-top: calc(2.75rem + 50px);
+    }
+    main > .wrap.strip {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    section h2 {
+      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+      color: var(--navy);
+      margin: 0 0 0.4rem;
+    }
+    .section-kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 0.3rem;
+    }
+    .section-lead {
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 44rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 1.15rem;
+    }
+    @media (min-width: 700px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+    .grid-3 {
+      display: grid;
+      gap: 1.15rem;
+    }
+    @media (min-width: 700px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .grid-5 {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 700px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1000px) { .grid-5 { grid-template-columns: repeat(5, 1fr); } }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.2rem 1.25rem;
+    }
+    .card h3 { font-size: 0.88rem; margin: 0 0 0.45rem; color: var(--navy); }
+    .card p { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+    .card .weight-tag {
+      font-family: Cinzel, serif;
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.08em;
+    }
+    .card-accent { border-color: rgba(197, 160, 64, 0.35); }
+
+    /* Pasos “Cómo funciona” — iconos + tarjeta (carrusel) */
+    .how-step-card {
+      background: linear-gradient(180deg, #fafbfc 0%, #fff 45%);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.35rem 1.35rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+    }
+    .gk-carousel--how .step-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.85rem;
+      height: 5.85rem;
+      margin: 0 auto 1rem;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(197, 160, 64, 0.14), rgba(10, 17, 40, 0.06));
+      border: 1px solid rgba(197, 160, 64, 0.28);
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .gk-carousel--how .step-icon svg {
+      width: 2.8275rem;
+      height: 2.8275rem;
+      flex-shrink: 0;
+    }
+    .how-step-card strong {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.65rem;
+      text-align: center;
+      line-height: 1.35;
+    }
+    .how-step-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.72;
+      text-align: left;
+    }
+    .gk-carousel--how .gk-carousel-slide.how-step-slide {
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 0.35rem 0.5rem 1rem;
+      box-sizing: border-box;
+    }
+
+    details.faq {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+      padding: 0 1rem;
+    }
+    details.faq summary {
+      cursor: pointer;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      list-style: none;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq p {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #121a3a 100%);
+      color: #fff;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 0.45rem; }
+    .cta-band p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 1.15rem; font-size: 0.88rem; }
+
+    .policy-block {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .policy-block h3 { font-size: 0.95rem; color: var(--navy); margin: 1.5rem 0 0.5rem; }
+    .policy-block p { margin: 0 0 0.75rem; }
+
+    /* Product carousel — full image, no crop */
+    .gk-carousel {
+      margin-top: 1.25rem;
+      position: relative;
+    }
+    .gk-carousel-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .gk-carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 1.25rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .gk-carousel-btn:hover {
+      background: var(--ivory);
+      border-color: var(--gold-bright);
+    }
+    .gk-carousel-btn:focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 2px;
+    }
+    .gk-carousel-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .gk-carousel-counter {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      min-width: 4.5rem;
+      text-align: center;
+    }
+    .gk-carousel-counter .current { color: var(--navy); font-weight: 600; }
+    .gk-carousel-viewport {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #eceef2 0%, #dfe3ea 100%);
+      outline: none;
+      touch-action: pan-y pinch-zoom;
+      min-height: 12rem;
+    }
+    .gk-carousel-viewport:focus-visible {
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.45);
+    }
+    .gk-carousel-track {
+      display: flex;
+      align-items: center;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .gk-carousel-track { transition: none; }
+    }
+    .gk-carousel-slide {
+      flex: 0 0 auto;
+      margin: 0;
+      padding: 1rem 0.75rem 1.25rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Wrapper solo centra; la imagen define altura con proporción nativa */
+    .gk-slide-pic {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+    }
+    .gk-carousel-slide img {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+      max-width: calc(100% * var(--gk-img-scale));
+      max-height: min(calc(92vh * var(--gk-img-scale)), calc(1280px * var(--gk-img-scale)));
+      border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(10, 17, 40, 0.15);
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .gk-carousel-slide figcaption {
+      max-width: 38rem;
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding: 0 0.5rem;
+    }
+    .gk-carousel-slide figcaption strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .gk-carousel-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .gk-carousel-dots button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .gk-carousel-dots button:hover { transform: scale(1.15); }
+    .gk-carousel-dots button[aria-current="true"] {
+      background: var(--gold-bright);
+      border-color: #b38728;
+      transform: scale(1.2);
+    }
+    .gk-carousel-hint {
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .gk-carousel--shipping,
+    .gk-carousel--how {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .gk-carousel--shipping .gk-carousel-viewport,
+    .gk-carousel--how .gk-carousel-viewport {
+      order: 1;
+    }
+    .gk-carousel--shipping .gk-carousel-toolbar,
+    .gk-carousel--how .gk-carousel-toolbar {
+      order: 2;
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+    }
+    .gk-carousel--how .gk-carousel-dots {
+      order: 3;
+      margin-top: 0.65rem;
+    }
+
+    /* Envío y seguro — cajas de copy: +20% altura (padding); fuente ~+17.6% vs base (1.12×1.05) */
+    #shipping .section-lead {
+      font-size: calc(0.92rem * 1.12 * 1.05);
+      margin-bottom: calc(1.25rem * 1.2);
+      line-height: 1.75;
+    }
+    #shipping .grid-2 .card {
+      padding: calc(1.2rem * 1.2) calc(1.25rem * 1.2);
+      box-sizing: border-box;
+    }
+    #shipping .grid-2 .card h3 {
+      font-size: calc(0.88rem * 1.12 * 1.05);
+      margin: 0 0 calc(0.45rem * 1.2);
+    }
+    #shipping .grid-2 .card p {
+      font-size: calc(0.82rem * 1.12 * 1.05);
+      line-height: 1.65;
+    }
+
+    .split-story {
+      display: grid;
+      gap: 1.75rem;
+      align-items: start;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 860px) {
+      .split-story { grid-template-columns: 1fr 1.05fr; }
+      .split-story.is-reverse { direction: rtl; }
+      .split-story.is-reverse > * { direction: ltr; }
+    }
+    .split-story ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .split-story li { margin-bottom: 0.45rem; }
+
+    /* How it works — full-bleed band, content aligned to .wrap like rest of site */
+    .how-section {
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 2.75rem 0;
+      box-sizing: border-box;
+    }
+    .how-section .wrap {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .how-layout {
+      margin-top: 1.35rem;
+      max-width: min(28rem, 100%);
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    .photo-rail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.975rem;
+      margin: 1.25rem 0 0;
+      list-style: none;
+      padding: 0;
+      align-items: flex-start;
+    }
+    .photo-rail li {
+      margin: 0;
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+    .photo-rail a {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .photo-rail a:hover {
+      text-decoration: none;
+      border-color: rgba(197, 160, 64, 0.45);
+      box-shadow: 0 9px 30px rgba(10, 17, 40, 0.08);
+    }
+    .photo-rail img {
+      width: auto;
+      height: 210px;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 0.525rem;
+    }
+    .photo-rail button.photo-rail-trigger {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      cursor: zoom-in;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      font: inherit;
+      text-align: left;
+    }
+    .photo-rail button.photo-rail-trigger:hover {
+      border-color: rgba(197, 160, 64, 0.45);
+      box-shadow: 0 9px 30px rgba(10, 17, 40, 0.08);
+    }
+
+    /* Lightbox — “At a glance” thumbnails */
+    .gk-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      padding: 1rem;
+      padding-top: 3rem;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gk-lightbox[hidden] {
+      display: none !important;
+    }
+    .gk-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 17, 40, 0.88);
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+    .gk-lightbox-inner {
+      position: relative;
+      z-index: 1;
+      max-width: min(96vw, 1120px);
+      max-height: 90vh;
+      pointer-events: none;
+    }
+    .gk-lightbox-inner img {
+      pointer-events: auto;
+      display: block;
+      max-width: 100%;
+      max-height: min(85vh, 900px);
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    }
+    .gk-lightbox-close {
+      pointer-events: auto !important;
+      position: absolute;
+      top: -0.25rem;
+      right: -0.25rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 160, 64, 0.5);
+      background: var(--navy);
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+      z-index: 2;
+    }
+    .gk-lightbox-close:hover {
+      background: #121a3a;
+      border-color: var(--gold-bright);
+    }
+    .gk-lightbox-close:focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 2px;
+    }
+
+    .trust-card-img {
+      margin: -1.2rem -1.25rem 0.85rem -1.25rem;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fafafa, #f0f0f0);
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      padding: 0;
+      line-height: 0;
+    }
+    .trust-card-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .split-panel {
+      display: grid;
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 800px) {
+      .split-panel { grid-template-columns: 1fr 1fr; }
+      .split-panel.wide-img { grid-template-columns: 0.42fr 1fr; }
+    }
+    .panel-photo {
+      margin: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .panel-photo img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: contain;
+      display: block;
+    }
+    .panel-photo figcaption {
+      font-size: 0.7rem;
+      color: var(--muted);
+      padding: 0.5rem 0.75rem;
+      border-top: 1px solid var(--line);
+      background: var(--ivory);
+    }
+
+    .faq-layout {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      align-items: start;
+    }
+    @media (min-width: 800px) {
+      .faq-layout { grid-template-columns: 220px 1fr; }
+    }
+    .faq-aside {
+      margin: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      position: sticky;
+      top: 5.5rem;
+    }
+    .faq-aside img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 420px;
+    }
+    .faq-aside figcaption {
+      font-size: 0.68rem;
+      color: var(--muted);
+      padding: 0.6rem 0.75rem;
+      background: #fff;
+    }
+
+    .contact-visual {
+      margin: 0 0 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .contact-visual img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+      display: block;
+      background: linear-gradient(180deg, #fafafa, #eee);
+    }
+
+    footer {
+      background: #060a16;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.68rem;
+      padding: 2rem 0;
+      line-height: 1.65;
+    }
+    footer .foot-grid {
+      display: grid;
+      gap: 1.35rem;
+      grid-template-columns: 1fr;
+    }
+    footer .foot-brand {
+      justify-self: start;
+    }
+    footer .foot-brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      display: block;
+      mix-blend-mode: lighten;
+    }
+    footer .foot-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+      min-width: 0;
+    }
+    footer .foot-info {
+      max-width: 28rem;
+    }
+    footer .foot-info strong.foot-kicker {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.12em;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+    }
+    footer .foot-info p {
+      margin: 0.45rem 0 0;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    footer .foot-info p strong {
+      color: rgba(255, 255, 255, 0.55);
+    }
+    footer .foot-nav {
+      font-size: 0.68rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+    @media (min-width: 640px) {
+      footer .foot-grid {
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: start;
+        column-gap: 1.25rem;
+      }
+      footer .foot-main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.25rem 2rem;
+      }
+      footer .foot-grid .legal { grid-column: 1 / -1; }
+    }
+    footer a { color: rgba(255,255,255,0.65); }
+    .legal {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.35);
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main"><span class="gk-es">Ir al contenido</span><span class="gk-en">Skip to content</span></a>
+
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN" width="48" height="48" />
+        <div class="brand-text">
+          <span>GOLDKOIN</span>
+          <small><span class="gk-es">Oro fino 999.9</span><span class="gk-en">Fine Gold 999.9</span></small>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#gallery"><span class="gk-es">Galería</span><span class="gk-en">Gallery</span></a>
+        <a href="#shop"><span class="gk-es">Lingotes</span><span class="gk-en">Bars</span></a>
+        <a href="#how"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></a>
+        <a href="#shipping"><span class="gk-es">Envío</span><span class="gk-en">Shipping</span></a>
+        <a href="#florida">Florida</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></a>
+        <a class="btn btn-gold" href="#shop"><span class="gk-es">Tienda</span><span class="gk-en">Shop</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn is-active" id="lang-btn-es" data-set-lang="es" aria-pressed="true" title="Español">
+            <span class="visually-hidden">Español</span>
+            <svg class="flag flag-es" viewBox="0 0 3 2" aria-hidden="true" focusable="false"><rect width="3" height="2" fill="#c60b1e"/><rect y="0.5" width="3" height="1" fill="#ffc400"/></svg>
+          </button>
+          <button type="button" class="lang-btn" id="lang-btn-en" data-set-lang="en" aria-pressed="false" title="English">
+            <span class="visually-hidden">English</span>
+            <svg class="flag flag-us" viewBox="0 0 19 10" aria-hidden="true" focusable="false">
+              <rect width="19" height="10" fill="#b22234"/>
+              <path fill="#fff" d="M0 1.54h19V0H0zm0 3.08h19V3.08H0zm0 3.08h19V6.15H0zm0 3.08h19V9.23H0z"/>
+              <rect width="7.6" height="5.38" fill="#3c3b6e"/>
+            </svg>
+          </button>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" data-aria-menu-es="Abrir menú" data-aria-menu-en="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-drawer" id="nav-drawer" aria-hidden="true" aria-label="Mobile">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn is-active" id="lang-btn-es-drawer" data-set-lang="es" aria-pressed="true" title="Español">
+          <span class="visually-hidden">Español</span>
+          <svg class="flag flag-es" viewBox="0 0 3 2" aria-hidden="true" focusable="false"><rect width="3" height="2" fill="#c60b1e"/><rect y="0.5" width="3" height="1" fill="#ffc400"/></svg>
+        </button>
+        <button type="button" class="lang-btn" id="lang-btn-en-drawer" data-set-lang="en" aria-pressed="false" title="English">
+          <span class="visually-hidden">English</span>
+          <svg class="flag flag-us" viewBox="0 0 19 10" aria-hidden="true" focusable="false">
+            <rect width="19" height="10" fill="#b22234"/>
+            <path fill="#fff" d="M0 1.54h19V0H0zm0 3.08h19V3.08H0zm0 3.08h19V6.15H0zm0 3.08h19V9.23H0z"/>
+            <rect width="7.6" height="5.38" fill="#3c3b6e"/>
+          </svg>
+        </button>
+      </div>
+      <a href="#gallery"><span class="gk-es">Galería</span><span class="gk-en">Gallery</span></a>
+      <a href="#shop"><span class="gk-es">Lingotes</span><span class="gk-en">Bars</span></a>
+      <a href="#how"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></a>
+      <a href="#shipping"><span class="gk-es">Envío</span><span class="gk-en">Shipping</span></a>
+      <a href="#florida">Florida</a>
+      <a href="#faq">FAQ</a>
+      <a href="#policies"><span class="gk-es">Políticas</span><span class="gk-en">Policies</span></a>
+      <a href="#contact"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="tagline"><span class="gk-es">Serie Sovereign · Florida, EE. UU.</span><span class="gk-en">The Sovereign Series · Florida, USA</span></p>
+          <h1 class="font-display"><span class="gk-es">Lingotes de Oro<br /> presentación entre 5g - 100g.<br />.9995 milésimas.<br /> Listos para entrega.</span><span class="gk-en">Gold bars<br /> presentations from 5g–100g.<br />.9995 fine.<br /> Ready for delivery.</span></h1>
+          <p class="lead">
+            <span class="gk-es"><strong style="color:#fff">GOLDKOIN, LLC</strong> es tu proveedor oficial de la Serie Sovereign: Oro fino acuñado .9995 y presentado en la forma en que los compradores serios comparan gramo a gramo. Entrega asegurada, embalaje discreto y presentación tipo ensayo que puedes revisar el día que llega a tu domicilio.</span>
+            <span class="gk-en"><strong style="color:#fff">GOLDKOIN, LLC</strong> is the official supplier of the Sovereign Series—minted .9995 fine gold, presented the way serious buyers compare gram for gram. Insured delivery, discreet packaging, and assay-style presentation you can inspect the day it arrives at your door.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver pesos</span><span class="gk-en">View weights</span></a>
+            <a class="btn btn-outline" href="#gallery"><span class="gk-es">Ver el producto</span><span class="gk-en">See the product</span></a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img
+            src="assets/hero-sovereign-50g.jpg"
+            data-alt-es="Lingote de oro GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+            data-alt-en="GOLDKOIN Sovereign Series gold bar in secure assay packaging"
+            alt="Lingote de oro GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+            width="800"
+            height="1000"
+            loading="eager"
+            onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex';"
+          />
+          <div class="hero-fallback" id="hero-fallback" role="img" data-aria-fallback-es="Imagen del producto Serie Sovereign no disponible" data-aria-fallback-en="Sovereign Series product image unavailable" aria-label="Imagen del producto Serie Sovereign no disponible">
+            <span class="mono">Sovereign Series</span>
+            <div class="bar-shape" aria-hidden="true"></div>
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);max-width:14rem;margin:0;">
+              <span class="gk-es">Cargando foto del producto…</span><span class="gk-en">Product photo loading…</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="gallery" aria-labelledby="gallery-heading">
+      <p class="section-kicker"><span class="gk-es">Oro de inversión</span><span class="gk-en">Gold bullion</span></p>
+      <h2 class="font-display" id="gallery-heading"><span class="gk-es">Conoce la Serie Sovereign</span><span class="gk-en">See the Sovereign Series</span></h2>
+      <p class="section-lead">
+        <span class="gk-es">Cada lingote se envía en embalaje protector con los grabados, elementos de seguridad y documentación que ves aquí. Usa las flechas o desliza para ver cada foto.</span>
+        <span class="gk-en">Every bar ships in protective packaging with the markings, security features, and documentation shown here. Tap the arrows or swipe to view each photo.</span>
+      </p>
+
+      <div class="gk-carousel" id="product-carousel" data-gk-carousel role="region" aria-roledescription="carousel" data-carousel-label-es="Fotografía GOLDKOIN Serie Sovereign" data-carousel-label-en="GOLDKOIN Sovereign Series photography" aria-label="Fotografía GOLDKOIN Serie Sovereign">
+        <div class="gk-carousel-toolbar">
+          <button type="button" class="gk-carousel-btn gk-carousel-prev" aria-controls="carousel-vp-gallery" data-aria-prev-es="Imagen anterior" data-aria-prev-en="Previous image" aria-label="Imagen anterior">‹</button>
+          <span class="gk-carousel-counter" aria-live="polite"><span class="current">1</span> / <span class="total">7</span></span>
+          <button type="button" class="gk-carousel-btn gk-carousel-next" aria-controls="carousel-vp-gallery" data-aria-next-es="Imagen siguiente" data-aria-next-en="Next image" aria-label="Imagen siguiente">›</button>
+        </div>
+
+        <div class="gk-carousel-viewport" id="carousel-vp-gallery" tabindex="0" data-aria-viewport-es="Desliza o usa las flechas del teclado cuando tenga el foco" data-aria-viewport-en="Swipe or use arrow keys when focused" aria-label="Desliza o usa las flechas del teclado cuando tenga el foco">
+          <div class="gk-carousel-track">
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Lingote GOLDKOIN Sovereign 50 g sellado en tarjeta de ensayo con QR y holograma GOLDAPP, en la mano" data-alt-en="GOLDKOIN 50g Sovereign bar sealed in assay card with QR and GOLDAPP hologram, held in hand" alt="Lingote GOLDKOIN Sovereign 50 g sellado en tarjeta de ensayo con QR y holograma GOLDAPP, en la mano" width="1200" height="1600" decoding="async" fetchpriority="high" />
+              </div>
+              <figcaption><strong><span class="gk-es">1 · En tus manos</span><span class="gk-en">1 · In your hands</span></strong> <span class="gk-es">Presentación Sovereign sellada: metacrilato, cierres de seguridad, código QR, holograma y lingote numerado.</span><span class="gk-en">The sealed Sovereign presentation: acrylic case, security fasteners, QR code, hologram, and serialized bar.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-02-assay-full.jpg" data-alt-es="Tarjeta autenticada GOLDKOIN con lingote en exposición minorista con ciudad de fondo" data-alt-en="GOLDKOIN authenticated card with gold bar at retail display with city backdrop" alt="Tarjeta autenticada GOLDKOIN con lingote en exposición minorista con ciudad de fondo" width="1200" height="1600" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">2 · En vitrina</span><span class="gk-en">2 · On display</span></strong> <span class="gk-es">Formato de tarjeta autenticada que reconocen los clientes de distribuidores premium.</span><span class="gk-en">The authenticated card format customers recognize from premium bullion retailers.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-01-bar-studio.jpg" data-alt-es="Lingote de oro fino GOLDKOIN 50 g en estudio con marcas de acuñación y serie GK" data-alt-en="GOLDKOIN fine gold bar 50g studio shot with mint markings and GK serial" alt="Lingote de oro fino GOLDKOIN 50 g en estudio con marcas de acuñación y serie GK" width="1200" height="1200" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">3 · Detalle del lingote</span><span class="gk-en">3 · Bar detail</span></strong> <span class="gk-es">Oro .9999, peso y serie—compara con tu albarán de embalaje.</span><span class="gk-en">.9999 fine gold, weight, and serial—compare directly to your packing slip.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" alt="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" width="1200" height="1600" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">4 · Presentación navy</span><span class="gk-en">4 · Navy presentation</span></strong> <span class="gk-es">Acabado Sovereign alternativo con las mismas funciones de seguridad.</span><span class="gk-en">Alternate Sovereign finish with the same security features.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-03b-case-dark.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign variante fondo oscuro" data-alt-en="GOLDKOIN Sovereign assay case dark background variant" alt="Estuche de ensayo GOLDKOIN Sovereign variante fondo oscuro" width="1200" height="1600" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">5 · Tarjeta negra clásica</span><span class="gk-en">5 · Classic black card</span></strong> <span class="gk-es">Segundo look minorista para coleccionistas que buscan variedad.</span><span class="gk-en">A second retail look for collectors who want variety in the stack.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-04-brand-desk.jpg" data-alt-es="Escritorio con membrete GOLDKOIN precious metals, lingote, pluma y tarjetas" data-alt-en="GOLDKOIN precious metals letterhead desk with gold bar fountain pen and cards" alt="Escritorio con membrete GOLDKOIN precious metals, lingote, pluma y tarjetas" width="1600" height="1000" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">6 · El estándar GOLDKOIN</span><span class="gk-en">6 · The GOLDKOIN standard</span></strong> <span class="gk-es">Papelería y dirección de arte—respaldamos cada gramo que vendemos.</span><span class="gk-en">Stationery and bar art direction—we stand behind every gram we sell.</span></figcaption>
+            </figure>
+            <figure class="gk-carousel-slide">
+              <div class="gk-slide-pic">
+                <img src="assets/gallery-04b-brand-desk-alt.jpg" data-alt-es="Papelería corporativa GOLDKOIN y lingote, otro ángulo" data-alt-en="GOLDKOIN corporate stationery and gold bar alternate angle" alt="Papelería corporativa GOLDKOIN y lingote, otro ángulo" width="1200" height="1600" loading="lazy" decoding="async" />
+              </div>
+              <figcaption><strong><span class="gk-es">7 · Historia de marca</span><span class="gk-en">7 · Brand story</span></strong> <span class="gk-es">Otra vista de la identidad Serie Sovereign.</span><span class="gk-en">Another view of the Sovereign Series identity.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="gk-carousel-dots" data-aria-dots-es="Selección de imagen" data-aria-dots-en="Slide selection" aria-label="Selección de imagen"></div>
+        <p class="gk-carousel-hint"><span class="gk-es">En escritorio: haz clic dentro de la galería y usa las flechas del teclado. En móvil: desliza.</span><span class="gk-en">Desktop: click inside the gallery, then use keyboard arrows. Mobile: swipe.</span></p>
+      </div>
+    </section>
+
+    <div class="wrap strip">
+      <div><strong><span class="gk-es">Distribuidor en Florida</span><span class="gk-en">Florida dealer</span></strong> <span class="gk-es">Venta minorista a nombre de <strong>GOLDKOIN, LLC</strong>, Miami, Florida: facturas reales y responsabilidad clara.</span><span class="gk-en">Retail sales by <strong>GOLDKOIN, LLC</strong>, Miami, Florida—real invoices, real accountability.</span></div>
+      <div><strong><span class="gk-es">Envío asegurado</span><span class="gk-en">Insured shipping</span></strong> <span class="gk-es">Totalmente asegurado en tránsito hasta la entrega. Firma obligatoria en la mayoría de pedidos de alto valor. </span><span class="gk-en">Fully insured in transit until delivery. Signature required on most high-value orders. </span><a href="#shipping"><span class="gk-es">Más información</span><span class="gk-en">Learn more</span></a></div>
+      <div><strong><span class="gk-es">Precio cerrado</span><span class="gk-en">Price locked in</span></strong> <span class="gk-es">Tu total—metal, prima y envío—queda confirmado al hacer el pedido, como en los principales distribuidores de lingotes en EE. UU.</span><span class="gk-en">Your total—including metal, premium, and shipping—is confirmed when you place your order, like leading U.S. bullion dealers.</span></div>
+      <div><strong><span class="gk-es">Atención experta</span><span class="gk-en">Expert support</span></strong> <span class="gk-es">¿Dudas sobre pesos, entrega o autenticidad? Escríbenos en horario comercial—te respondemos.</span><span class="gk-en">Questions about weights, delivery, or authenticity? Reach us during business hours—we answer the phone.</span></div>
+    </div>
+
+    <section class="wrap" id="shop">
+      <p class="section-kicker"><span class="gk-es">Línea de producto</span><span class="gk-en">Product line</span></p>
+      <h2 class="font-display"><span class="gk-es">Compra por peso</span><span class="gk-en">Shop by weight</span></h2>
+      <p class="section-lead">
+        <span class="gk-es">Cinco pesos acuñados de <strong>5 g a 100 g</strong>, todos en oro <strong>.9999 fino</strong>. Compara primas con sentido gramo a gramo—misma calidad de lingote y embalaje en toda la gama.</span>
+        <span class="gk-en">Five minted weights from <strong>5g to 100g</strong>, all <strong>.9999 fine</strong>. Compare premiums fairly gram for gram—the same bar quality and packaging across the line.</span>
+      </p>
+      <div class="grid-5">
+        <article class="card card-accent">
+          <div class="weight-tag">5g</div>
+          <h3 class="font-display"><span class="gk-es">Tamaño de entrada</span><span class="gk-en">Entry size</span></h3>
+          <p><span class="gk-es">Prima más alta por gramo; ideal para regalo o una primera compra para conocer nuestro servicio.</span><span class="gk-en">Higher premium per gram; ideal for gifts or a first purchase to experience our fulfillment.</span></p>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+        </article>
+        <article class="card card-accent">
+          <div class="weight-tag">10g</div>
+          <h3 class="font-display"><span class="gk-es">Compacto</span><span class="gk-en">Compact</span></h3>
+          <p><span class="gk-es">Salto popular respecto a los microformatos; sigue siendo fácil de guardar y revender.</span><span class="gk-en">A popular step up—still easy to store and resell when the time comes.</span></p>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+        </article>
+        <article class="card card-accent">
+          <div class="weight-tag">20g</div>
+          <h3 class="font-display"><span class="gk-es">Peso medio</span><span class="gk-en">Mid-weight</span></h3>
+          <p><span class="gk-es">Equilibrio entre prima y gramos por pedido para acumular con regularidad.</span><span class="gk-en">Balances premium and grams per order for steady accumulation.</span></p>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+        </article>
+        <article class="card card-accent">
+          <div class="weight-tag">50g</div>
+          <h3 class="font-display"><span class="gk-es">Estrella</span><span class="gk-en">Flagship</span></h3>
+          <p><span class="gk-es">El peso protagonista en nuestra fotografía Sovereign—mucho metal en un solo lingote.</span><span class="gk-en">The weight featured across our Sovereign photography—serious savings in a single bar.</span></p>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+        </article>
+        <article class="card card-accent">
+          <div class="weight-tag">100g</div>
+          <h3 class="font-display"><span class="gk-es">Reserva principal</span><span class="gk-en">Core holding</span></h3>
+          <p><span class="gk-es">Suele ser la prima más baja por gramo de la serie; prevé almacenamiento seguro.</span><span class="gk-en">Typically the lowest premium per gram in the series; plan secure storage accordingly.</span></p>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+        </article>
+      </div>
+
+      <p class="section-kicker" style="margin-top:2.25rem;margin-bottom:0.35rem;"><span class="gk-es">De un vistazo</span><span class="gk-en">At a glance</span></p>
+      <p style="color:var(--muted);font-size:0.88rem;margin:0 0 0.25rem;max-width:40rem;"><span class="gk-es">Haz clic en una miniatura para ver esa foto ampliada en una ventana emergente (embalaje, grabados del lingote y acabados minoristas).</span><span class="gk-en">Click any thumbnail to open that photo in a popup—packaging, bar markings, and retail finishes.</span></p>
+      <ul class="photo-rail">
+        <li>
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/ship-03-in-hand.jpg" data-alt-es="Lingote Sovereign sellado en presentación de ensayo en la mano" data-alt-en="Sealed Sovereign gold bar in assay presentation held in hand" data-a11y-es="Ver foto ampliada: lingote sellado en la mano" data-a11y-en="View enlarged photo: sealed bar in hand" aria-label="Ver foto ampliada: lingote sellado en la mano">
+            <img src="assets/ship-03-in-hand.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
+          </button>
+        </li>
+        <li>
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/gallery-02-assay-full.jpg" data-alt-es="Tarjeta autenticada GOLDKOIN con lingote en exposición minorista con ciudad de fondo" data-alt-en="GOLDKOIN authenticated card with gold bar at retail display with city backdrop" data-a11y-es="Ver foto ampliada: tarjeta en exposición" data-a11y-en="View enlarged photo: retail display card" aria-label="Ver foto ampliada: tarjeta en exposición">
+            <img src="assets/gallery-02-assay-full.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
+          </button>
+        </li>
+        <li>
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/gallery-01-bar-studio.jpg" data-alt-es="Lingote de oro fino GOLDKOIN 50 g en estudio con marcas de acuñación y serie GK" data-alt-en="GOLDKOIN fine gold bar 50g studio shot with mint markings and GK serial" data-a11y-es="Ver foto ampliada: grabados del lingote en estudio" data-a11y-en="View enlarged photo: studio bar markings" aria-label="Ver foto ampliada: grabados del lingote en estudio">
+            <img src="assets/gallery-01-bar-studio.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
+          </button>
+        </li>
+        <li>
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" data-a11y-es="Ver foto ampliada: estuche Sovereign azul marino" data-a11y-en="View enlarged photo: navy Sovereign case" aria-label="Ver foto ampliada: estuche Sovereign azul marino">
+            <img src="assets/gallery-03-case-navy.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="wrap">
+        <p class="section-kicker"><span class="gk-es">Proceso</span><span class="gk-en">Process</span></p>
+        <h2 class="font-display"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></h2>
+        <p class="section-lead"><span class="gk-es">Pasos claros desde la cotización hasta la entrega asegurada—lo que esperas de un distribuidor de metales preciosos en EE. UU.</span><span class="gk-en">Straightforward steps from quote to insured delivery—what you expect from a U.S. precious-metals dealer.</span></p>
+        <div class="how-layout">
+          <div class="gk-carousel gk-carousel--how" id="how-carousel" data-gk-carousel data-gk-carousel-loop data-gk-autoplay-ms="8000" data-gk-autoplay-inview data-gk-autoplay-dwell-ms="1000" role="region" aria-roledescription="carousel" data-carousel-label-es="Pasos del proceso de compra GOLDKOIN" data-carousel-label-en="GOLDKOIN purchase steps" aria-label="Pasos del proceso de compra GOLDKOIN">
+            <div class="gk-carousel-viewport" id="carousel-vp-how" tabindex="0" data-aria-viewport-es="Pasos: usa flechas o desliza en móvil" data-aria-viewport-en="Steps: use arrows or swipe on mobile" aria-label="Pasos: usa flechas o desliza en móvil">
+              <div class="gk-carousel-track">
+                <figure class="gk-carousel-slide how-step-slide">
+                  <div class="how-step-card">
+                    <span class="step-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="4" height="6" rx="1"/><rect x="10" y="10" width="4" height="10" rx="1"/><rect x="16" y="6" width="4" height="14" rx="1"/></svg>
+                    </span>
+                    <strong><span class="gk-es">Elige el peso</span><span class="gk-en">Choose weight</span></strong>
+                    <p><span class="gk-es">Selecciona de 5 g a 100 g. Confirmamos metal, prima y envío en un solo total antes del pago.</span><span class="gk-en">Select 5g–100g. We confirm metal, premium, and shipping in one total before you pay.</span></p>
+                  </div>
+                </figure>
+                <figure class="gk-carousel-slide how-step-slide">
+                  <div class="how-step-card">
+                    <span class="step-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V8a5 5 0 0110 0v3"/></svg>
+                    </span>
+                    <strong><span class="gk-es">Cierra tu precio</span><span class="gk-en">Lock your price</span></strong>
+                    <p><span class="gk-es">El total del pedido queda fijado al pagar—sin ajustes sorpresa después.</span><span class="gk-en">Your order total is fixed at checkout—no surprise adjustments after you commit.</span></p>
+                  </div>
+                </figure>
+                <figure class="gk-carousel-slide how-step-slide">
+                  <div class="how-step-card">
+                    <span class="step-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="M6 15h4M14 15h2"/></svg>
+                    </span>
+                    <strong><span class="gk-es">Paga con seguridad</span><span class="gk-en">Pay securely</span></strong>
+                    <p><span class="gk-es">Transferencia bancaria, ACH o tarjeta cuando esté disponible. Los pedidos de alto valor pueden requerir comprobaciones estándar de fraude o identidad—habitual en lingotes.</span><span class="gk-en">Bank wire, ACH, or card where available. High-value orders may require standard fraud or identity checks—common in bullion.</span></p>
+                  </div>
+                </figure>
+                <figure class="gk-carousel-slide how-step-slide">
+                  <div class="how-step-card">
+                    <span class="step-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v11H1z"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+                    </span>
+                    <strong><span class="gk-es">Enviamos asegurado</span><span class="gk-en">We ship insured</span></strong>
+                    <p><span class="gk-es">Caja exterior discreta, seguro de tránsito completo, seguimiento y avisos por correo al despachar.</span><span class="gk-en">Discreet outer carton, full transit insurance, tracking, and email updates at dispatch.</span></p>
+                  </div>
+                </figure>
+                <figure class="gk-carousel-slide how-step-slide">
+                  <div class="how-step-card">
+                    <span class="step-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/></svg>
+                    </span>
+                    <strong><span class="gk-es">Firma y revisión</span><span class="gk-en">Sign &amp; inspect</span></strong>
+                    <p><span class="gk-es">Firma de adulto cuando corresponda. Revisa el envío al recibirlo y contáctanos de inmediato si algo no cuadra.</span><span class="gk-en">Adult signature where required. Examine the shipment on arrival and contact us immediately if anything looks wrong.</span></p>
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <div class="gk-carousel-toolbar">
+              <button type="button" class="gk-carousel-btn gk-carousel-prev" aria-controls="carousel-vp-how" data-aria-prev-es="Paso anterior" data-aria-prev-en="Previous step" aria-label="Paso anterior">‹</button>
+              <span class="gk-carousel-counter" aria-live="polite"><span class="current">1</span> / <span class="total">5</span></span>
+              <button type="button" class="gk-carousel-btn gk-carousel-next" aria-controls="carousel-vp-how" data-aria-next-es="Paso siguiente" data-aria-next-en="Next step" aria-label="Paso siguiente">›</button>
+            </div>
+            <div class="gk-carousel-dots" data-aria-dots-es="Selección de paso" data-aria-dots-en="Step selection" aria-label="Selección de paso"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="trust">
+      <p class="section-kicker"><span class="gk-es">Confianza</span><span class="gk-en">Trust</span></p>
+      <h2 class="font-display"><span class="gk-es">Lo que más preguntan los compradores</span><span class="gk-en">What buyers ask first</span></h2>
+      <div class="grid-3" style="margin-top:1rem;">
+        <div class="card card-accent">
+          <div class="trust-card-img" aria-hidden="true">
+            <img src="assets/hero-sovereign-50g.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async" />
+          </div>
+          <h3 class="font-display"><span class="gk-es">Autenticidad</span><span class="gk-en">Authenticity</span></h3>
+          <p><span class="gk-es">Los Sovereign se envían en embalaje anti-manipulación con holograma y código QR. Las fichas de producto indican qué confirma cada elemento para que puedas verificar al recibir.</span><span class="gk-en">Sovereign bars ship in tamper-evident packaging with holographic and QR security features. Listing pages describe exactly what each mark confirms so you can verify on delivery.</span></p>
+        </div>
+        <div class="card card-accent">
+          <div class="trust-card-img" aria-hidden="true">
+            <img src="assets/logo.jpg" alt="" width="512" height="512" loading="lazy" decoding="async" />
+          </div>
+          <h3 class="font-display"><span class="gk-es">Con quién compras</span><span class="gk-en">Who you are buying from</span></h3>
+          <p><span class="gk-es">Tu compra es con <strong>GOLDKOIN, LLC</strong>, sociedad de responsabilidad limitada de Florida. El nombre GOLDKOIN en el lingote coincide con la entidad de tu factura.</span><span class="gk-en">Your sale is with <strong>GOLDKOIN, LLC</strong>, a Florida limited liability company. The GOLDKOIN name on the bar matches the entity on your invoice.</span></p>
+        </div>
+        <div class="card card-accent">
+          <div class="trust-card-img" aria-hidden="true">
+            <img src="assets/gallery-01-bar-studio.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async" />
+          </div>
+          <h3 class="font-display"><span class="gk-es">Recompra</span><span class="gk-en">Buyback</span></h3>
+          <p><span class="gk-es">Si hay programa de recompra, publicaremos condiciones y diferenciales aquí. Mientras tanto, escríbenos para opciones de liquidación—preferimos una respuesta clara a una promesa vaga.</span><span class="gk-en">Repurchase programs, spreads, and holding periods will be posted here when available. Until then, contact us for liquidation options—we prefer an honest answer over a vague promise.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="shipping">
+      <p class="section-kicker"><span class="gk-es">Logística</span><span class="gk-en">Logistics</span></p>
+      <h2 class="font-display"><span class="gk-es">Envío y seguro</span><span class="gk-en">Shipping &amp; insurance</span></h2>
+      <p class="section-lead" style="margin-bottom:0;">
+        <span class="gk-es">Cada pedido viaja totalmente asegurado desde nuestras instalaciones hasta tu dirección. El embalaje exterior es neutro—sin marcas de lingotes en la caja. Mira la <a href="#gallery">galería de producto</a> para ver cómo van empacados por dentro.</span>
+        <span class="gk-en">Every order ships fully insured from our vault to your door. Outer packaging is plain—no bullion branding on the box. See the <a href="#gallery">product gallery</a> for how bars are packed inside.</span>
+      </p>
+      <div class="split-panel wide-img" style="margin-top:1.25rem;">
+        <div>
+          <div class="gk-carousel gk-carousel--shipping" id="shipping-carousel" data-gk-carousel role="region" aria-roledescription="carousel" data-carousel-label-es="Envío asegurado y entrega GOLDKOIN" data-carousel-label-en="GOLDKOIN insured shipping and delivery" aria-label="Envío asegurado y entrega GOLDKOIN">
+            <div class="gk-carousel-toolbar">
+              <button type="button" class="gk-carousel-btn gk-carousel-prev" aria-controls="carousel-vp-shipping" data-aria-prev-es="Imagen anterior" data-aria-prev-en="Previous image" aria-label="Imagen anterior">‹</button>
+              <span class="gk-carousel-counter" aria-live="polite"><span class="current">1</span> / <span class="total">3</span></span>
+              <button type="button" class="gk-carousel-btn gk-carousel-next" aria-controls="carousel-vp-shipping" data-aria-next-es="Imagen siguiente" data-aria-next-en="Next image" aria-label="Imagen siguiente">›</button>
+            </div>
+            <div class="gk-carousel-viewport" id="carousel-vp-shipping" tabindex="0" data-aria-viewport-es="Carrusel de envío: desliza o usa flechas con el foco" data-aria-viewport-en="Shipping carousel: swipe or arrow keys when focused" aria-label="Carrusel de envío: desliza o usa flechas con el foco">
+              <div class="gk-carousel-track">
+                <figure class="gk-carousel-slide">
+                  <div class="gk-slide-pic">
+                    <img src="assets/ship-03-in-hand.jpg" data-alt-es="Presentación Sovereign sellada lista para embalaje exterior discreto y envío asegurado" data-alt-en="Sealed Sovereign presentation ready for discreet outer packing and insured dispatch" alt="Presentación Sovereign sellada lista para embalaje exterior discreto y envío asegurado" width="1200" height="1600" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption><strong><span class="gk-es">1 · Preparación para envío</span><span class="gk-en">1 · Packed for transit</span></strong> <span class="gk-es">La pieza viaja en su presentación de ensayo antes de introducirse en la caja exterior neutra—sin texto sobre oro en el exterior.</span><span class="gk-en">Product stays in assay presentation before it goes into a plain outer carton—no bullion wording on the outside.</span></figcaption>
+                </figure>
+                <figure class="gk-carousel-slide">
+                  <div class="gk-slide-pic">
+                    <img src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche minorista Sovereign con seguridad holográfica—protección interior en el paquete" data-alt-en="Sovereign retail case with holographic security—inner protection inside the parcel" alt="Estuche minorista Sovereign con seguridad holográfica—protección interior en el paquete" width="1200" height="1600" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption><strong><span class="gk-es">2 · Protección interior</span><span class="gk-en">2 · Inner protection</span></strong> <span class="gk-es">Estuche acolchado y elementos anti-manipulación como describimos en logística—el seguro cubre el trayecto hasta la entrega.</span><span class="gk-en">Padded case and tamper-evident features as noted in logistics—coverage applies in transit through delivery.</span></figcaption>
+                </figure>
+                <figure class="gk-carousel-slide">
+                  <div class="gk-slide-pic">
+                    <img src="assets/ship-02-bar-reference.jpg" data-alt-es="Referencia de grabados y serie del lingote para cotejar con factura al recibir" data-alt-en="Bar markings and serial reference to match your invoice at receipt" alt="Referencia de grabados y serie del lingote para cotejar con factura al recibir" width="1200" height="1200" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption><strong><span class="gk-es">3 · Entrega y verificación</span><span class="gk-en">3 · Delivery &amp; verification</span></strong> <span class="gk-es">Coteja serie y marcas con tu factura al abrir el paquete interior; firma de adulto cuando el transportista lo exija.</span><span class="gk-en">Match serial and stamps to your invoice when you open the inner package; adult signature when the carrier requires it.</span></figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:0;">
+          <div class="card">
+            <h3 class="font-display"><span class="gk-es">Transportistas y firma</span><span class="gk-en">Carriers &amp; signature</span></h3>
+            <p><span class="gk-es">Grandes transportistas con seguimiento completo. Los envíos de alto valor suelen exigir firma de un adulto. Los apartados postales pueden tener restricciones—lo confirmamos en el checkout.</span><span class="gk-en">Major carriers with full tracking. High-value shipments typically require an adult signature. PO boxes may be limited by carrier rules—we confirm at checkout.</span></p>
+          </div>
+          <div class="card">
+            <h3 class="font-display"><span class="gk-es">Seguro</span><span class="gk-en">Insurance</span></h3>
+            <p><span class="gk-es">La cobertura aplica en tránsito hasta la entrega según transportista y aseguradora. Revisa el paquete al recibirlo; los daños visibles deben reportarse de inmediato.</span><span class="gk-en">Coverage applies in transit up to delivery per carrier and underwriter terms. Review completed delivery promptly; claims for visible damage must be reported right away.</span></p>
+          </div>
+          <div class="card">
+            <h3 class="font-display"><span class="gk-es">Entrega discreta</span><span class="gk-en">Discreet delivery</span></h3>
+            <p><span class="gk-es">Sin texto sobre oro en el exterior. Por dentro, la presentación Sovereign va acolchada para proteger tarjeta de ensayo y lingote.</span><span class="gk-en">No gold wording on the outside of the box. Inside, the Sovereign presentation is padded to protect the assay card and bar.</span></p>
+          </div>
+          <div class="card">
+            <h3 class="font-display"><span class="gk-es">Plazos de envío</span><span class="gk-en">Fulfillment timing</span></h3>
+            <p><span class="gk-es">La mayoría de pedidos salen en los días hábiles indicados tras el pago efectivo. Verificación del pago o volatilidad del mercado pueden añadir un breve retraso—te avisamos si ocurre.</span><span class="gk-en">Most orders ship within stated business days after cleared payment. Payment verification or market volatility can occasionally add a short delay—we communicate if that happens.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="florida" style="background:linear-gradient(180deg,#fff 0%,var(--ivory) 100%);border-top:1px solid var(--line);">
+      <p class="section-kicker"><span class="gk-es">Cumplimiento</span><span class="gk-en">Compliance</span></p>
+      <h2 class="font-display">GOLDKOIN, LLC · Florida</h2>
+      <p class="section-lead">
+        <span class="gk-es"><strong>GOLDKOIN, LLC</strong> es una sociedad de responsabilidad limitada constituida en Florida ante la División de Corporaciones (Sunbiz), con agente registrado en dirección física dentro del estado. Según el tipo y volumen de operaciones, pueden aplicar normas federales AML, reportes de titularidad efectiva y licencias de compraventa en Florida—operamos alineados con el asesoramiento profesional de nuestro modelo de negocio.</span>
+        <span class="gk-en"><strong>GOLDKOIN, LLC</strong> is a Florida limited liability company on file with the Division of Corporations (Sunbiz), with a registered agent at a physical in-state address. Depending on transaction types and volumes, federal AML rules, beneficial ownership reporting, and Florida secondhand-dealer licensing may apply—we operate consistent with professional guidance for our business model.</span>
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="font-display"><span class="gk-es">Antilavado / FinCEN</span><span class="gk-en">AML / FinCEN</span></h3>
+          <p><span class="gk-es">Por encima de ciertos umbrales pueden exigirse políticas escritas, función de cumplimiento, formación y revisión independiente. La diligencia debida puede aplicarse a pedidos de mayor riesgo.</span><span class="gk-en">Written policies, compliance leadership, training, and independent review may be required when volume thresholds are met. Customer due diligence can apply to higher-risk orders.</span></p>
+        </div>
+        <div class="card">
+          <h3 class="font-display"><span class="gk-es">Impuesto sobre ventas</span><span class="gk-en">Sales tax</span></h3>
+          <p><span class="gk-es">Florida puede eximir lingotes de inversión que cumplan requisitos; carritos mixtos y otros estados varían. El impuesto se muestra en el checkout—esta página no sustituye asesoría fiscal.</span><span class="gk-en">Florida may exempt qualifying investment bullion bars; mixed carts and other states differ. Display tax in checkout—do not rely on this marketing page for tax advice.</span></p>
+        </div>
+        <div class="card">
+          <h3 class="font-display"><span class="gk-es">Representación</span><span class="gk-en">Representation</span></h3>
+          <p><span class="gk-es">Importación y representación de marca desde Colombia se rigen por contratos privados. La relación de venta al consumidor en EE. UU. es con GOLDKOIN, LLC.</span><span class="gk-en">Import and brand representation from Colombia are governed by private contracts. The consumer relationship for U.S. retail sales is with GOLDKOIN, LLC.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="verify">
+      <p class="section-kicker"><span class="gk-es">Digital</span><span class="gk-en">Digital</span></p>
+      <h2 class="font-display"><span class="gk-es">Verificación y GOLDAPP</span><span class="gk-en">Verification &amp; GOLDAPP</span></h2>
+      <div class="split-panel" style="margin-top:1rem;">
+        <figure class="panel-photo">
+          <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Código QR y holograma GOLDAPP en embalaje de ensayo Sovereign para verificación del producto" data-alt-en="QR code and GOLDAPP hologram on Sovereign assay packaging for product verification" alt="Código QR y holograma GOLDAPP en embalaje de ensayo Sovereign para verificación del producto" width="800" height="1000" loading="lazy" decoding="async" />
+          <figcaption><span class="gk-es">Escanea el QR y revisa el sello holográfico—los mismos elementos que en la <a href="#gallery">galería completa</a>.</span><span class="gk-en">Scan the QR and inspect the holographic seal—the same features shown in the <a href="#gallery">full gallery</a>.</span></figcaption>
+        </figure>
+        <div>
+          <p class="section-lead" style="margin-bottom:0.75rem;">
+            <span class="gk-es">Los elementos de seguridad GOLDAPP van integrados en el embalaje Sovereign para que puedas confirmar los datos del producto al recibirlo. Las fichas indicarán qué devuelve exactamente la lectura (por ejemplo consulta de certificado o registro en la app).</span>
+            <span class="gk-en">GOLDAPP security elements are integrated into Sovereign packaging so you can confirm product data at receipt. Listing pages will state exactly what the scan returns (for example certificate lookup or registration in the app).</span>
+          </p>
+          <p style="font-size:0.85rem;color:var(--muted);margin:0;"><span class="gk-es">¿Dudas sobre un lingote concreto? Escríbenos a <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> con la serie y fotos del paquete intacto.</span><span class="gk-en">Questions about a specific bar? Email <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> with your serial and photos of the intact package.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="faq">
+      <p class="section-kicker">FAQ</p>
+      <h2 class="font-display"><span class="gk-es">Preguntas frecuentes</span><span class="gk-en">Common questions</span></h2>
+      <div class="faq-layout" style="margin-top:1rem;">
+        <figure class="faq-aside">
+          <img src="assets/gallery-03b-case-dark.jpg" data-alt-es="Estuche minorista Serie Sovereign con QR y seguridad holográfica" data-alt-en="Sovereign Series retail assay case with QR and holographic security" alt="Estuche minorista Serie Sovereign con QR y seguridad holográfica" width="600" height="800" loading="lazy" decoding="async" />
+          <figcaption><span class="gk-es">Acabados Sovereign en punto de venta—mismo lingote, distintas presentaciones para coleccionar.</span><span class="gk-en">Sovereign retail finishes—same bar, presentation options you can collect.</span></figcaption>
+        </figure>
+        <div>
+          <details class="faq">
+            <summary><span class="gk-es">¿Qué pureza tienen los lingotes Sovereign?</span><span class="gk-en">What purity are Sovereign Series bars?</span></summary>
+            <p><span class="gk-es">Cada lingote es de <strong>oro fino .9999</strong> (cuatro nueves). Peso, pureza y serie están grabados en el metal y repetidos en la tarjeta de ensayo.</span><span class="gk-en">Each bar is struck from <strong>.9999 fine gold</strong> (four nines). Weight, purity, and serial are stamped on the bar and repeated on the assay card.</span></p>
+          </details>
+          <details class="faq">
+            <summary><span class="gk-es">¿Por qué un lingote más pequeño cuesta más por gramo?</span><span class="gk-en">Why does a smaller bar cost more per gram?</span></summary>
+            <p><span class="gk-es">Acuñación, embalaje de ensayo y autenticación se reparten entre menos gramos. Cotizamos precio por gramo con transparencia para comparar tamaños con criterio.</span><span class="gk-en">Minting, assay packaging, and authentication are spread across fewer grams. We quote transparent price-per-gram so you can compare sizes fairly.</span></p>
+          </details>
+          <details class="faq">
+            <summary><span class="gk-es">¿Envían fuera de Florida?</span><span class="gk-en">Do you ship outside Florida?</span></summary>
+            <p><span class="gk-es">Los destinos admitidos figuran en las condiciones de venta en el checkout. Algunos estados o códigos postales pueden estar restringidos por ley o por la paquetería—lo indicamos antes del pago.</span><span class="gk-en">Approved destinations are listed in our terms of sale at checkout. Some states or ZIP codes may be restricted by law or carrier rules—we disclose that before you pay.</span></p>
+          </details>
+          <details class="faq">
+            <summary><span class="gk-es">¿GOLDKOIN da asesoramiento de inversión?</span><span class="gk-en">Is GOLDKOIN giving investment advice?</span></summary>
+            <p><span class="gk-es">No. Vendemos oro físico. Consulta a tus propios asesores sobre cartera, impuestos y planificación patrimonial.</span><span class="gk-en">No. We sell physical gold. Speak with your own advisors about portfolio, tax, and estate planning.</span></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="about">
+      <p class="section-kicker"><span class="gk-es">Sobre nosotros</span><span class="gk-en">About</span></p>
+      <h2 class="font-display">GOLDKOIN</h2>
+      <div class="split-story" style="margin-top:0.5rem;">
+        <figure class="panel-photo" style="margin:0;">
+          <img src="assets/gallery-04-brand-desk.jpg" data-alt-es="Escritorio GOLDKOIN precious metals con lingote Serie Sovereign y material de marca" data-alt-en="GOLDKOIN precious metals desk with Sovereign Series gold bar and brand materials" alt="Escritorio GOLDKOIN precious metals con lingote Serie Sovereign y material de marca" width="1600" height="1000" loading="lazy" decoding="async" />
+          <figcaption><span class="gk-es">Operación minorista en Miami con el nivel de presentación que esperan los coleccionistas.</span><span class="gk-en">Miami-based retail execution with the presentation standards collectors expect.</span></figcaption>
+        </figure>
+        <div>
+          <p class="section-lead" style="margin-bottom:0.75rem;">
+            <span class="gk-es">GOLDKOIN acerca un abastecimiento de nivel institucional a compradores privados que buscan <strong>lingotes .9999 en formato compacto</strong>, precios claros y un embalaje que puedes revisar el día que llega. La Serie Sovereign es nuestra línea insignia—pesos de 5 g a 100 g, un mismo estándar de calidad.</span>
+            <span class="gk-en">GOLDKOIN brings institution-grade sourcing to private buyers who want <strong>small-format .9999 bars</strong>, clear pricing, and packaging they can inspect the day it arrives. The Sovereign Series is our flagship retail line—minted weights from 5g to 100g, one consistent quality standard.</span>
+          </p>
+          <p style="font-size:0.88rem;color:var(--muted);margin:0;"><span class="gk-es">Priorizamos respuestas rápidas, envío asegurado y documentación coherente con el nombre del lingote: <strong>GOLDKOIN, LLC</strong>.</span><span class="gk-en">We focus on fast answers, insured shipping, and paperwork that matches the name on the bar: <strong>GOLDKOIN, LLC</strong>.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="policies">
+      <p class="section-kicker"><span class="gk-es">Legal</span><span class="gk-en">Legal</span></p>
+      <h2 class="font-display"><span class="gk-es">Políticas</span><span class="gk-en">Policies</span></h2>
+      <div class="policy-block card" style="padding:1.5rem;">
+        <h3 class="font-display"><span class="gk-es">Privacidad</span><span class="gk-en">Privacy</span></h3>
+        <p><span class="gk-es">Nuestra política de privacidad completa describirá qué datos personales recogemos para pedidos y cumplimiento, cuánto los conservamos, uso de cookies y cómo contactarnos sobre datos. El enlace a la versión vigente aparecerá aquí antes del lanzamiento del checkout.</span><span class="gk-en">Our full privacy policy will describe what personal data we collect for orders and compliance, how long we retain it, cookie use, and how to reach us for data questions. A link to the executed policy will appear here before live checkout.</span></p>
+        <h3 class="font-display"><span class="gk-es">Condiciones de venta</span><span class="gk-en">Terms of sale</span></h3>
+        <p><span class="gk-es">Las condiciones cubrirán aceptación del pedido, bloqueo de precio, liquidación del pago, cancelaciones, transferencia de riesgo en el envío, fuerza mayor, limitación de responsabilidad y ley aplicable en Florida. El cliente recibe la versión vigente al comprar.</span><span class="gk-en">Terms of sale will cover order acceptance, price locks, payment clearance, cancellations, shipping risk transfer, force majeure, limitation of liability, and governing law in Florida. Customers receive the active version at purchase.</span></p>
+        <h3 class="font-display">AML &amp; KYC</h3>
+        <p><span class="gk-es">Cuando las normas federales o bancarias exijan identificación o diligencia reforzada, solo recogeremos lo que la norma demande y lo explicaremos por escrito. El aviso definitivo se publicará junto al flujo de venta en producción.</span><span class="gk-en">Where federal or banking rules require identification or enhanced due diligence, we will collect only what the regulations demand and explain the process in writing. The final notice will be published with our go-live sales flow.</span></p>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <p class="section-kicker"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></p>
+      <h2 class="font-display"><span class="gk-es">Disponibilidad o cotización</span><span class="gk-en">Request availability or a quote</span></h2>
+      <p class="section-lead"><span class="gk-es">Indica qué peso Sovereign te interesa, a dónde debe enviarse y cómo prefieres pagar—te respondemos con disponibilidad y cotización por escrito.</span><span class="gk-en">Tell us which Sovereign weight you want, where it should ship, and how you prefer to pay—we reply with availability and a written quote.</span></p>
+      <div class="grid-2" style="align-items:start;">
+        <form class="contact-form card card-accent" id="contact-form" novalidate>
+          <div class="contact-visual">
+            <img src="assets/gallery-04b-brand-desk-alt.jpg" alt="" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <label for="c-name"><span class="gk-es">Nombre</span><span class="gk-en">Name</span></label>
+          <input id="c-name" name="name" type="text" autocomplete="name" required />
+          <label for="c-email"><span class="gk-es">Correo electrónico</span><span class="gk-en">Email</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" required />
+          <label for="c-weight"><span class="gk-es">Peso de interés</span><span class="gk-en">Weight interest</span></label>
+          <input id="c-weight" name="weight" type="text" data-ph-es="p. ej. Sovereign 50 g" data-ph-en="e.g. 50g Sovereign" placeholder="p. ej. Sovereign 50 g" />
+          <label for="c-msg"><span class="gk-es">Mensaje</span><span class="gk-en">Message</span></label>
+          <textarea id="c-msg" name="message" required data-ph-es="Estado de envío, cantidad, forma de pago preferida…" data-ph-en="Shipping state, quantity, preferred payment method…" placeholder="Estado de envío, cantidad, forma de pago preferida…"></textarea>
+          <button type="submit" class="btn btn-gold"><span class="gk-es">Enviar mensaje</span><span class="gk-en">Send message</span></button>
+          <p style="font-size:0.72rem;color:var(--muted);margin:0.75rem 0 0;"><span class="gk-es">Al enviar se abre tu correo dirigido a <strong>sales@goldkoin.co</strong> con los datos rellenados.</span><span class="gk-en">Submitting opens your email app addressed to <strong>sales@goldkoin.co</strong> with your details filled in.</span></p>
+        </form>
+        <div class="card">
+          <h3 class="font-display">GOLDKOIN, LLC</h3>
+          <p><span class="gk-es">Miami, Florida · Estados Unidos</span><span class="gk-en">Miami, Florida · United States</span></p>
+          <p style="margin-top:1rem;"><strong><span class="gk-es">Correo</span><span class="gk-en">Email</span></strong><br /><a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a></p>
+          <p style="margin-top:1rem;font-size:0.8rem;color:var(--muted);"><span class="gk-es">Teléfono y dirección postal para correspondencia oficial figuran en facturas y firmas de correo.</span><span class="gk-en">Phone and mailing address for registered correspondence are provided on invoices and email signatures.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="wrap">
+        <h2 class="font-display"><span class="gk-es">Incorpora oro Sovereign a tu patrimonio</span><span class="gk-en">Add Sovereign gold to your holdings</span></h2>
+        <p><span class="gk-es">Compara pesos, revisa la galería y escríbenos para una cotización firme—entrega asegurada con un distribuidor registrado en Florida.</span><span class="gk-en">Compare weights, review the gallery, and contact us for a firm quote—insured delivery from a Florida-registered dealer.</span></p>
+        <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver pesos</span><span class="gk-en">Browse weights</span></a>
+      </div>
+    </div>
+  </main>
+
+  <div id="gk-lightbox" class="gk-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" data-a11y-es="Vista ampliada de la foto" data-a11y-en="Enlarged photo view" aria-label="Vista ampliada de la foto">
+    <button type="button" class="gk-lightbox-backdrop" id="gk-lightbox-backdrop" tabindex="-1" data-a11y-es="Cerrar vista ampliada" data-a11y-en="Close enlarged view" aria-label="Cerrar vista ampliada"></button>
+    <div class="gk-lightbox-inner">
+      <button type="button" class="gk-lightbox-close" id="gk-lightbox-close" data-a11y-es="Cerrar" data-a11y-en="Close" aria-label="Cerrar">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img id="gk-lightbox-img" src="" alt="" width="1200" height="1600" decoding="async" />
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <img src="assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN" width="64" height="64" loading="lazy" decoding="async" />
+      </div>
+      <div class="foot-main">
+        <div class="foot-info">
+          <strong class="foot-kicker">GOLDKOIN · Sovereign Series</strong>
+          <p>
+            <strong>GOLDKOIN, LLC</strong><br />
+            <span class="gk-es">Miami, Florida — Estados Unidos</span><span class="gk-en">Miami, Florida — United States</span><br />
+            <span class="gk-es">Registro mercantil: División de Corporaciones de Florida (Sunbiz).</span><span class="gk-en">Corporate records: Florida Division of Corporations (Sunbiz).</span>
+          </p>
+        </div>
+        <div class="foot-nav">
+          <a href="#policies"><span class="gk-es">Privacidad y condiciones</span><span class="gk-en">Privacy &amp; terms</span></a><br />
+          <a href="#shipping"><span class="gk-es">Envío</span><span class="gk-en">Shipping</span></a> ·
+          <a href="#faq">FAQ</a> ·
+          <a href="#contact"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></a>
+        </div>
+      </div>
+      <p class="legal">
+        <span class="gk-es">Los metales preciosos conllevan riesgo de mercado. GOLDKOIN, LLC no ofrece asesoramiento de inversión, fiscal ni legal. Nada en esta página constituye oferta vinculante; los pedidos quedan sujetos a las condiciones de venta por escrito. Las relaciones de suministro con socios internacionales se rigen por acuerdos comerciales independientes.</span>
+        <span class="gk-en">Precious metals involve market risk. GOLDKOIN, LLC does not provide investment, tax, or legal advice.
+        Nothing here creates a binding offer; orders require acceptance under your written terms of sale.
+        Supply relationships with international partners are governed by separate commercial agreements.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'gk-ui-lang';
+
+      function getStoredLang() {
+        try {
+          var s = localStorage.getItem(STORAGE_KEY);
+          if (s === 'es' || s === 'en') return s;
+        } catch (e) {}
+        return null;
+      }
+
+      function setLang(lang) {
+        if (lang !== 'es' && lang !== 'en') lang = 'es';
+        var root = document.documentElement;
+        root.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+        root.setAttribute('data-ui-lang', lang);
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (e) {}
+
+        document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+          var target = btn.getAttribute('data-set-lang');
+          var active = target === lang;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        var meta = document.getElementById('gk-meta-desc');
+        if (meta) {
+          var des = meta.getAttribute('data-desc-es');
+          var den = meta.getAttribute('data-desc-en');
+          if (lang === 'es' && des) meta.setAttribute('content', des);
+          else if (lang === 'en' && den) meta.setAttribute('content', den);
+        }
+
+        var tit = document.getElementById('gk-page-title');
+        if (tit && tit.tagName === 'TITLE') {
+          var tes = tit.getAttribute('data-title-es');
+          var ten = tit.getAttribute('data-title-en');
+          if (lang === 'es' && tes) tit.textContent = tes;
+          else if (lang === 'en' && ten) tit.textContent = ten;
+        }
+
+        document.querySelectorAll('img[data-alt-es][data-alt-en]').forEach(function (img) {
+          img.setAttribute('alt', lang === 'es' ? img.getAttribute('data-alt-es') : img.getAttribute('data-alt-en'));
+        });
+
+        document.querySelectorAll('[data-a11y-es][data-a11y-en]').forEach(function (el) {
+          var es = el.getAttribute('data-a11y-es');
+          var en = el.getAttribute('data-a11y-en');
+          if (es && en) el.setAttribute('aria-label', lang === 'es' ? es : en);
+        });
+
+        var phWeight = document.getElementById('c-weight');
+        if (phWeight) {
+          var phes = phWeight.getAttribute('data-ph-es');
+          var phen = phWeight.getAttribute('data-ph-en');
+          if (phes && phen) phWeight.setAttribute('placeholder', lang === 'es' ? phes : phen);
+        }
+        var phMsg = document.getElementById('c-msg');
+        if (phMsg) {
+          var pmes = phMsg.getAttribute('data-ph-es');
+          var pmen = phMsg.getAttribute('data-ph-en');
+          if (pmes && pmen) phMsg.setAttribute('placeholder', lang === 'es' ? pmes : pmen);
+        }
+
+        var heroFb = document.getElementById('hero-fallback');
+        if (heroFb) {
+          var aes = heroFb.getAttribute('data-aria-fallback-es');
+          var aen = heroFb.getAttribute('data-aria-fallback-en');
+          if (lang === 'es' && aes) heroFb.setAttribute('aria-label', aes);
+          else if (lang === 'en' && aen) heroFb.setAttribute('aria-label', aen);
+        }
+
+        var navToggle = document.getElementById('nav-toggle');
+        if (navToggle) {
+          var ms = navToggle.getAttribute('data-aria-menu-es');
+          var men = navToggle.getAttribute('data-aria-menu-en');
+          if (lang === 'es' && ms) navToggle.setAttribute('aria-label', ms);
+          else if (lang === 'en' && men) navToggle.setAttribute('aria-label', men);
+        }
+
+        document.querySelectorAll('[data-gk-carousel]').forEach(function (carouselRoot) {
+          var cls = carouselRoot.getAttribute('data-carousel-label-es');
+          var cln = carouselRoot.getAttribute('data-carousel-label-en');
+          if (lang === 'es' && cls) carouselRoot.setAttribute('aria-label', cls);
+          else if (lang === 'en' && cln) carouselRoot.setAttribute('aria-label', cln);
+
+          var viewport = carouselRoot.querySelector('.gk-carousel-viewport');
+          if (viewport) {
+            var vs = viewport.getAttribute('data-aria-viewport-es');
+            var vn = viewport.getAttribute('data-aria-viewport-en');
+            if (lang === 'es' && vs) viewport.setAttribute('aria-label', vs);
+            else if (lang === 'en' && vn) viewport.setAttribute('aria-label', vn);
+          }
+
+          var dotsBox = carouselRoot.querySelector('.gk-carousel-dots');
+          if (dotsBox) {
+            var ds = dotsBox.getAttribute('data-aria-dots-es');
+            var dn = dotsBox.getAttribute('data-aria-dots-en');
+            if (lang === 'es' && ds) dotsBox.setAttribute('aria-label', ds);
+            else if (lang === 'en' && dn) dotsBox.setAttribute('aria-label', dn);
+            var prefix = lang === 'es' ? 'Ir a imagen ' : 'Go to image ';
+            dotsBox.querySelectorAll('button').forEach(function (b, i) {
+              b.setAttribute('aria-label', prefix + (i + 1));
+            });
+          }
+
+          var btnPrev = carouselRoot.querySelector('.gk-carousel-prev');
+          var btnNext = carouselRoot.querySelector('.gk-carousel-next');
+          if (btnPrev) {
+            var ps = btnPrev.getAttribute('data-aria-prev-es');
+            var pn = btnPrev.getAttribute('data-aria-prev-en');
+            if (lang === 'es' && ps) btnPrev.setAttribute('aria-label', ps);
+            else if (lang === 'en' && pn) btnPrev.setAttribute('aria-label', pn);
+          }
+          if (btnNext) {
+            var ns = btnNext.getAttribute('data-aria-next-es');
+            var nn = btnNext.getAttribute('data-aria-next-en');
+            if (lang === 'es' && ns) btnNext.setAttribute('aria-label', ns);
+            else if (lang === 'en' && nn) btnNext.setAttribute('aria-label', nn);
+          }
+        });
+      }
+
+      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lang = btn.getAttribute('data-set-lang');
+          if (lang === 'es' || lang === 'en') setLang(lang);
+        });
+      });
+
+      setLang(getStoredLang() || 'es');
+      window.gkSetLang = setLang;
+    })();
+
+    (function () {
+      var lb = document.getElementById('gk-lightbox');
+      var lbImg = document.getElementById('gk-lightbox-img');
+      var backdrop = document.getElementById('gk-lightbox-backdrop');
+      var btnClose = document.getElementById('gk-lightbox-close');
+      if (!lb || !lbImg || !backdrop || !btnClose) return;
+
+      var lastFocus = null;
+
+      function lightboxIsOpen() {
+        return !lb.hasAttribute('hidden');
+      }
+
+      function openLightbox(trigger) {
+        var src = trigger.getAttribute('data-img-src');
+        if (!src) return;
+        var lang = document.documentElement.getAttribute('data-ui-lang') || 'es';
+        var aes = trigger.getAttribute('data-alt-es');
+        var aen = trigger.getAttribute('data-alt-en');
+        lbImg.src = src;
+        lbImg.alt = lang === 'es' ? (aes || '') : (aen || '');
+        lastFocus = document.activeElement;
+        lb.removeAttribute('hidden');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
+      }
+
+      function closeLightbox() {
+        if (!lightboxIsOpen()) return false;
+        lb.setAttribute('hidden', '');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+        lbImg.alt = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') {
+          try { lastFocus.focus(); } catch (err) {}
+        }
+        return true;
+      }
+
+      window.gkCloseLightbox = function () {
+        return closeLightbox();
+      };
+
+      document.querySelectorAll('.photo-rail-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openLightbox(btn);
+        });
+      });
+
+      backdrop.addEventListener('click', closeLightbox);
+      btnClose.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeLightbox();
+      });
+    })();
+
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var drawer = document.getElementById('nav-drawer');
+      if (!toggle || !drawer) return;
+
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        drawer.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') !== 'true';
+        setOpen(open);
+      });
+
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+
+      document.querySelectorAll('.nav-drawer [data-set-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setOpen(false);
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        if (typeof window.gkCloseLightbox === 'function' && window.gkCloseLightbox()) return;
+        setOpen(false);
+      });
+
+      var form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var fd = new FormData(form);
+          var name = (fd.get('name') || '').toString().trim();
+          var email = (fd.get('email') || '').toString().trim();
+          var weight = (fd.get('weight') || '').toString().trim();
+          var message = (fd.get('message') || '').toString().trim();
+          if (!name || !email || !message) return;
+          var uiLang = document.documentElement.getAttribute('data-ui-lang') || 'es';
+          var body;
+          var subject;
+          if (uiLang === 'es') {
+            body = 'Nombre: ' + name + '\nCorreo: ' + email + '\nPeso de interés: ' + weight + '\n\n' + message;
+            subject = 'Consulta GOLDKOIN Sovereign';
+          } else {
+            body = 'Name: ' + name + '\nEmail: ' + email + '\nWeight interest: ' + weight + '\n\n' + message;
+            subject = 'GOLDKOIN Sovereign — inquiry';
+          }
+          var to = 'sales@goldkoin.co';
+          window.location.href = 'mailto:' + encodeURIComponent(to) +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(body);
+        });
+      }
+
+      document.querySelectorAll('[data-gk-carousel]').forEach(function (carouselRoot) {
+        var track = carouselRoot.querySelector('.gk-carousel-track');
+        var viewport = carouselRoot.querySelector('.gk-carousel-viewport');
+        var btnPrev = carouselRoot.querySelector('.gk-carousel-prev');
+        var btnNext = carouselRoot.querySelector('.gk-carousel-next');
+        var dotsBox = carouselRoot.querySelector('.gk-carousel-dots');
+        var curEl = carouselRoot.querySelector('.gk-carousel-counter .current');
+        var totalEl = carouselRoot.querySelector('.gk-carousel-counter .total');
+        var slides = track ? track.querySelectorAll('.gk-carousel-slide') : [];
+        var n = slides.length;
+        var idx = 0;
+        var touchStartX = 0;
+        var touchStartY = 0;
+        var loop = carouselRoot.hasAttribute('data-gk-carousel-loop');
+        var autoplayMs = parseInt(carouselRoot.getAttribute('data-gk-autoplay-ms') || '0', 10);
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          autoplayMs = 0;
+        }
+        var autoplayTimer = null;
+        var autoplayHover = false;
+        var useInViewAutoplay = carouselRoot.hasAttribute('data-gk-autoplay-inview');
+        var dwellMs = parseInt(carouselRoot.getAttribute('data-gk-autoplay-dwell-ms') || '1000', 10);
+        var dwellTimer = null;
+        var isIntersecting = false;
+        var wasPlayingBeforeHover = false;
+
+        if (!track || !viewport || !curEl || !totalEl || !btnPrev || !btnNext || !n) return;
+
+        function layoutSlides() {
+          var pct = 100 / n;
+          track.style.width = n * 100 + '%';
+          slides.forEach(function (sl) {
+            sl.style.flex = '0 0 ' + pct + '%';
+          });
+        }
+
+        function go(i) {
+          if (loop && n > 0) {
+            i = ((i % n) + n) % n;
+          } else {
+            if (i < 0) i = 0;
+            if (i >= n) i = n - 1;
+          }
+          idx = i;
+          track.style.transform = 'translateX(-' + (idx * 100) / n + '%)';
+          curEl.textContent = String(idx + 1);
+          totalEl.textContent = String(n);
+          if (loop) {
+            btnPrev.disabled = false;
+            btnNext.disabled = false;
+          } else {
+            btnPrev.disabled = idx === 0;
+            btnNext.disabled = idx === n - 1;
+          }
+          if (dotsBox) {
+            var dots = dotsBox.querySelectorAll('button');
+            for (var j = 0; j < dots.length; j++) {
+              if (j === idx) dots[j].setAttribute('aria-current', 'true');
+              else dots[j].removeAttribute('aria-current');
+            }
+          }
+        }
+
+        function stopAutoplay() {
+          if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+          }
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          if (autoplayMs <= 0 || !loop || n < 2) return;
+          autoplayTimer = setInterval(function () {
+            go(idx + 1);
+          }, autoplayMs);
+        }
+
+        function clearDwell() {
+          if (dwellTimer) {
+            clearTimeout(dwellTimer);
+            dwellTimer = null;
+          }
+        }
+
+        function resetCarouselOnLeave() {
+          clearDwell();
+          stopAutoplay();
+          go(0);
+        }
+
+        function scheduleDwellAndMaybeStart() {
+          clearDwell();
+          if (dwellMs <= 0 || autoplayMs <= 0 || !loop || n < 2) return;
+          dwellTimer = setTimeout(function () {
+            dwellTimer = null;
+            if (isIntersecting && !document.hidden && !autoplayHover) {
+              startAutoplay();
+            }
+          }, dwellMs);
+        }
+
+        layoutSlides();
+        if (dotsBox) {
+          dotsBox.innerHTML = '';
+          for (var d = 0; d < n; d++) {
+            (function (slideIndex) {
+              var b = document.createElement('button');
+              b.type = 'button';
+              var langNow = document.documentElement.getAttribute('data-ui-lang') || 'es';
+              var dotPrefix = langNow === 'es' ? 'Ir a imagen ' : 'Go to image ';
+              b.setAttribute('aria-label', dotPrefix + (slideIndex + 1));
+              b.addEventListener('click', function () { go(slideIndex); });
+              dotsBox.appendChild(b);
+            })(d);
+          }
+        }
+        go(0);
+
+        if (typeof window.gkSetLang === 'function') {
+          window.gkSetLang(document.documentElement.getAttribute('data-ui-lang') || 'es');
+        }
+
+        if (useInViewAutoplay && autoplayMs > 0 && loop && typeof IntersectionObserver !== 'undefined') {
+          var ioTarget = carouselRoot.closest('section#how') || carouselRoot;
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                isIntersecting = entry.isIntersecting;
+                if (!entry.isIntersecting) {
+                  resetCarouselOnLeave();
+                } else {
+                  scheduleDwellAndMaybeStart();
+                }
+              });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -5% 0px' }
+          );
+          io.observe(ioTarget);
+        } else if (autoplayMs > 0 && loop) {
+          startAutoplay();
+        }
+
+        carouselRoot.addEventListener('mouseenter', function () {
+          autoplayHover = true;
+          wasPlayingBeforeHover = autoplayTimer !== null;
+          stopAutoplay();
+        });
+        carouselRoot.addEventListener('mouseleave', function () {
+          autoplayHover = false;
+          if (!isIntersecting || document.hidden) {
+            wasPlayingBeforeHover = false;
+            return;
+          }
+          if (useInViewAutoplay) {
+            if (wasPlayingBeforeHover) {
+              startAutoplay();
+            }
+            wasPlayingBeforeHover = false;
+          } else if (autoplayMs > 0 && loop) {
+            startAutoplay();
+          }
+        });
+
+        if (autoplayMs > 0 && loop) {
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+              clearDwell();
+              stopAutoplay();
+              return;
+            }
+            if (useInViewAutoplay) {
+              if (isIntersecting && !autoplayHover) {
+                scheduleDwellAndMaybeStart();
+              }
+            } else if (!autoplayHover) {
+              startAutoplay();
+            }
+          });
+        }
+
+        btnPrev.addEventListener('click', function () { go(idx - 1); });
+        btnNext.addEventListener('click', function () { go(idx + 1); });
+
+        viewport.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+        viewport.addEventListener('touchend', function (e) {
+          var dx = e.changedTouches[0].screenX - touchStartX;
+          var dy = e.changedTouches[0].screenY - touchStartY;
+          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 45) {
+            if (dx < 0) go(idx + 1);
+            else go(idx - 1);
+          }
+        }, { passive: true });
+
+        viewport.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            go(idx - 1);
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            go(idx + 1);
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          go(idx);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GOLDKOIN Sovereign Series - Presentación Estratégica con IA para inversores y socios.">
+  <title>GOLDKOIN: The Sovereign Series - AI Enhanced Concept</title>
+  
+  <!-- Dependencias CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #F8F9FA; color: #0A1128; }
+    h1, h2, h3, h4, h5, .font-serif { font-family: 'Cinzel', serif; }
+    .bg-navy { background-color: #0A1128; }
+    .text-navy { color: #0A1128; }
+    .bg-gold { background-color: #D4AF37; }
+    .text-gold { color: #D4AF37; }
+    .border-gold { border-color: #D4AF37; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin: auto; height: 350px; }
+    .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .gold-gradient { background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .ai-glow { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); border: 1px solid rgba(212, 175, 55, 0.4); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #0A1128; border-radius: 10px; }
+    .loading-dots::after { content: '...'; animation: dots 1.5s steps(4, end) infinite; }
+    @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60%, 100% { content: '...'; } }
+  </style>
+</head>
+<body class="flex flex-col md:flex-row h-screen overflow-hidden">
+  <!-- Navegación Lateral -->
+  <nav class="bg-navy text-white w-full md:w-72 flex-shrink-0 shadow-xl z-20 flex flex-col h-auto md:h-full">
+    <div class="p-8 text-center border-b border-gray-800">
+      <div class="text-5xl font-serif text-gold mb-2">G</div>
+      <h1 class="text-xl font-serif tracking-widest">GOLDKOIN</h1>
+      <p class="text-xs font-light text-gray-400 mt-1 uppercase tracking-widest">Sovereign Series</p>
+    </div>
+    <div class="flex-grow overflow-y-auto">
+      <ul class="flex flex-row md:flex-col p-2 md:p-0">
+        <li><button class="nav-btn active w-full text-left p-4 hover:bg-gray-800 border-l-4 border-gold bg-gray-800" data-target="home"><span class="text-sm font-medium uppercase tracking-tighter">Visión General</span></button></li>
+        <li><button class="nav-btn w-full text-left p-4 hover:bg-gray-800 border-l-4 border-transparent" data-target="identity"><span class="text-sm font-medium uppercase tracking-tighter">Identidad & Logo</span></button></li>
+        <li><button class="nav-btn w-full text-left p-4 hover:bg-gray-800 border-l-4 border-transparent" data-target="narrative"><span class="text-sm font-medium uppercase tracking-tighter">Narrativa & Pilares</span></button></li>
+        <li><button class="nav-btn w-full text-left p-4 hover:bg-gray-800 border-l-4 border-transparent" data-target="ai-lab"><span class="text-sm font-medium uppercase tracking-tighter">✨ AI Strategy Lab</span></button></li>
+        <li><button class="nav-btn w-full text-left p-4 hover:bg-gray-800 border-l-4 border-transparent" data-target="market"><span class="text-sm font-medium uppercase tracking-tighter">Análisis de Mercado</span></button></li>
+      </ul>
+    </div>
+    <div class="p-4 bg-black/20 text-[10px] text-gray-500 text-center italic">Powered by Gemini AI Intelligence</div>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <main class="flex-grow overflow-y-auto p-6 md:p-12 bg-white">
+    <!-- Tab: Overview -->
+    <section id="home" class="tab-content active max-w-4xl mx-auto">
+      <div class="mb-12">
+        <h2 class="text-5xl font-serif text-navy mb-4">El Oro de <span class="gold-gradient">Próxima Generación</span></h2>
+        <p class="text-xl text-gray-500 font-light leading-relaxed">Uniendo la estabilidad del metal físico con la sofisticación del mercado de lujo norteamericano.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <h3 class="font-serif text-xl mb-4 text-navy">Propuesta de Valor</h3>
+          <p class="text-gray-600 mb-6">Elevamos GOLDKOIN de un producto industrial a un activo aspiracional. Cada lingote es una obra de ingeniería y confianza.</p>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex items-center"><span class="w-2 h-2 bg-gold rounded-full mr-3"></span>Pureza Certificada 999.9</li>
+            <li class="flex items-center"><span class="w-2 h-2 bg-gold rounded-full mr-3"></span>Design for Export (USA/Canada)</li>
+            <li class="flex items-center"><span class="w-2 h-2 bg-gold rounded-full mr-3"></span>Ecosistema Digital Seguro</li>
+          </ul>
+        </div>
+        <div class="bg-navy p-8 rounded-2xl text-white flex flex-col justify-center items-center text-center">
+          <div class="text-gold text-5xl mb-4 font-serif">999.9</div>
+          <div class="text-sm uppercase tracking-[0.3em] font-light">Fine Gold Standard</div>
+          <div class="mt-6 h-1 w-24 bg-gold"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Identity -->
+    <section id="identity" class="tab-content max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-navy mb-8 border-b border-gray-100 pb-4">Evolución de Identidad</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Análisis del Logotipo</h4>
+          <p class="text-gray-600 mb-6 text-sm leading-relaxed">El nuevo monograma elimina la rigidez del símbolo de moneda tradicional para adoptar una "G" geométrica fluida. Esto evita connotaciones de "casa de cambio" y se alinea con marcas de alta costura y joyería global.</p>
+          <div class="p-6 bg-gray-50 rounded-xl">
+            <h5 class="font-bold text-navy text-xs uppercase mb-2">Claves del Rediseño</h5>
+            <ul class="text-xs text-gray-500 space-y-2">
+              <li>• Simetría bajo proporción áurea.</li>
+              <li>• Eje vertical sutil para equilibrio visual.</li>
+              <li>• Grabado 3D profundo para textura táctil.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex items-center justify-center bg-gray-50 rounded-3xl p-12 border border-gray-100">
+          <div class="text-[120px] font-serif text-navy relative">G<div class="absolute inset-0 flex items-center justify-center"><div class="w-1 h-32 bg-gold/30"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Narrative -->
+    <section id="narrative" class="tab-content max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-navy mb-8">Pilares Estratégicos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all"><div class="text-gold text-2xl mb-4">I</div><h4 class="font-serif font-bold mb-2">Herencia</h4><p class="text-xs text-gray-500">Valor que trasciende generaciones. Oro como legado familiar.</p></div>
+        <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all"><div class="text-gold text-2xl mb-4">II</div><h4 class="font-serif font-bold mb-2">Prestigio</h4><p class="text-xs text-gray-500">Un símbolo de estatus y sabiduría financiera en el mercado USA.</p></div>
+        <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all"><div class="text-gold text-2xl mb-4">III</div><h4 class="font-serif font-bold mb-2">Integridad</h4><p class="text-xs text-gray-500">Transparencia absoluta mediante trazabilidad digital avanzada.</p></div>
+      </div>
+    </section>
+
+    <!-- Tab: AI Strategy Lab -->
+    <section id="ai-lab" class="tab-content max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-navy mb-2">✨ AI Strategy Lab</h2>
+      <p class="text-gray-500 mb-8">Utilice la inteligencia de Gemini para potenciar su marca Goldkoin.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-2xl ai-glow flex flex-col h-[500px]">
+          <h4 class="font-serif font-bold text-navy mb-4 flex items-center">Consultor de Estrategia ✨</h4>
+          <div id="chat-box" class="flex-grow overflow-y-auto mb-4 space-y-4 p-2 text-sm">
+            <div class="bg-gray-100 p-3 rounded-lg text-gray-700 max-w-[80%]">Hola, soy el asistente de Goldkoin. ¿En qué aspecto de la exportación a USA puedo asesorarte hoy?</div>
+          </div>
+          <div class="flex gap-2">
+            <input id="chat-input" type="text" placeholder="Pregunta sobre mercado o marca..." class="flex-grow border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold">
+            <button id="send-chat" class="bg-navy text-white p-2 rounded-full hover:bg-gold transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></button>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-navy p-6 rounded-2xl text-white ai-glow">
+            <h4 class="font-serif font-bold mb-4">Generador de Campaña ✨</h4>
+            <p class="text-xs text-gray-400 mb-4">Cree anuncios de lujo instantáneos basados en su visión.</p>
+            <select id="copy-tone" class="w-full bg-gray-800 border-none rounded-lg p-3 text-sm mb-4">
+              <option value="Luxury & Exclusive">Tono: Lujo Exclusivo</option>
+              <option value="Safe & Institutional">Tono: Seguro e Institucional</option>
+              <option value="Modern & Digital">Tono: Moderno y Digital</option>
+            </select>
+            <button id="generate-copy" class="w-full bg-gold text-navy font-bold py-3 rounded-lg hover:brightness-110 transition-all uppercase text-xs tracking-widest">Generar Copy ✨</button>
+          </div>
+          <div id="copy-result" class="bg-gray-50 p-6 rounded-2xl border border-gray-100 min-h-[150px] text-sm text-gray-600 italic">Los resultados generados aparecerán aquí...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Market -->
+    <section id="market" class="tab-content max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-navy mb-8">Análisis de Mercado</h2>
+      <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-8">
+        <div class="chart-container"><canvas id="marketChart"></canvas></div>
+      </div>
+      <div class="bg-white p-6 rounded-2xl ai-glow">
+        <h4 class="font-serif font-bold text-navy mb-2 flex items-center">Interpretación AI ✨</h4>
+        <div id="market-analysis-text" class="text-sm text-gray-600 leading-relaxed">Haga clic en el botón para que Gemini analice los datos de proyección de Goldkoin.</div>
+        <button id="analyze-market" class="mt-4 text-gold text-xs font-bold uppercase tracking-widest hover:underline">Generar Análisis Ejecutivo ✨</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // 🔑 CONFIGURACIÓN DE API (Reemplaza con tu clave de Google AI Studio)
+    const API_KEY = ""; // Pega tu clave aquí: "AIzaSy..."
+    const MODEL = "gemini-2.5-flash"; 
+
+    async function callGemini(prompt, systemPrompt = "") {
+      if (!API_KEY) return "⚠️ Configura tu clave de API en la línea 144 del código.";
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
+      const payload = {
+        contents: [{ parts: [{ text: prompt }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+      for (let i = 0; i < 3; i++) {
+        try {
+          const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          if (!response.ok) throw new Error('API Error');
+          const data = await response.json();
+          return data.candidates?.[0]?.content?.parts?.[0]?.text || "Sin respuesta generada.";
+        } catch (e) {
+          if (i === 2) return "Error al conectar con la IA. Verifique su clave o conexión.";
+          await new Promise(r => setTimeout(r, 1000));
+        }
+      }
+    }
+
+    // Navegación por pestañas
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        navButtons.forEach(b => b.classList.remove('active', 'border-gold', 'bg-gray-800'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active', 'border-gold', 'bg-gray-800');
+        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+        if (btn.getAttribute('data-target') === 'market') initChart();
+      });
+    });
+
+    // ✨ Chat de Estrategia
+    document.getElementById('send-chat').addEventListener('click', async () => {
+      const input = document.getElementById('chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+      const chatBox = document.getElementById('chat-box');
+      const userMsg = document.createElement('div');
+      userMsg.className = "bg-navy text-white p-3 rounded-lg ml-auto max-w-[80%]";
+      userMsg.textContent = query;
+      chatBox.appendChild(userMsg);
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const aiMsg = document.createElement('div');
+      aiMsg.className = "bg-gray-100 p-3 rounded-lg text-gray-700 max-w-[80%] loading-dots";
+      aiMsg.textContent = "Pensando";
+      chatBox.appendChild(aiMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const response = await callGemini(query, "Eres un experto en branding de lujo y exportación de metales preciosos para Goldkoin. Responde de forma elegante, profesional y estratégica sobre el mercado de USA.");
+      aiMsg.classList.remove('loading-dots');
+      aiMsg.textContent = response;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    // ✨ Generador de Copy
+    document.getElementById('generate-copy').addEventListener('click', async () => {
+      const btn = document.getElementById('generate-copy');
+      const result = document.getElementById('copy-result');
+      const tone = document.getElementById('copy-tone').value;
+      btn.disabled = true; btn.textContent = "Generando...";
+      result.textContent = "Diseñando narrativa exclusiva...";
+      const prompt = `Genera un anuncio corto y elegante para los lingotes GOLDKOIN Sovereign Series. El tono debe ser ${tone}. Enfócate en la exclusividad, la pureza 999.9 y el valor como refugio en el mercado norteamericano.`;
+      const response = await callGemini(prompt, "Eres un redactor creativo de marcas de lujo como Cartier o Rolex.");
+      result.textContent = response;
+      btn.disabled = false; btn.textContent = "Generar Copy ✨";
+    });
+
+    // ✨ Análisis de Mercado
+    document.getElementById('analyze-market').addEventListener('click', async () => {
+      const btn = document.getElementById('analyze-market');
+      const text = document.getElementById('market-analysis-text');
+      btn.disabled = true; btn.textContent = "Analizando...";
+      text.textContent = "Procesando datos y tendencias...";
+      const prompt = "Analiza los siguientes datos de proyección de Goldkoin para USA: 2024(100), 2025(105), 2026(103), 2027(108), 2028(110) en lingotes estándar, pero con un crecimiento acelerado en Luxury Bullion de 30 a 125 puntos. ¿Por qué es esta una oportunidad masiva para Goldkoin?";
+      const response = await callGemini(prompt, "Eres un analista financiero de alto nivel.");
+      text.textContent = response;
+      btn.disabled = false; btn.textContent = "Generar Análisis Ejecutivo ✨";
+    });
+
+    // 📊 Gráfico de Mercado
+    let chartInstance = null;
+    function initChart() {
+      if (chartInstance) return;
+      const ctx = document.getElementById('marketChart').getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2024', '2025', '2026', '2027', '2028'],
+          datasets: [{
+            label: 'Standard Bullion Demand',
+            data: [100, 105, 103, 108, 110],
+            borderColor: '#E5E7EB',
+            tension: 0.4
+          }, {
+            label: 'Goldkoin Sovereign (Luxury)',
+            data: [30, 45, 65, 90, 125],
+            borderColor: '#D4AF37',
+            borderWidth: 3,
+            tension: 0.4,
+            fill: true,
+            backgroundColor: 'rgba(212, 175, 55, 0.1)'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#0A1128', font: { family: 'Montserrat' } } } }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

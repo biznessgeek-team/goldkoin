@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GOLDKOIN: The Sovereign Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0A1128;
+    --gold: #D4AF37;
+    --gold-light: #FCF6BA;
+    --gold-dark: #B38728;
+    --gold-gradient: linear-gradient(135deg, #BF953F 0%, #FCF6BA 50%, #B38728 100%);
+    --ivory: #F8F9FA;
+    --ivory-warm: #FFF8E1;
+    --text-dark: #1a1a2e;
+    --text-muted: #6B7280;
+  }
+
+  @page {
+    size: 210mm 297mm;
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    background: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  /* ─── Page 1: Cover ─── */
+  .cover {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cover-bg-ornament {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(212,175,55,0.05) 0%, transparent 40%);
+  }
+
+  .cover-frame {
+    position: absolute;
+    top: 20mm;
+    left: 20mm;
+    right: 20mm;
+    bottom: 20mm;
+    border: 0.5px solid rgba(212,175,55,0.15);
+    border-radius: 4px;
+  }
+
+  .cover-inner-frame {
+    position: absolute;
+    top: 22mm;
+    left: 22mm;
+    right: 22mm;
+    bottom: 22mm;
+    border: 0.3px solid rgba(212,175,55,0.08);
+  }
+
+  .cover-logo-container {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12mm;
+  }
+
+  .cover-logo-ring {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid rgba(212,175,55,0.6);
+    padding: 6px;
+    box-shadow: 0 0 40px rgba(212,175,55,0.25), inset 0 0 20px rgba(212,175,55,0.1);
+    margin: 0 auto;
+    background: linear-gradient(135deg, #FFF8E1 0%, white 50%, #FFF3CD 100%);
+  }
+
+  .cover-logo-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  .cover-kicker {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6mm;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-title {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 0.15em;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin: 0 0 4mm 0;
+  }
+
+  .cover-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 400;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.2em;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin: 0 0 10mm 0;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 10mm;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    max-width: 380px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+  }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 28mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .cover-footer-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .cover-year {
+    position: absolute;
+    bottom: 22mm;
+    right: 28mm;
+    font-family: 'Cinzel', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(212,175,55,0.04);
+    z-index: 1;
+    line-height: 1;
+  }
+
+  /* ─── Common page styles ─── */
+  .content-page {
+    background: var(--ivory);
+    padding: 22mm 24mm 20mm;
+  }
+
+  .section-kicker {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 4mm;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 3mm 0;
+    line-height: 1.2;
+  }
+
+  .section-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 1px;
+    margin-bottom: 10mm;
+  }
+
+  .section-body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 8mm;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 10mm;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(212,175,55,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 16px;
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .cards-row {
+    display: flex;
+    gap: 14px;
+  }
+
+  .cards-row .card {
+    flex: 1;
+  }
+
+  /* ─── Gold badge ─── */
+  .badge-navy {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 8mm;
+  }
+
+  .badge-navy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 60%);
+  }
+
+  .badge-number {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+    margin: 8px 0 4px;
+  }
+
+  .badge-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    position: relative;
+    z-index: 1;
+  }
+
+  .badge-seal {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(212,175,55,0.5);
+    padding: 4px;
+    box-shadow: 0 0 20px rgba(212,175,55,0.2);
+    margin: 0 auto 8px;
+    background: linear-gradient(135deg, #FFF8E1, white, #FFF3CD);
+    position: relative;
+    z-index: 1;
+  }
+
+  .badge-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  /* ─── Pillar cards ─── */
+  .pillar-card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6mm;
+  }
+
+  .pillar-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(225deg, rgba(212,175,55,0.06) 0%, transparent 60%);
+    border-radius: 0 12px 0 0;
+  }
+
+  .pillar-numeral {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .pillar-title {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .pillar-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── Vision block ─── */
+  .vision-block {
+    background: linear-gradient(135deg, var(--navy) 0%, rgba(10,17,40,0.95) 100%);
+    border-radius: 12px;
+    padding: 28px 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 6mm;
+  }
+
+  .vision-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(212,175,55,0.08) 0%, transparent 50%);
+  }
+
+  .vision-kicker {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .vision-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── Logo section ─── */
+  .seal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%);
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    margin-bottom: 8mm;
+  }
+
+  .seal-outer {
+    position: relative;
+    width: 130px;
+    height: 130px;
+  }
+
+  .seal-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(191,149,63,0.2) 0%, rgba(252,246,186,0.12) 50%, rgba(179,135,40,0.2) 100%);
+    filter: blur(4px);
+  }
+
+  .seal-ring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid rgba(212,175,55,0.65);
+    padding: 6px;
+    box-shadow: 0 0 30px rgba(212,175,55,0.2), inset 0 0 15px rgba(212,175,55,0.06);
+  }
+
+  .seal-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.25);
+    padding: 4px;
+    background: linear-gradient(135deg, #FFF8E1 0%, white 50%, #FFF3CD 100%);
+  }
+
+  .seal-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  .seal-caption {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* ─── Color swatches ─── */
+  .color-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8mm;
+  }
+
+  .color-swatch {
+    flex: 1;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .color-swatch.navy {
+    background: var(--navy);
+    color: white;
+  }
+
+  .color-swatch.gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .color-swatch.ivory {
+    background: var(--ivory);
+    color: var(--navy);
+    border: 1px solid #E5E7EB;
+  }
+
+  .swatch-name {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .swatch-hex {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  /* ─── Redesign keys ─── */
+  .key-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .key-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .key-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid var(--gold);
+    border-bottom: 1.5px solid var(--gold);
+    transform: rotate(-45deg);
+  }
+
+  /* ─── Metrics ─── */
+  .metrics-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8mm;
+  }
+
+  .metric-card {
+    flex: 1;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .metric-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .metric-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  /* ─── AI Section ─── */
+  .ai-card {
+    background: white;
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 6mm;
+    box-shadow: 0 0 20px rgba(212,175,55,0.04);
+  }
+
+  .ai-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .ai-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 14px;
+  }
+
+  .ai-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .ai-card-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    color: var(--text-muted);
+  }
+
+  .ai-card-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ─── Chart placeholder ─── */
+  .chart-container {
+    background: linear-gradient(135deg, #FAFAFA 0%, white 100%);
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 6mm;
+  }
+
+  .chart-title {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .chart-title-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    height: 140px;
+    padding: 0 10px;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 8px;
+  }
+
+  .chart-bar-group {
+    flex: 1;
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .chart-bar {
+    width: 18px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .chart-bar.standard {
+    background: #D1D5DB;
+  }
+
+  .chart-bar.sovereign {
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
+  }
+
+  .chart-labels {
+    display: flex;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .chart-label {
+    flex: 1;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .legend-dot.standard { background: #D1D5DB; }
+  .legend-dot.sovereign { background: var(--gold); }
+
+  /* ─── Page numbers ─── */
+  .page-number {
+    position: absolute;
+    bottom: 14mm;
+    right: 20mm;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    color: rgba(0,0,0,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .cover .page-number {
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: flex;
+    gap: 16px;
+  }
+
+  .two-col > div {
+    flex: 1;
+  }
+
+  /* ─── Value list ─── */
+  .value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .value-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .value-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1: COVER ═══════════ -->
+<div class="page cover">
+  <div class="cover-bg-ornament"></div>
+  <div class="cover-frame"></div>
+  <div class="cover-inner-frame"></div>
+
+  <div class="cover-logo-container">
+    <div class="cover-logo-ring">
+      <img src="../assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN"/>
+    </div>
+  </div>
+
+  <div class="cover-kicker">Sovereign Series</div>
+  <h1 class="cover-title">GOLDKOIN</h1>
+  <div class="cover-subtitle">The Sovereign Series</div>
+  <div class="cover-divider"></div>
+  <p class="cover-description">
+    Uniendo la estabilidad del metal fisico con la sofisticacion del mercado de lujo norteamericano.
+    Concepto potenciado por Inteligencia Artificial.
+  </p>
+
+  <div class="cover-footer">
+    <div class="cover-footer-text">AI Enhanced Concept</div>
+  </div>
+  <div class="cover-year">2026</div>
+  <div class="page-number">01</div>
+</div>
+
+<!-- ═══════════ PAGE 2: VISION GENERAL ═══════════ -->
+<div class="page content-page">
+  <div class="section-kicker">Vision General</div>
+  <h2 class="section-title">El Oro de Proxima Generacion</h2>
+  <div class="section-divider"></div>
+
+  <p class="section-body">
+    GOLDKOIN transforma la experiencia del oro fisico en un activo aspiracional para el mercado norteamericano.
+    Cada lingote es una obra de ingenieria y confianza, disenado para satisfacer al inversor mas exigente,
+    combinando pureza certificada, trazabilidad digital y diseno de exportacion.
+  </p>
+
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-icon">&#9670;</div>
+      <div class="card-title">Pureza Certificada</div>
+      <div class="card-text">
+        Cada lingote alcanza el estandar de pureza 999.9, respaldado por certificacion internacional y
+        verificacion independiente de laboratorios acreditados.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#8599;</div>
+      <div class="card-title">Design for Export</div>
+      <div class="card-text">
+        Ingenieria de producto optimizada para los mercados de USA y Canada, cumpliendo normativas LBMA
+        y requisitos de importacion norteamericanos.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#9670;</div>
+      <div class="card-title">Ecosistema Digital</div>
+      <div class="card-text">
+        Trazabilidad blockchain, autenticacion digital y plataforma de verificacion en tiempo real para
+        garantizar transparencia absoluta.
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="badge-navy">
+        <div class="badge-seal"><img src="../assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN"/></div>
+        <div class="badge-number">999.9</div>
+        <div class="badge-label">Fine Gold Standard</div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-title">Propuesta de Valor</div>
+        <div class="card-text" style="margin-bottom: 12px;">
+          Elevamos GOLDKOIN de un producto industrial a un activo aspiracional. Cada lingote es una obra
+          de ingenieria y confianza para el inversor mas exigente.
+        </div>
+        <ul class="value-list">
+          <li>Pureza Certificada 999.9</li>
+          <li>Design for Export (USA/Canada)</li>
+          <li>Ecosistema Digital Seguro</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-number">02</div>
+</div>
+
+<!-- ═══════════ PAGE 3: IDENTIDAD & LOGO ═══════════ -->
+<div class="page content-page">
+  <div class="section-kicker">Identidad &amp; Logo</div>
+  <h2 class="section-title">Evolucion de Identidad</h2>
+  <div class="section-divider"></div>
+
+  <div class="two-col">
+    <div>
+      <p class="section-body">
+        El nuevo monograma elimina la rigidez del simbolo de moneda tradicional para adoptar una "G" geometrica
+        fluida. Esto evita connotaciones de "casa de cambio" y se alinea con marcas de alta costura y joyeria
+        global como Cartier, Bulgari o Tiffany &amp; Co. La forma organica sugiere movimiento y evolucion,
+        mientras que la estructura geometrica transmite precision y confiabilidad.
+      </p>
+
+      <div class="card">
+        <div class="card-title" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">
+          Claves del Rediseno
+        </div>
+        <ul class="key-list">
+          <li>Simetria bajo proporcion aurea para armonia visual perfecta.</li>
+          <li>Eje vertical sutil para equilibrio y estabilidad percibida.</li>
+          <li>Grabado 3D profundo para textura tactil premium.</li>
+          <li>Paleta cromatica limitada: Navy, Gold, Ivory. Lujo atemporal.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="seal-container">
+        <div>
+          <div class="seal-outer">
+            <div class="seal-glow"></div>
+            <div class="seal-ring">
+              <div class="seal-inner">
+                <img src="../assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN Seal"/>
+              </div>
+            </div>
+          </div>
+          <div class="seal-caption">Sello Oficial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-kicker" style="margin-top: 4mm;">Paleta Corporativa</div>
+  <div class="color-row">
+    <div class="color-swatch navy">
+      <div class="swatch-name">Navy</div>
+      <div class="swatch-hex">#0A1128</div>
+    </div>
+    <div class="color-swatch gold">
+      <div class="swatch-name">Gold</div>
+      <div class="swatch-hex">#D4AF37</div>
+    </div>
+    <div class="color-swatch ivory">
+      <div class="swatch-name">Ivory</div>
+      <div class="swatch-hex">#F8F9FA</div>
+    </div>
+  </div>
+
+  <p class="section-body">
+    La paleta corporativa se fundamenta en tres tonos que comunican autoridad, exclusividad y pureza.
+    El Navy transmite solidez institucional y confianza financiera; el Gold evoca el valor intrinseco
+    del metal precioso y el estatus aspiracional; el Ivory aporta luminosidad y elegancia, creando
+    un equilibrio visual que refuerza la posicionamiento de lujo atemporal de la marca.
+  </p>
+
+  <div class="page-number">03</div>
+</div>
+
+<!-- ═══════════ PAGE 4: NARRATIVA & PILARES ═══════════ -->
+<div class="page content-page">
+  <div class="section-kicker">Narrativa &amp; Pilares</div>
+  <h2 class="section-title">Pilares Estrategicos</h2>
+  <div class="section-divider"></div>
+
+  <div class="pillar-card">
+    <div class="pillar-numeral">I</div>
+    <div class="pillar-title">Herencia</div>
+    <div class="pillar-text">
+      Valor que trasciende generaciones. Cada lingote Goldkoin es un legado familiar, una reserva de valor
+      que se transmite de padres a hijos como simbolo de prosperidad y previsión financiera. La herencia
+      no es solo acumulacion de riqueza, sino la transmision de principios de prudencia y vision a largo plazo.
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-numeral">II</div>
+    <div class="pillar-title">Prestigio</div>
+    <div class="pillar-text">
+      Un simbolo de estatus y sabiduria financiera en el mercado USA. La marca Sovereign Series posiciona
+      cada pieza como un activo aspiracional comparable a las grandes maison de joyeria suiza. El prestigio
+      se construye a traves de la excelencia verificable y la consistencia en cada detalle del producto.
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-numeral">III</div>
+    <div class="pillar-title">Integridad</div>
+    <div class="pillar-text">
+      Transparencia absoluta mediante trazabilidad digital avanzada. Cada lingote cuenta con certificacion
+      blockchain y verificacion de origen, garantizando confianza total en cada transaccion. La integridad
+      es el cimiento sobre el cual se edifica toda relacion comercial duradera.
+    </div>
+  </div>
+
+  <div class="vision-block">
+    <div class="vision-kicker">Nuestra Vision</div>
+    <div class="vision-text">
+      "No vendemos oro. Ofrecemos la ultima moneda del soberano &mdash; un refugio de valor que combina
+      la herencia milenaria del metal precioso con la innovacion tecnologica del siglo XXI."
+    </div>
+  </div>
+
+  <div class="page-number">04</div>
+</div>
+
+<!-- ═══════════ PAGE 5: AI STRATEGY LAB ═══════════ -->
+<div class="page content-page">
+  <div class="section-kicker">AI Strategy Lab</div>
+  <h2 class="section-title">Inteligencia Artificial Estrategica</h2>
+  <div class="section-divider"></div>
+
+  <p class="section-body">
+    GOLDKOIN integra herramientas de inteligencia artificial que potencian la toma de decisiones estrategicas,
+    la creacion de contenido de marca y el analisis de mercado en tiempo real. Estas capacidades permiten
+    una ventaja competitiva sin precedentes en el sector de metales preciosos.
+  </p>
+
+  <div class="ai-card">
+    <div class="ai-card-header">
+      <div class="ai-card-icon">&#9993;</div>
+      <div>
+        <div class="ai-card-title">Consultor de Estrategia</div>
+        <div class="ai-card-subtitle">Chat impulsado por IA</div>
+      </div>
+    </div>
+    <div class="ai-card-text">
+      Asistente virtual especializado en branding de lujo y exportacion de metales preciosos. Responde
+      consultas sobre tendencias de mercado, estrategias de posicionamiento, regulaciones de exportacion
+      a USA/Canada y marketing digital para productos premium. Disponible 24/7 con conocimiento
+      actualizado del sector.
+    </div>
+  </div>
+
+  <div class="ai-card">
+    <div class="ai-card-header">
+      <div class="ai-card-icon">&#9998;</div>
+      <div>
+        <div class="ai-card-title">Generador de Campana</div>
+        <div class="ai-card-subtitle">Creacion de copy de lujo al instante</div>
+      </div>
+    </div>
+    <div class="ai-card-text">
+      Genera anuncios elegantes y evocadores para los lingotes GOLDKOIN Sovereign Series en multiples tonos:
+      Lujo Exclusivo, Seguro e Institucional, o Moderno y Digital. Cada pieza de copy transmite exclusividad,
+      valor atemporal y sofisticacion, alineada con marcas de la talla de Cartier o Rolex.
+    </div>
+  </div>
+
+  <div class="ai-card">
+    <div class="ai-card-header">
+      <div class="ai-card-icon">&#9733;</div>
+      <div>
+        <div class="ai-card-title">Interpretacion AI de Mercado</div>
+        <div class="ai-card-subtitle">Analisis ejecutivo inteligente</div>
+      </div>
+    </div>
+    <div class="ai-card-text">
+      Analiza datos de proyeccion de demanda USA 2024-2028 y genera recomendaciones estrategicas basadas en
+      inteligencia artificial. Identifica oportunidades masivas, evalua el crecimiento del segmento Luxury
+      versus Standard, y propone acciones concretas para capitalizar la tendencia del mercado.
+    </div>
+  </div>
+
+  <div class="page-number">05</div>
+</div>
+
+<!-- ═══════════ PAGE 6: ANALISIS DE MERCADO ═══════════ -->
+<div class="page content-page">
+  <div class="section-kicker">Analisis de Mercado</div>
+  <h2 class="section-title">Proyeccion USA 2024-2028</h2>
+  <div class="section-divider"></div>
+
+  <div class="chart-container">
+    <div class="chart-title">
+      <span class="chart-title-dot"></span>
+      Demanda de Lingotes: Standard vs Sovereign Luxury
+    </div>
+    <div class="chart-bars">
+      <div class="chart-bar-group">
+        <div class="chart-bar standard" style="height: 71%"></div>
+        <div class="chart-bar sovereign" style="height: 21%"></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar standard" style="height: 75%"></div>
+        <div class="chart-bar sovereign" style="height: 32%"></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar standard" style="height: 74%"></div>
+        <div class="chart-bar sovereign" style="height: 46%"></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar standard" style="height: 77%"></div>
+        <div class="chart-bar sovereign" style="height: 64%"></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar standard" style="height: 79%"></div>
+        <div class="chart-bar sovereign" style="height: 89%"></div>
+      </div>
+    </div>
+    <div class="chart-labels">
+      <div class="chart-label">2024</div>
+      <div class="chart-label">2025</div>
+      <div class="chart-label">2026</div>
+      <div class="chart-label">2027</div>
+      <div class="chart-label">2028</div>
+    </div>
+    <div class="chart-legend">
+      <div class="legend-item"><span class="legend-dot standard"></span> Standard Bullion</div>
+      <div class="legend-item"><span class="legend-dot sovereign"></span> Goldkoin Sovereign (Luxury)</div>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-card">
+      <div class="metric-value">2.4%</div>
+      <div class="metric-label">CAGR Standard</div>
+      <div class="metric-sub">2024-2028</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">33.0%</div>
+      <div class="metric-label">CAGR Sovereign</div>
+      <div class="metric-sub">2024-2028</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">4.2x</div>
+      <div class="metric-label">Growth Multiple</div>
+      <div class="metric-sub">Luxury vs 1.1x</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">+317%</div>
+      <div class="metric-label">Market Gap</div>
+      <div class="metric-sub">Sovereign potential</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color: rgba(212,175,55,0.2); box-shadow: 0 0 20px rgba(212,175,55,0.04);">
+    <div class="card-title" style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: var(--gold);">&#9733;</span>
+      Interpretacion Estrategica
+    </div>
+    <div class="card-text">
+      Los datos revelan una oportunidad masiva para GOLDKOIN en el segmento de lujo. Mientras la demanda
+      de lingotes estandar crece marginalmente (CAGR 2.4%), el segmento Sovereign Luxury experimenta un
+      crecimiento explosivo (CAGR 33.0%), multiplicando su tamano por 4.2x en el periodo de proyeccion.
+      Esta brecha de +317% indica que el mercado norteamericano esta listo para un producto que trascienda
+      la commodity del oro y se posicione como activo aspiracional. La recomendacion estrategica es
+      capitalizar esta ventana de oportunidad con un lanzamiento agresivo en USA y Canada, enfatizando
+      los tres pilares de marca: Herencia, Prestigio e Integridad.
+    </div>
+  </div>
+
+  <div class="page-number">06</div>
+</div>
+
+</body>
+</html>

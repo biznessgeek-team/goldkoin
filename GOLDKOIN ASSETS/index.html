@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GOLDKOIN Sovereign Series — fine gold 999.9 bars from 5g to 100g. Insured U.S. shipping, verified packaging, human support." />
+  <title>GOLDKOIN | Fine Gold 999.9 — The Sovereign Series</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1128;
+      --gold: #c5a040;
+      --gold-bright: #d4af37;
+      --ivory: #f8f9fa;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Montserrat, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--ivory);
+      line-height: 1.6;
+    }
+    h1, h2, h3, .font-display {
+      font-family: Cinzel, Georgia, serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    a { color: var(--gold-bright); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(197, 160, 64, 0.25);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand:hover { text-decoration: none; }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 1px solid rgba(197, 160, 64, 0.5);
+    }
+    .brand span {
+      font-family: Cinzel, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      font-size: 0.95rem;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    nav a:hover { color: var(--gold-bright); }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
+      color: var(--navy);
+    }
+    .btn-gold:hover { filter: brightness(1.05); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(197, 160, 64, 0.6);
+    }
+    .btn-outline:hover { background: rgba(197, 160, 64, 0.12); text-decoration: none; }
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 3rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(197, 160, 64, 0.12), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      letter-spacing: 0.08em;
+    }
+    .hero .tagline {
+      color: var(--gold-bright);
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .hero p.lead {
+      color: rgba(255,255,255,0.72);
+      font-weight: 300;
+      font-size: 1rem;
+      max-width: 36rem;
+      margin: 0 0 1.5rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .hero-media {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(197, 160, 64, 0.25);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+      background: #111;
+    }
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      vertical-align: middle;
+    }
+    .strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (min-width: 700px) {
+      .strip { grid-template-columns: repeat(3, 1fr); }
+    }
+    .strip div {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--gold-bright);
+    }
+    .strip strong { display: block; color: var(--navy); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.25rem; }
+    section { padding: 3rem 0; }
+    section h2 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin: 0 0 0.5rem;
+    }
+    .section-kicker {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 0.35rem;
+    }
+    .grid-3 {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 700px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.35rem;
+    }
+    .card h3 { font-size: 0.95rem; margin: 0 0 0.5rem; color: var(--navy); }
+    .card p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+    .weights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .weight-pill {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      letter-spacing: 0.08em;
+    }
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #121a3a 100%);
+      color: #fff;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 0.5rem; }
+    .cta-band p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 1.25rem; font-size: 0.9rem; }
+    footer {
+      background: #060a16;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.7rem;
+      padding: 2rem 0;
+      line-height: 1.7;
+    }
+    footer .wrap { display: grid; gap: 1rem; }
+    @media (min-width: 600px) {
+      footer .wrap { grid-template-columns: 1fr auto; align-items: start; }
+    }
+    footer a { color: rgba(255,255,255,0.65); }
+    .legal {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.35);
+      max-width: 720px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="../assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN" width="40" height="40" />
+        <span>GOLDKOIN</span>
+      </a>
+      <nav>
+        <a href="#sovereign">Sovereign Series</a>
+        <a href="#trust">Trust</a>
+        <a href="#verify">Verify</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-gold" href="#shop">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="tagline">Fine Gold 999.9 · USA</p>
+          <h1 class="font-display">Small bars.<br />Clear standards.<br />Serious delivery.</h1>
+          <p class="lead">
+            GOLDKOIN Sovereign Series focuses on investment-weight bars from <strong style="color:#fff">5g to 100g</strong>—so you compare fairly, buy confidently, and receive insured, trackable shipment built for high-value physical gold.
+          </p>
+          <div class="hero-actions">
+            <a id="shop" class="btn btn-gold" href="mailto:sales@goldkoin.co?subject=GOLDKOIN%20—%20Order%20inquiry">Request availability</a>
+            <a class="btn btn-outline" href="#trust">How we build trust</a>
+          </div>
+          <p style="margin-top:1.25rem;font-size:0.7rem;color:rgba(255,255,255,0.45);max-width:28rem">
+            Replace the mailto link with your Shopify collection URL when the store is live.
+          </p>
+        </div>
+        <div class="hero-media">
+          <img
+            src="WhatsApp%20Image%202026-05-10%20at%2017.12.57%20(1).jpeg"
+            alt="GOLDKOIN 50g fine gold bar in certified display"
+            loading="eager"
+            width="800"
+            height="1000"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap strip">
+      <div><strong>Insured transit</strong> High-value shipping with signature where required—policy details provided at checkout.</div>
+      <div><strong>Transparent totals</strong> Metal, premium, and delivery—spelled out before you commit.</div>
+      <div><strong>Human support</strong> Real answers on authenticity, delivery, and order status during business hours.</div>
+    </div>
+
+    <section id="sovereign" class="wrap">
+      <p class="section-kicker">Product line</p>
+      <h2 class="font-display">The Sovereign Series</h2>
+      <p style="color:var(--muted);max-width:40rem;font-size:0.9rem;margin:0;">
+        Minted presentation with security features designed for verification and long-term storage—not generic bulk packaging.
+      </p>
+      <div class="weights" aria-label="Bar weights">
+        <span class="weight-pill">5 g</span>
+        <span class="weight-pill">10 g</span>
+        <span class="weight-pill">20 g</span>
+        <span class="weight-pill">50 g</span>
+        <span class="weight-pill">100 g</span>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="font-display">999.9 fine gold</h3>
+          <p>Purity and fine weight stated on each bar; presentation matches the Sovereign Series specification.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-display">Serialized traceability</h3>
+          <p>Unique identifiers support inventory integrity and customer records—details on each certificate and bar.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-display">Built for first-time buyers</h3>
+          <p>We explain premiums per gram, delivery milestones, and what to expect at the door—before you pay.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="wrap" style="background:#fff;margin:0;padding:3rem 1.25rem;border-radius:12px;box-shadow:0 8px 32px rgba(10,17,40,0.06);">
+      <p class="section-kicker">Objections, answered</p>
+      <h2 class="font-display">Trust &amp; operations</h2>
+      <div class="grid-3">
+        <div class="card" style="border-color:rgba(197,160,64,0.25);">
+          <h3 class="font-display">Is it authentic?</h3>
+          <p>Security elements and documentation are part of the retail package. We publish refinery and assay expectations per SKU once listings are live.</p>
+        </div>
+        <div class="card" style="border-color:rgba(197,160,64,0.25);">
+          <h3 class="font-display">Is shipment safe?</h3>
+          <p>Discreet outer packaging, full-value insurance in line with carrier and underwriter rules, and tracking from dispatch to signature.</p>
+        </div>
+        <div class="card" style="border-color:rgba(197,160,64,0.25);">
+          <h3 class="font-display">What if I need to sell?</h3>
+          <p>Publish a clear buyback or consignment policy—or an honest “not offered yet” with a timeline. Ambiguity kills conversion on bullion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="verify" class="wrap">
+      <p class="section-kicker">Digital layer</p>
+      <h2 class="font-display">Verification &amp; GOLDAPP</h2>
+      <p style="color:var(--muted);max-width:42rem;font-size:0.9rem;">
+        Your physical product shows QR and holographic elements—on the public site, describe <strong>exactly</strong> what scanning does (e.g. certificate lookup, warranty registration). Avoid vague “blockchain” claims unless a lawyer-reviewed description is ready.
+      </p>
+    </section>
+
+    <div class="cta-band" id="contact">
+      <div class="wrap">
+        <h2 class="font-display">Ready to reserve metal?</h2>
+        <p>Connect your Shopify “Shop gold bars” button here, or keep a short form for wire-first customers.</p>
+        <a class="btn btn-gold" href="mailto:sales@goldkoin.co">Contact GOLDKOIN</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong style="color:rgba(255,255,255,0.7);letter-spacing:0.15em;font-size:0.65rem;">GOLDKOIN PRECIOUS METALS</strong>
+        <p style="margin:0.5rem 0 0;">
+          Replace with your legal entity address and registered phone. Do not use placeholder “555” or fictitious suite addresses on a production site.
+        </p>
+      </div>
+      <div>
+        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Shipping &amp; insurance</a>
+      </div>
+      <p class="legal">
+        Precious metals involve market risk. GOLDKOIN does not provide investment, tax, or legal advice. Past performance of gold does not guarantee future results.
+        The investor / strategic deck (<code>goldkoin-presentation.html</code>) contains illustrative charts and forward-looking language—keep it offline or gated; do not mirror unverified market statistics on the consumer storefront.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
