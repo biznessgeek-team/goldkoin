@@ -14,7 +14,12 @@ las fotos en WhatsApp, vuelve a copiar sobre los mismos nombres.
       Copia/respaldo anterior; ya no enlazado si mantienes solo el SVG.
 
   hero-sovereign-50g.jpg
-      Producto en mano: blister blanco, QR, sello GOLDAPP, 50g — hero principal.
+      Foto estática: carrusel, secciones y poster del vídeo del hero.
+
+  hero-sovereign.mp4
+      Vídeo del hero (autoplay, bucle). Recorte en ~8 s: antes de ~8,12 s aparece
+      la tarjeta blanca con logo; el original completo está en GOLDKOIN ASSETS/
+      «…17.13.03.full-backup.mp4».
 
   gallery-01-bar-studio.jpg
       Lingote 50g estudio, fondo dorado suave — marcas y pureza nítidas.
