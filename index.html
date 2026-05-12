@@ -322,17 +322,33 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem;
+      padding: 0.65rem;
       line-height: 0;
+      /* Ancho del marco = vídeo + padding (sin banda azul extra a los lados) */
+      width: fit-content;
+      max-width: 100%;
+      margin-inline: auto;
+      justify-self: center;
+      box-sizing: border-box;
     }
-    .hero-media img {
-      max-width: calc(100% * var(--gk-img-scale));
+    .hero-media img,
+    .hero-media video.hero-video {
+      max-height: min(calc(85vh * var(--gk-img-scale)), calc(720px * var(--gk-img-scale)));
       width: auto;
       height: auto;
-      max-height: min(calc(85vh * var(--gk-img-scale)), calc(720px * var(--gk-img-scale)));
       display: block;
       border-radius: 8px;
       flex-shrink: 0;
+    }
+    .hero-media img {
+      max-width: calc(100% * var(--gk-img-scale));
+    }
+    .hero-media video.hero-video {
+      /* Alto limita el tamaño; el ancho sigue la proporción del clip (sin forzar 70% del ancho de columna) */
+      max-width: min(720px, calc(100vw - 2.5rem));
+      object-fit: contain;
+      min-width: 0;
+      vertical-align: top;
     }
     .hero-fallback {
       display: none;
@@ -1192,21 +1208,28 @@
           </div>
         </div>
         <div class="hero-media">
-          <img
-            src="assets/hero-sovereign-50g.jpg"
-            data-alt-es="Lingote de oro GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
-            data-alt-en="GOLDKOIN Sovereign Series gold bar in secure assay packaging"
-            alt="Lingote de oro GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
-            width="800"
-            height="1000"
-            loading="eager"
-            onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex';"
-          />
-          <div class="hero-fallback" id="hero-fallback" role="img" data-aria-fallback-es="Imagen del producto Serie Sovereign no disponible" data-aria-fallback-en="Sovereign Series product image unavailable" aria-label="Imagen del producto Serie Sovereign no disponible">
+          <video
+            id="hero-video"
+            class="hero-video"
+            width="720"
+            height="1264"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="metadata"
+            poster="assets/hero-sovereign-50g.jpg"
+            data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+            data-aria-en="Promotional video: GOLDKOIN Sovereign Series gold bar in secure assay packaging"
+            aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+          >
+            <source src="assets/hero-sovereign.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-fallback" id="hero-fallback" role="img" data-aria-fallback-es="Vídeo del producto Serie Sovereign no disponible" data-aria-fallback-en="Sovereign Series product video unavailable" aria-label="Vídeo del producto Serie Sovereign no disponible">
             <span class="mono">Sovereign Series</span>
             <div class="bar-shape" aria-hidden="true"></div>
             <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);max-width:14rem;margin:0;">
-              <span class="gk-es">Cargando foto del producto…</span><span class="gk-en">Product photo loading…</span>
+              <span class="gk-es">No se pudo reproducir el vídeo. Revisa la galería más abajo.</span><span class="gk-en">Video could not play. See the gallery below.</span>
             </p>
           </div>
         </div>
@@ -1764,6 +1787,13 @@
           else if (lang === 'en' && aen) heroFb.setAttribute('aria-label', aen);
         }
 
+        var heroVid = document.getElementById('hero-video');
+        if (heroVid) {
+          var ves = heroVid.getAttribute('data-aria-es');
+          var ven = heroVid.getAttribute('data-aria-en');
+          if (ves && ven) heroVid.setAttribute('aria-label', lang === 'es' ? ves : ven);
+        }
+
         var navToggle = document.getElementById('nav-toggle');
         if (navToggle) {
           var ms = navToggle.getAttribute('data-aria-menu-es');
@@ -1825,6 +1855,28 @@
 
       setLang(getStoredLang() || 'es');
       window.gkSetLang = setLang;
+    })();
+
+    (function () {
+      var v = document.getElementById('hero-video');
+      var fb = document.getElementById('hero-fallback');
+      if (!v) return;
+      function showHeroFallback() {
+        v.style.display = 'none';
+        if (fb) fb.style.display = 'flex';
+      }
+      v.addEventListener('error', showHeroFallback);
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay');
+        try {
+          v.pause();
+        } catch (e) {}
+      } else {
+        var p = v.play && v.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(function () {});
+        }
+      }
     })();
 
     (function () {

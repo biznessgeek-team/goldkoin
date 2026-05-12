@@ -3,3 +3,5 @@ _snapshots/
 *.tar
 .env
 .env.*
+*.full-backup.mp4
+*.prproj
