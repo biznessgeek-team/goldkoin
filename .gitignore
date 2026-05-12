@@ -4,4 +4,7 @@ _snapshots/
 .env
 .env.*
 *.full-backup.mp4
+*.before-merge.mp4
+*.pre-xfade.mp4
+*.pre-50gtrim2.mp4
 *.prproj
