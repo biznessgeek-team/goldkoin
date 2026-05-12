@@ -7,6 +7,7 @@
   <title id="gk-page-title" data-title-es="GOLDKOIN | Oro fino 999.9 — Serie Sovereign" data-title-en="GOLDKOIN | Fine Gold 999.9 — The Sovereign Series">GOLDKOIN | Oro fino 999.9 — Serie Sovereign</title>
   <link rel="icon" href="assets/goldkoin-logo-navbar.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/goldkoin-logo-navbar.svg" />
+  <link rel="preload" href="assets/hero-video-poster.jpg" as="image" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -349,6 +350,50 @@
       object-fit: contain;
       min-width: 0;
       vertical-align: top;
+    }
+    .hero-video-stack {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+    }
+    .hero-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 4.25rem;
+      height: 4.25rem;
+      padding: 0;
+      margin: 0;
+      border: 2px solid rgba(212, 175, 55, 0.95);
+      border-radius: 50%;
+      background: rgba(10, 17, 40, 0.72);
+      color: var(--gold-bright);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .hero-play-btn:hover {
+      background: rgba(10, 17, 40, 0.88);
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    .hero-play-btn:focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 3px;
+    }
+    .hero-play-icon {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      margin-left: 0.15em;
+    }
+    .hero-video-stack.is-playing .hero-play-btn {
+      opacity: 0;
+      pointer-events: none;
     }
     .hero-fallback {
       display: none;
@@ -1208,23 +1253,34 @@
           </div>
         </div>
         <div class="hero-media">
-          <video
-            id="hero-video"
-            class="hero-video"
-            width="720"
-            height="1264"
-            muted
-            loop
-            playsinline
-            autoplay
-            preload="metadata"
-            poster="assets/hero-sovereign-50g.jpg"
-            data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
-            data-aria-en="Promotional video: GOLDKOIN Sovereign Series gold bar in secure assay packaging"
-            aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
-          >
-            <source src="assets/hero-sovereign.mp4" type="video/mp4" />
-          </video>
+          <div class="hero-video-stack" id="hero-video-stack">
+            <video
+              id="hero-video"
+              class="hero-video"
+              width="720"
+              height="1264"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="assets/hero-video-poster.jpg"
+              data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+              data-aria-en="Promotional video: GOLDKOIN Sovereign Series gold bar in secure assay packaging"
+              aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+            >
+              <source src="assets/hero-sovereign.mp4" type="video/mp4" />
+            </video>
+            <button
+              type="button"
+              id="hero-play-btn"
+              class="hero-play-btn"
+              data-a11y-es="Reproducir vídeo del producto"
+              data-a11y-en="Play product video"
+              aria-label="Reproducir vídeo del producto"
+            >
+              <span class="hero-play-icon" aria-hidden="true">▶</span>
+            </button>
+          </div>
           <div class="hero-fallback" id="hero-fallback" role="img" data-aria-fallback-es="Vídeo del producto Serie Sovereign no disponible" data-aria-fallback-en="Sovereign Series product video unavailable" aria-label="Vídeo del producto Serie Sovereign no disponible">
             <span class="mono">Sovereign Series</span>
             <div class="bar-shape" aria-hidden="true"></div>
@@ -1860,22 +1916,66 @@
     (function () {
       var v = document.getElementById('hero-video');
       var fb = document.getElementById('hero-fallback');
+      var btn = document.getElementById('hero-play-btn');
+      var stack = document.getElementById('hero-video-stack');
       if (!v) return;
+
       function showHeroFallback() {
         v.style.display = 'none';
+        if (btn) btn.style.display = 'none';
+        if (stack) stack.classList.remove('is-playing');
         if (fb) fb.style.display = 'flex';
       }
+
       v.addEventListener('error', showHeroFallback);
+
+      function syncPlayUi() {
+        if (!stack) return;
+        var playing = !v.paused && !v.ended;
+        stack.classList.toggle('is-playing', playing);
+        if (btn) btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      }
+
+      function playHero() {
+        var p = v.play && v.play();
+        if (p && typeof p.then === 'function') {
+          p.then(syncPlayUi).catch(function () {});
+        } else {
+          syncPlayUi();
+        }
+      }
+
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          playHero();
+        });
+      }
+
+      v.addEventListener('play', syncPlayUi);
+      v.addEventListener('pause', syncPlayUi);
+      v.addEventListener('ended', syncPlayUi);
+
+      v.addEventListener('click', function () {
+        if (v.paused) playHero();
+        else {
+          try {
+            v.pause();
+          } catch (err) {}
+          syncPlayUi();
+        }
+      });
+
+      try {
+        v.pause();
+      } catch (e2) {}
+      syncPlayUi();
+
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        v.removeAttribute('autoplay');
         try {
           v.pause();
-        } catch (e) {}
-      } else {
-        var p = v.play && v.play();
-        if (p && typeof p.catch === 'function') {
-          p.catch(function () {});
-        }
+        } catch (e3) {}
+        syncPlayUi();
       }
     })();
 
