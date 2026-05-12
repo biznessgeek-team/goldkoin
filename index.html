@@ -7,7 +7,7 @@
   <title id="gk-page-title" data-title-es="GOLDKOIN | Oro fino 999.9 — Serie Sovereign" data-title-en="GOLDKOIN | Fine Gold 999.9 — The Sovereign Series">GOLDKOIN | Oro fino 999.9 — Serie Sovereign</title>
   <link rel="icon" href="assets/goldkoin-logo-navbar.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/goldkoin-logo-navbar.svg" />
-  <link rel="preload" href="assets/hero-video-poster.jpg" as="image" fetchpriority="high" />
+  <link rel="preload" href="assets/hero-video-poster-web1.jpg" as="image" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -1242,9 +1242,9 @@
       <div class="wrap hero-grid">
         <div>
           <p class="tagline"><span class="gk-es">Serie Sovereign · Florida, EE. UU.</span><span class="gk-en">The Sovereign Series · Florida, USA</span></p>
-          <h1 class="font-display"><span class="gk-es">Lingotes de Oro<br /> presentación entre 5g - 100g.<br />.9995 milésimas.<br /> Listos para entrega.</span><span class="gk-en">Gold bars<br /> presentations from 5g–100g.<br />.9995 fine.<br /> Ready for delivery.</span></h1>
+          <h1 class="font-display"><span class="gk-es">Lingotes de Oro<br /> presentación entre 5g - 100g.<br />.9995 milésimas.<br /> Listos para entrega.</span><span class="gk-en">Fine Gold bars<br />small presentations<br />Starting at 5g–100g.<br />.9995 refined<br />Secured delivery.</span></h1>
           <p class="lead">
-            <span class="gk-es"><strong style="color:#fff">GOLDKOIN, LLC</strong> es tu proveedor oficial de la Serie Sovereign: Oro fino acuñado .9995 y presentado en la forma en que los compradores serios comparan gramo a gramo. Entrega asegurada, embalaje discreto y presentación tipo ensayo que puedes revisar el día que llega a tu domicilio.</span>
+            <span class="gk-es"><strong style="color:#fff">GOLDKOIN, LLC</strong> es tu proveedor oficial de la Serie Sovereign: Oro fino acuñado .9995 y presentado en la forma en que los compradores serios comparan gramo a gramo. <br />Entrega asegurada, embalaje discreto y presentación tipo ensayo que puedes revisar el día que llega a tu domicilio.</span>
             <span class="gk-en"><strong style="color:#fff">GOLDKOIN, LLC</strong> is the official supplier of the Sovereign Series—minted .9995 fine gold, presented the way serious buyers compare gram for gram. Insured delivery, discreet packaging, and assay-style presentation you can inspect the day it arrives at your door.</span>
           </p>
           <div class="hero-actions">
@@ -1258,12 +1258,10 @@
               id="hero-video"
               class="hero-video"
               width="720"
-              height="1264"
-              muted
-              loop
+              height="1280"
               playsinline
               preload="none"
-              poster="assets/hero-video-poster.jpg"
+              poster="assets/hero-video-poster-web1.jpg"
               data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
               data-aria-en="Promotional video: GOLDKOIN Sovereign Series gold bar in secure assay packaging"
               aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
@@ -1937,6 +1935,9 @@
       }
 
       function playHero() {
+        try {
+          v.muted = false;
+        } catch (e0) {}
         var p = v.play && v.play();
         if (p && typeof p.then === 'function') {
           p.then(syncPlayUi).catch(function () {});
@@ -1954,7 +1955,14 @@
 
       v.addEventListener('play', syncPlayUi);
       v.addEventListener('pause', syncPlayUi);
-      v.addEventListener('ended', syncPlayUi);
+      v.addEventListener('ended', function () {
+        try {
+          v.pause();
+          v.currentTime = 0;
+          v.load();
+        } catch (err) {}
+        syncPlayUi();
+      });
 
       v.addEventListener('click', function () {
         if (v.paused) playHero();

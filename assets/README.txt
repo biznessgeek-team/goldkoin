@@ -13,16 +13,24 @@ las fotos en WhatsApp, vuelve a copiar sobre los mismos nombres.
   logo-navbar.png
       Copia/respaldo anterior; ya no enlazado si mantienes solo el SVG.
 
+  hero-video-poster-web1.jpg
+      Miniatura del hero antes de PLAY (~540px ancho, ~24 KB). Generada desde
+      GOLDKOIN ASSETS/«thumbnail video web 1 Goldkoin.png» — sustituye el PNG y
+      vuelve a exportar si cambias la imagen.
+
+  hero-video-poster.jpg
+      Respaldo antiguo (script); el hero usa hero-video-poster-web1.jpg.
+
   hero-sovereign-50g.jpg
       Foto estática: carrusel y secciones (ya no es poster del vídeo del hero).
 
-  hero-video-poster.jpg
-      Miniatura del hero antes de pulsar PLAY: ~540px de ancho, JPEG ligero.
-      Sustituye este archivo si quieres otra toma exacta (export comprimido).
-
   hero-sovereign.mp4
-      Vídeo del hero (bucle, sin autoplay: se reproduce al pulsar PLAY). Recorte
-      en ~8 s; original completo en GOLDKOIN ASSETS/ «…17.13.03.full-backup.mp4».
+      Vídeo del hero (PLAY, sin bucle: al terminar se reinicia y espera otro PLAY;
+      con audio): «Goldkoin discover.mp4» +
+      «50g ingot Goldkoin.mp4» (recortado a 5,79 s: la banda blanca con logo
+      empieza ~5,8 s; antes se recortaba tarde y seguía visible),
+      «Goldkoin Asegura tu Futuro.mp4». Transiciones cruzadas ~0,55 s (vídeo: xfade
+      fade; audio: acrossfade). Salida 720×1280, ~20,8 s.
 
   gallery-01-bar-studio.jpg
       Lingote 50g estudio, fondo dorado suave — marcas y pureza nítidas.
