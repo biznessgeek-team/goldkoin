@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta id="gk-meta-desc" name="description" data-desc-es="Compra lingotes de oro GOLDKOIN Serie Sovereign — oro fino .9999, de 5 g a 100 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." data-desc-en="Buy GOLDKOIN Sovereign Series gold bars — .9999 fine, 5g to 100g. Florida dealer. Insured shipping, secure packaging, competitive pricing." content="Compra lingotes de oro GOLDKOIN Serie Sovereign — oro fino .9999, de 5 g a 100 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." />
-  <title id="gk-page-title" data-title-es="GOLDKOIN | Oro fino 999.9 — Serie Sovereign" data-title-en="GOLDKOIN | Fine Gold 999.9 — The Sovereign Series">GOLDKOIN | Oro fino 999.9 — Serie Sovereign</title>
+  <meta id="gk-meta-desc" name="description" data-desc-es="Compra lingotes de oro GOLDKOIN Serie Sovereign — 99.99% de pureza, en gramajes de 5 g, 10 g, 30 g y 50 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." data-desc-en="Buy GOLDKOIN Sovereign Series gold bullion bars with 99.99% purity in 5g, 10g, 30g, and 50g weights. Florida dealer, insured delivery, authentication packaging, and written quotes." content="Compra lingotes de oro GOLDKOIN Serie Sovereign — 99.99% de pureza, en gramajes de 5 g, 10 g, 30 g y 50 g. Distribuidor en Florida, EE. UU. Envío asegurado, embalaje seguro y precios claros." />
+  <title id="gk-page-title" data-title-es="GOLDKOIN | Oro 99.99% de pureza — Serie Sovereign" data-title-en="GOLDKOIN | 99.99% Gold Bullion Bars — Sovereign Series">GOLDKOIN | Oro 99.99% de pureza — Serie Sovereign</title>
   <link rel="icon" href="assets/goldkoin-logo-navbar.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/goldkoin-logo-navbar.svg" />
   <link rel="preload" href="assets/hero-video-poster-web1.jpg" as="image" fetchpriority="high" />
@@ -158,18 +158,20 @@
       mix-blend-mode: lighten;
     }
     .brand-text { display: flex; flex-direction: column; gap: 0.1rem; }
-    .brand-text span {
+    .brand-text .brand-name {
       font-family: Cinzel, Georgia, serif;
       font-weight: 700;
       letter-spacing: 0.2em;
-      font-size: 0.9rem;
+      font-size: 1.35rem;
     }
-    .brand-text small {
-      font-size: 0.55rem;
+    .brand-subtitle {
+      font-size: 0.68rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.45);
+      margin-top: -5px;
     }
+    html[data-ui-lang="en"] .brand-subtitle { font-size: 0.722rem; }
 
     .nav-desktop {
       display: none;
@@ -488,13 +490,22 @@
       gap: 1.15rem;
     }
     @media (min-width: 700px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-    .grid-5 {
+    .grid-4 {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (min-width: 700px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 1000px) { .grid-5 { grid-template-columns: repeat(5, 1fr); } }
+    @media (min-width: 700px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+    .grid-4 > .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .grid-4 > .card > p:last-child {
+      margin-top: auto !important;
+      padding-top: 1rem;
+    }
 
     .card {
       background: #fff;
@@ -512,6 +523,57 @@
       letter-spacing: 0.08em;
     }
     .card-accent { border-color: rgba(197, 160, 64, 0.35); }
+
+    .shop-card-visual {
+      margin: 0.85rem 0 0;
+      padding: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(10, 17, 40, 0.08);
+      background: linear-gradient(165deg, rgba(248, 249, 250, 0.92) 0%, #fff 52%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+    .shop-card-visual button.shop-card-zoom.photo-rail-trigger {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      background: transparent;
+      cursor: zoom-in;
+      transition: box-shadow 0.2s ease, filter 0.2s ease;
+      font: inherit;
+      text-align: left;
+    }
+    .shop-card-visual button.shop-card-zoom.photo-rail-trigger:hover {
+      box-shadow: inset 0 0 0 1px rgba(197, 160, 64, 0.35);
+    }
+    .shop-card-visual button.shop-card-zoom.photo-rail-trigger:focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 2px;
+    }
+    .shop-card-visual button.shop-card-zoom.photo-rail-trigger img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      vertical-align: middle;
+      filter: saturate(0.96);
+      transition: filter 0.2s ease, transform 0.25s ease;
+    }
+    .shop-card-visual button.shop-card-zoom.photo-rail-trigger:hover img {
+      filter: saturate(1) brightness(1.03);
+      transform: scale(1.02);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shop-card-visual button.shop-card-zoom.photo-rail-trigger:hover img {
+        transform: none;
+      }
+    }
 
     /* Pasos “Cómo funciona” — iconos + tarjeta (carrusel) */
     .how-step-card {
@@ -1060,21 +1122,6 @@
       background: #fff;
     }
 
-    .contact-visual {
-      margin: 0 0 1rem;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-    .contact-visual img {
-      width: 100%;
-      height: auto;
-      max-height: 200px;
-      object-fit: contain;
-      display: block;
-      background: linear-gradient(180deg, #fafafa, #eee);
-    }
-
     footer {
       background: #060a16;
       color: rgba(255,255,255,0.45);
@@ -1175,8 +1222,8 @@
       <a class="brand" href="#top">
         <img src="assets/goldkoin-logo-navbar.svg" alt="GOLDKOIN" width="48" height="48" />
         <div class="brand-text">
-          <span>GOLDKOIN</span>
-          <small><span class="gk-es">Oro fino 999.9</span><span class="gk-en">Fine Gold 999.9</span></small>
+          <span class="brand-name">GOLDKOIN</span>
+          <div class="brand-subtitle"><span class="gk-es">Solidez Patrimonial</span><span class="gk-en">Preserving Wealth</span></div>
         </div>
       </a>
 
@@ -1185,7 +1232,7 @@
         <a href="#shop"><span class="gk-es">Lingotes</span><span class="gk-en">Bars</span></a>
         <a href="#how"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></a>
         <a href="#shipping"><span class="gk-es">Envío</span><span class="gk-en">Shipping</span></a>
-        <a href="#florida">Florida</a>
+        <a href="#florida"><span class="gk-es">NOSOTROS</span><span class="gk-en">About</span></a>
         <a href="#faq">FAQ</a>
         <a href="#contact"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></a>
         <a class="btn btn-gold" href="#shop"><span class="gk-es">Tienda</span><span class="gk-en">Shop</span></a>
@@ -1230,7 +1277,7 @@
       <a href="#shop"><span class="gk-es">Lingotes</span><span class="gk-en">Bars</span></a>
       <a href="#how"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></a>
       <a href="#shipping"><span class="gk-es">Envío</span><span class="gk-en">Shipping</span></a>
-      <a href="#florida">Florida</a>
+      <a href="#florida"><span class="gk-es">NOSOTROS</span><span class="gk-en">About</span></a>
       <a href="#faq">FAQ</a>
       <a href="#policies"><span class="gk-es">Políticas</span><span class="gk-en">Policies</span></a>
       <a href="#contact"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></a>
@@ -1242,13 +1289,13 @@
       <div class="wrap hero-grid">
         <div>
           <p class="tagline"><span class="gk-es">Serie Sovereign · Florida, EE. UU.</span><span class="gk-en">The Sovereign Series · Florida, USA</span></p>
-          <h1 class="font-display"><span class="gk-es">Lingotes de Oro<br /> presentación entre 5g - 100g.<br />.9995 milésimas.<br /> Listos para entrega.</span><span class="gk-en">Fine Gold bars<br />small presentations<br />Starting at 5g–100g.<br />.9995 refined<br />Secured delivery.</span></h1>
+          <h1 class="font-display"><span class="gk-es">Lingotes de oro<br />99.99% de pureza<br />Entrega asegurada</span><span class="gk-en">Gold bullion bars<br />99.99% purity<br />Insured delivery</span></h1>
           <p class="lead">
-            <span class="gk-es"><strong style="color:#fff">GOLDKOIN, LLC</strong> es tu proveedor oficial de la Serie Sovereign: Oro fino acuñado .9995 y presentado en la forma en que los compradores serios comparan gramo a gramo. <br />Entrega asegurada, embalaje discreto y presentación tipo ensayo que puedes revisar el día que llega a tu domicilio.</span>
-            <span class="gk-en"><strong style="color:#fff">GOLDKOIN, LLC</strong> is the official supplier of the Sovereign Series—minted .9995 fine gold, presented the way serious buyers compare gram for gram. Insured delivery, discreet packaging, and assay-style presentation you can inspect the day it arrives at your door.</span>
+            <span class="gk-es"><strong style="color:#fff">GOLDKOIN, LLC</strong> es tu proveedor oficial de la Serie Sovereign: lingotes de oro con 99.99% de pureza, disponibles en presentaciones de 5 g, 10 g, 30 g y 50 g, con empaque sellado, numeración del lingote y elementos de autenticación para verificar al recibir. <br />Entrega asegurada, embalaje exterior discreto y documentación comercial para revisar tu compra el día que llega a tu domicilio.</span>
+            <span class="gk-en"><strong style="color:#fff">GOLDKOIN, LLC</strong> supplies the Sovereign Series: 99.99% pure gold bullion bars available in 5g, 10g, 30g, and 50g presentations, with sealed packaging, bar numbering, and authentication features for delivery inspection. <br />Fully insured delivery, discreet outer packaging, and commercial documentation help you review the order when it arrives.</span>
           </p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver pesos</span><span class="gk-en">View weights</span></a>
+            <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver gramajes</span><span class="gk-en">View weights</span></a>
             <a class="btn btn-outline" href="#gallery"><span class="gk-es">Ver el producto</span><span class="gk-en">See the product</span></a>
           </div>
         </div>
@@ -1262,9 +1309,9 @@
               playsinline
               preload="none"
               poster="assets/hero-video-poster-web1.jpg"
-              data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+              data-aria-es="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en empaque seguro de autenticación"
               data-aria-en="Promotional video: GOLDKOIN Sovereign Series gold bar in secure assay packaging"
-              aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en embalaje de ensayo seguro"
+              aria-label="Vídeo promocional: lingote GOLDKOIN Serie Sovereign en empaque seguro de autenticación"
             >
               <source src="assets/hero-sovereign.mp4" type="video/mp4" />
             </video>
@@ -1295,7 +1342,7 @@
       <h2 class="font-display" id="gallery-heading"><span class="gk-es">Conoce la Serie Sovereign</span><span class="gk-en">See the Sovereign Series</span></h2>
       <p class="section-lead">
         <span class="gk-es">Cada lingote se envía en embalaje protector con los grabados, elementos de seguridad y documentación que ves aquí. Usa las flechas o desliza para ver cada foto.</span>
-        <span class="gk-en">Every bar ships in protective packaging with the markings, security features, and documentation shown here. Tap the arrows or swipe to view each photo.</span>
+        <span class="gk-en">Each bar ships in protective packaging with product markings, security features, and supporting documentation. Use the arrows or swipe to review the product details.</span>
       </p>
 
       <div class="gk-carousel" id="product-carousel" data-gk-carousel role="region" aria-roledescription="carousel" data-carousel-label-es="Fotografía GOLDKOIN Serie Sovereign" data-carousel-label-en="GOLDKOIN Sovereign Series photography" aria-label="Fotografía GOLDKOIN Serie Sovereign">
@@ -1309,45 +1356,45 @@
           <div class="gk-carousel-track">
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
-                <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Lingote GOLDKOIN Sovereign 50 g sellado en tarjeta de ensayo con QR y holograma GOLDAPP, en la mano" data-alt-en="GOLDKOIN 50g Sovereign bar sealed in assay card with QR and GOLDAPP hologram, held in hand" alt="Lingote GOLDKOIN Sovereign 50 g sellado en tarjeta de ensayo con QR y holograma GOLDAPP, en la mano" width="1200" height="1600" decoding="async" fetchpriority="high" />
+                <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Lingote GOLDKOIN Sovereign 50 g sellado en empaque de autenticación con QR y holograma GOLDAPP, en la mano" data-alt-en="GOLDKOIN 50g Sovereign bar sealed in authentication packaging with QR and GOLDAPP hologram, held in hand" alt="Lingote GOLDKOIN Sovereign 50 g sellado en empaque de autenticación con QR y holograma GOLDAPP, en la mano" width="1200" height="1600" decoding="async" fetchpriority="high" />
               </div>
-              <figcaption><strong><span class="gk-es">1 · En tus manos</span><span class="gk-en">1 · In your hands</span></strong> <span class="gk-es">Presentación Sovereign sellada: metacrilato, cierres de seguridad, código QR, holograma y lingote numerado.</span><span class="gk-en">The sealed Sovereign presentation: acrylic case, security fasteners, QR code, hologram, and serialized bar.</span></figcaption>
+              <figcaption><strong><span class="gk-es">1 · En tus manos</span><span class="gk-en">1 · In hand</span></strong> <span class="gk-es">Presentación Sovereign sellada: metacrilato, cierres de seguridad, código QR, holograma y lingote numerado.</span><span class="gk-en">Sealed Sovereign presentation: acrylic protection, security fasteners, QR code, hologram, and serialized gold bar.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
                 <img src="assets/gallery-02-assay-full.jpg" data-alt-es="Tarjeta autenticada GOLDKOIN con lingote en exposición minorista con ciudad de fondo" data-alt-en="GOLDKOIN authenticated card with gold bar at retail display with city backdrop" alt="Tarjeta autenticada GOLDKOIN con lingote en exposición minorista con ciudad de fondo" width="1200" height="1600" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">2 · En vitrina</span><span class="gk-en">2 · On display</span></strong> <span class="gk-es">Formato de tarjeta autenticada que reconocen los clientes de distribuidores premium.</span><span class="gk-en">The authenticated card format customers recognize from premium bullion retailers.</span></figcaption>
+              <figcaption><strong><span class="gk-es">2 · En vitrina</span><span class="gk-en">2 · Retail presentation</span></strong> <span class="gk-es">Formato de tarjeta autenticada que reconocen los clientes de distribuidores premium.</span><span class="gk-en">Authenticated retail-card format similar to what buyers expect from premium U.S. bullion dealers.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
                 <img src="assets/gallery-01-bar-studio.jpg" data-alt-es="Lingote de oro fino GOLDKOIN 50 g en estudio con marcas de acuñación y serie GK" data-alt-en="GOLDKOIN fine gold bar 50g studio shot with mint markings and GK serial" alt="Lingote de oro fino GOLDKOIN 50 g en estudio con marcas de acuñación y serie GK" width="1200" height="1200" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">3 · Detalle del lingote</span><span class="gk-en">3 · Bar detail</span></strong> <span class="gk-es">Oro .9999, peso y serie—compara con tu albarán de embalaje.</span><span class="gk-en">.9999 fine gold, weight, and serial—compare directly to your packing slip.</span></figcaption>
+              <figcaption><strong><span class="gk-es">3 · Detalle del lingote</span><span class="gk-en">3 · Bar detail</span></strong> <span class="gk-es">99.99% de pureza, gramaje y serie—compara con tu albarán de embalaje.</span><span class="gk-en">99.99% purity, weight, and serial number for comparison with your invoice and packing record.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
-                <img src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" alt="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" width="1200" height="1600" loading="lazy" decoding="async" />
+                <img src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de autenticación GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" alt="Estuche de autenticación GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" width="1200" height="1600" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">4 · Presentación navy</span><span class="gk-en">4 · Navy presentation</span></strong> <span class="gk-es">Acabado Sovereign alternativo con las mismas funciones de seguridad.</span><span class="gk-en">Alternate Sovereign finish with the same security features.</span></figcaption>
+              <figcaption><strong><span class="gk-es">4 · Presentación navy</span><span class="gk-en">4 · Navy presentation</span></strong> <span class="gk-es">Acabado Sovereign alternativo con las mismas funciones de seguridad.</span><span class="gk-en">Alternate Sovereign finish with the same tamper-evident and verification features.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
-                <img src="assets/gallery-03b-case-dark.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign variante fondo oscuro" data-alt-en="GOLDKOIN Sovereign assay case dark background variant" alt="Estuche de ensayo GOLDKOIN Sovereign variante fondo oscuro" width="1200" height="1600" loading="lazy" decoding="async" />
+                <img src="assets/gallery-03b-case-dark.jpg" data-alt-es="Estuche de autenticación GOLDKOIN Sovereign variante fondo oscuro" data-alt-en="GOLDKOIN Sovereign assay case dark background variant" alt="Estuche de autenticación GOLDKOIN Sovereign variante fondo oscuro" width="1200" height="1600" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">5 · Tarjeta negra clásica</span><span class="gk-en">5 · Classic black card</span></strong> <span class="gk-es">Segundo look minorista para coleccionistas que buscan variedad.</span><span class="gk-en">A second retail look for collectors who want variety in the stack.</span></figcaption>
+              <figcaption><strong><span class="gk-es">5 · Tarjeta negra clásica</span><span class="gk-en">5 · Classic black card</span></strong> <span class="gk-es">Segundo look minorista para coleccionistas que buscan variedad.</span><span class="gk-en">A second retail presentation for buyers who value consistent product identity and collection-ready packaging.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
                 <img src="assets/gallery-04-brand-desk.jpg" data-alt-es="Escritorio con membrete GOLDKOIN precious metals, lingote, pluma y tarjetas" data-alt-en="GOLDKOIN precious metals letterhead desk with gold bar fountain pen and cards" alt="Escritorio con membrete GOLDKOIN precious metals, lingote, pluma y tarjetas" width="1600" height="1000" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">6 · El estándar GOLDKOIN</span><span class="gk-en">6 · The GOLDKOIN standard</span></strong> <span class="gk-es">Papelería y dirección de arte—respaldamos cada gramo que vendemos.</span><span class="gk-en">Stationery and bar art direction—we stand behind every gram we sell.</span></figcaption>
+              <figcaption><strong><span class="gk-es">6 · El estándar GOLDKOIN</span><span class="gk-en">6 · The GOLDKOIN standard</span></strong> <span class="gk-es">Papelería y dirección de arte—respaldamos cada gramo que vendemos.</span><span class="gk-en">Brand documentation and product presentation designed to support a traceable bullion purchase.</span></figcaption>
             </figure>
             <figure class="gk-carousel-slide">
               <div class="gk-slide-pic">
                 <img src="assets/gallery-04b-brand-desk-alt.jpg" data-alt-es="Papelería corporativa GOLDKOIN y lingote, otro ángulo" data-alt-en="GOLDKOIN corporate stationery and gold bar alternate angle" alt="Papelería corporativa GOLDKOIN y lingote, otro ángulo" width="1200" height="1600" loading="lazy" decoding="async" />
               </div>
-              <figcaption><strong><span class="gk-es">7 · Historia de marca</span><span class="gk-en">7 · Brand story</span></strong> <span class="gk-es">Otra vista de la identidad Serie Sovereign.</span><span class="gk-en">Another view of the Sovereign Series identity.</span></figcaption>
+              <figcaption><strong><span class="gk-es">7 · Historia de marca</span><span class="gk-en">7 · Brand identity</span></strong> <span class="gk-es">Otra vista de la identidad Serie Sovereign.</span><span class="gk-en">Another view of the Sovereign Series identity across packaging and documentation.</span></figcaption>
             </figure>
           </div>
         </div>
@@ -1357,49 +1404,99 @@
     </section>
 
     <div class="wrap strip">
-      <div><strong><span class="gk-es">Distribuidor en Florida</span><span class="gk-en">Florida dealer</span></strong> <span class="gk-es">Venta minorista a nombre de <strong>GOLDKOIN, LLC</strong>, Miami, Florida: facturas reales y responsabilidad clara.</span><span class="gk-en">Retail sales by <strong>GOLDKOIN, LLC</strong>, Miami, Florida—real invoices, real accountability.</span></div>
-      <div><strong><span class="gk-es">Envío asegurado</span><span class="gk-en">Insured shipping</span></strong> <span class="gk-es">Totalmente asegurado en tránsito hasta la entrega. Firma obligatoria en la mayoría de pedidos de alto valor. </span><span class="gk-en">Fully insured in transit until delivery. Signature required on most high-value orders. </span><a href="#shipping"><span class="gk-es">Más información</span><span class="gk-en">Learn more</span></a></div>
-      <div><strong><span class="gk-es">Precio cerrado</span><span class="gk-en">Price locked in</span></strong> <span class="gk-es">Tu total—metal, prima y envío—queda confirmado al hacer el pedido, como en los principales distribuidores de lingotes en EE. UU.</span><span class="gk-en">Your total—including metal, premium, and shipping—is confirmed when you place your order, like leading U.S. bullion dealers.</span></div>
-      <div><strong><span class="gk-es">Atención experta</span><span class="gk-en">Expert support</span></strong> <span class="gk-es">¿Dudas sobre pesos, entrega o autenticidad? Escríbenos en horario comercial—te respondemos.</span><span class="gk-en">Questions about weights, delivery, or authenticity? Reach us during business hours—we answer the phone.</span></div>
+      <div><strong><span class="gk-es">Distribuidor en Florida</span><span class="gk-en">Florida dealer</span></strong> <span class="gk-es">Venta minorista a nombre de <strong>GOLDKOIN, LLC</strong>, Miami, Florida: facturas reales y responsabilidad clara.</span><span class="gk-en">Retail bullion sales by <strong>GOLDKOIN, LLC</strong>, Miami, Florida, with clear invoices and accountable commercial documentation.</span></div>
+      <div><strong><span class="gk-es">Envío asegurado</span><span class="gk-en">Insured delivery</span></strong> <span class="gk-es">Totalmente asegurado en tránsito hasta la entrega. Firma obligatoria en la mayoría de pedidos de alto valor. </span><span class="gk-en">Fully insured while in transit, with tracking and adult signature requirements for higher-value orders. </span><a href="#shipping"><span class="gk-es">Más información</span><span class="gk-en">Learn more</span></a></div>
+      <div><strong><span class="gk-es">Precio Confirmado</span><span class="gk-en">Confirmed price</span></strong> <span class="gk-es">Tu total—valor del oro, margen comercial, empaque y envío—queda confirmado al hacer el pedido, como en los principales distribuidores de lingotes en EE. UU.</span><span class="gk-en">Your total, including metal value, commercial spread, packaging, and delivery, is confirmed before you proceed with payment.</span></div>
+      <div><strong><span class="gk-es">Atención experta</span><span class="gk-en">Dealer support</span></strong> <span class="gk-es">¿Dudas sobre gramajes, entrega o autenticidad? Escríbenos en horario comercial—te respondemos.</span><span class="gk-en">Questions about weights, delivery, authenticity, or buyback review? Contact us during business hours.</span></div>
     </div>
 
     <section class="wrap" id="shop">
-      <p class="section-kicker"><span class="gk-es">Línea de producto</span><span class="gk-en">Product line</span></p>
-      <h2 class="font-display"><span class="gk-es">Compra por peso</span><span class="gk-en">Shop by weight</span></h2>
+      <p class="section-kicker"><span class="gk-es">Línea de producto</span><span class="gk-en">Bullion line</span></p>
+      <h2 class="font-display"><span class="gk-es">Compra por gramaje</span><span class="gk-en">Choose your bar weight</span></h2>
       <p class="section-lead">
-        <span class="gk-es">Cinco pesos acuñados de <strong>5 g a 100 g</strong>, todos en oro <strong>.9999 fino</strong>. Compara primas con sentido gramo a gramo—misma calidad de lingote y embalaje en toda la gama.</span>
-        <span class="gk-en">Five minted weights from <strong>5g to 100g</strong>, all <strong>.9999 fine</strong>. Compare premiums fairly gram for gram—the same bar quality and packaging across the line.</span>
+        <span class="gk-es">Cuatro presentaciones acuñadas: <strong>5 g, 10 g, 30 g y 50 g</strong>, todas con <strong>99.99% de pureza</strong>. Para comparar bien, revisa el precio final por gramo: cada formato incluye el valor del oro, el proceso de acuñación, el empaque de autenticación y la logística de entrega.</span>
+        <span class="gk-en">Four minted presentations: <strong>5g, 10g, 30g, and 50g</strong>, all with <strong>99.99% purity</strong>. Compare the final price per gram: each format includes metal value, minting, authentication packaging, and delivery logistics.</span>
       </p>
-      <div class="grid-5">
+      <div class="grid-4">
         <article class="card card-accent">
           <div class="weight-tag">5g</div>
-          <h3 class="font-display"><span class="gk-es">Tamaño de entrada</span><span class="gk-en">Entry size</span></h3>
-          <p><span class="gk-es">Prima más alta por gramo; ideal para regalo o una primera compra para conocer nuestro servicio.</span><span class="gk-en">Higher premium per gram; ideal for gifts or a first purchase to experience our fulfillment.</span></p>
-          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+          <h3 class="font-display"><span class="gk-es">Discreto</span><span class="gk-en">Discreet</span></h3>
+          <p><span class="gk-es">Por ser un formato pequeño, el costo de acuñación y empaque se reparte entre menos gramos; ideal para regalo o primera compra para conocer nuestro servicio.</span><span class="gk-en">A compact format for gifting, first-time bullion buyers, or customers who want to review our service with a smaller order.</span></p>
+          <figure class="shop-card-visual">
+            <button
+              type="button"
+              class="shop-card-zoom photo-rail-trigger"
+              data-img-src="assets/gallery-03b-case-dark.jpg"
+              data-alt-es="Presentación Sovereign sellada en estuche oscuro — referencia visual de la línea (empaque según gramaje elegido)"
+              data-alt-en="Sealed Sovereign presentation in dark retail case — line reference photo (packaging per selected weight)"
+              data-a11y-es="Ver foto ampliada: presentación Sovereign en estuche oscuro"
+              data-a11y-en="View enlarged photo: Sovereign presentation in dark case"
+              aria-label="Ver foto ampliada: presentación Sovereign en estuche oscuro"
+            >
+              <img src="assets/gallery-03b-case-dark.jpg" width="800" height="600" loading="lazy" decoding="async" alt="" />
+            </button>
+          </figure>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request a quote</span></a></p>
         </article>
         <article class="card card-accent">
           <div class="weight-tag">10g</div>
           <h3 class="font-display"><span class="gk-es">Compacto</span><span class="gk-en">Compact</span></h3>
-          <p><span class="gk-es">Salto popular respecto a los microformatos; sigue siendo fácil de guardar y revender.</span><span class="gk-en">A popular step up—still easy to store and resell when the time comes.</span></p>
-          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+          <p><span class="gk-es">Gramaje compacto para quien quiere más oro que en el formato de 5 g, sin perder facilidad de almacenamiento, transporte y futura liquidación.</span><span class="gk-en">A compact step up from 5g, still simple to store, transport, and present for future liquidation review.</span></p>
+          <figure class="shop-card-visual">
+            <button
+              type="button"
+              class="shop-card-zoom photo-rail-trigger"
+              data-img-src="assets/gallery-02-assay-full.jpg"
+              data-alt-es="Tarjeta autenticada Sovereign en exposición minorista — referencia visual de la línea"
+              data-alt-en="Authenticated Sovereign retail-card presentation — line reference photo"
+              data-a11y-es="Ver foto ampliada: tarjeta Sovereign en vitrina minorista"
+              data-a11y-en="View enlarged photo: Sovereign retail display card"
+              aria-label="Ver foto ampliada: tarjeta Sovereign en vitrina minorista"
+            >
+              <img src="assets/gallery-02-assay-full.jpg" width="800" height="600" loading="lazy" decoding="async" alt="" />
+            </button>
+          </figure>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request a quote</span></a></p>
         </article>
         <article class="card card-accent">
-          <div class="weight-tag">20g</div>
-          <h3 class="font-display"><span class="gk-es">Peso medio</span><span class="gk-en">Mid-weight</span></h3>
-          <p><span class="gk-es">Equilibrio entre prima y gramos por pedido para acumular con regularidad.</span><span class="gk-en">Balances premium and grams per order for steady accumulation.</span></p>
-          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+          <div class="weight-tag">30g</div>
+          <h3 class="font-display"><span class="gk-es">Conveniente</span><span class="gk-en">Practical</span></h3>
+          <p><span class="gk-es">Una opción intermedia para acumular oro físico con regularidad, manteniendo un buen balance entre desembolso total y precio final por gramo.</span><span class="gk-en">A practical middle weight for steady physical-gold accumulation while balancing order size and final price per gram.</span></p>
+          <figure class="shop-card-visual">
+            <button
+              type="button"
+              class="shop-card-zoom photo-rail-trigger"
+              data-img-src="assets/gallery-03-case-navy.jpg"
+              data-alt-es="Estuche de autenticación Sovereign azul marino — referencia visual de la línea"
+              data-alt-en="Navy Sovereign authentication case — line reference photo"
+              data-a11y-es="Ver foto ampliada: estuche Sovereign azul marino"
+              data-a11y-en="View enlarged photo: navy Sovereign authentication case"
+              aria-label="Ver foto ampliada: estuche Sovereign azul marino"
+            >
+              <img src="assets/gallery-03-case-navy.jpg" width="800" height="600" loading="lazy" decoding="async" alt="" />
+            </button>
+          </figure>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request a quote</span></a></p>
         </article>
         <article class="card card-accent">
           <div class="weight-tag">50g</div>
-          <h3 class="font-display"><span class="gk-es">Estrella</span><span class="gk-en">Flagship</span></h3>
-          <p><span class="gk-es">El peso protagonista en nuestra fotografía Sovereign—mucho metal en un solo lingote.</span><span class="gk-en">The weight featured across our Sovereign photography—serious savings in a single bar.</span></p>
-          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
-        </article>
-        <article class="card card-accent">
-          <div class="weight-tag">100g</div>
-          <h3 class="font-display"><span class="gk-es">Reserva principal</span><span class="gk-en">Core holding</span></h3>
-          <p><span class="gk-es">Suele ser la prima más baja por gramo de la serie; prevé almacenamiento seguro.</span><span class="gk-en">Typically the lowest premium per gram in the series; plan secure storage accordingly.</span></p>
-          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request quote</span></a></p>
+          <h3 class="font-display"><span class="gk-es">Óptimo</span><span class="gk-en">Optimal</span></h3>
+          <p><span class="gk-es">El gramaje protagonista en nuestra fotografía Sovereign: una pieza sólida para compradores que buscan mayor concentración de oro en un solo lingote.</span><span class="gk-en">A substantial single-bar format for buyers who prefer a higher concentration of gold in one packaged piece.</span></p>
+          <figure class="shop-card-visual">
+            <button
+              type="button"
+              class="shop-card-zoom photo-rail-trigger"
+              data-img-src="assets/hero-sovereign-50g.jpg"
+              data-alt-es="Lingote GOLDKOIN Sovereign sellado en empaque de autenticación con QR y holograma GOLDAPP — ejemplo de presentación (50 g)"
+              data-alt-en="GOLDKOIN Sovereign bar sealed in authentication packaging with QR and GOLDAPP hologram — presentation example (50g)"
+              data-a11y-es="Ver foto ampliada: lingote Sovereign sellado en mano (50 g)"
+              data-a11y-en="View enlarged photo: sealed Sovereign bar in hand (50g)"
+              aria-label="Ver foto ampliada: lingote Sovereign sellado en mano (50 g)"
+            >
+              <img src="assets/hero-sovereign-50g.jpg" width="800" height="600" loading="lazy" decoding="async" alt="" />
+            </button>
+          </figure>
+          <p style="margin-top:0.75rem"><a class="btn btn-dark" href="#contact" style="font-size:0.6rem;padding:0.5rem 0.85rem;"><span class="gk-es">Solicitar cotización</span><span class="gk-en">Request a quote</span></a></p>
         </article>
       </div>
 
@@ -1407,7 +1504,7 @@
       <p style="color:var(--muted);font-size:0.88rem;margin:0 0 0.25rem;max-width:40rem;"><span class="gk-es">Haz clic en una miniatura para ver esa foto ampliada en una ventana emergente (embalaje, grabados del lingote y acabados minoristas).</span><span class="gk-en">Click any thumbnail to open that photo in a popup—packaging, bar markings, and retail finishes.</span></p>
       <ul class="photo-rail">
         <li>
-          <button type="button" class="photo-rail-trigger" data-img-src="assets/ship-03-in-hand.jpg" data-alt-es="Lingote Sovereign sellado en presentación de ensayo en la mano" data-alt-en="Sealed Sovereign gold bar in assay presentation held in hand" data-a11y-es="Ver foto ampliada: lingote sellado en la mano" data-a11y-en="View enlarged photo: sealed bar in hand" aria-label="Ver foto ampliada: lingote sellado en la mano">
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/ship-03-in-hand.jpg" data-alt-es="Lingote Sovereign sellado en empaque de autenticación en la mano" data-alt-en="Sealed Sovereign gold bar in authentication packaging held in hand" data-a11y-es="Ver foto ampliada: lingote sellado en la mano" data-a11y-en="View enlarged photo: sealed bar in hand" aria-label="Ver foto ampliada: lingote sellado en la mano">
             <img src="assets/ship-03-in-hand.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
           </button>
         </li>
@@ -1422,7 +1519,7 @@
           </button>
         </li>
         <li>
-          <button type="button" class="photo-rail-trigger" data-img-src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de ensayo GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" data-a11y-es="Ver foto ampliada: estuche Sovereign azul marino" data-a11y-en="View enlarged photo: navy Sovereign case" aria-label="Ver foto ampliada: estuche Sovereign azul marino">
+          <button type="button" class="photo-rail-trigger" data-img-src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche de autenticación GOLDKOIN Sovereign azul marino con gráficos dorados, QR y holograma" data-alt-en="GOLDKOIN Sovereign assay case navy blue with gold graphics QR and hologram" data-a11y-es="Ver foto ampliada: estuche Sovereign azul marino" data-a11y-en="View enlarged photo: navy Sovereign case" aria-label="Ver foto ampliada: estuche Sovereign azul marino">
             <img src="assets/gallery-03-case-navy.jpg" alt="" width="300" height="210" loading="lazy" decoding="async" />
           </button>
         </li>
@@ -1433,7 +1530,7 @@
       <div class="wrap">
         <p class="section-kicker"><span class="gk-es">Proceso</span><span class="gk-en">Process</span></p>
         <h2 class="font-display"><span class="gk-es">Cómo funciona</span><span class="gk-en">How it works</span></h2>
-        <p class="section-lead"><span class="gk-es">Pasos claros desde la cotización hasta la entrega asegurada—lo que esperas de un distribuidor de metales preciosos en EE. UU.</span><span class="gk-en">Straightforward steps from quote to insured delivery—what you expect from a U.S. precious-metals dealer.</span></p>
+        <p class="section-lead"><span class="gk-es">Pasos claros desde la cotización hasta la entrega asegurada—lo que esperas de un distribuidor de metales preciosos en EE. UU.</span><span class="gk-en">A clear process from written quote to insured delivery, aligned with how U.S. precious-metals buyers expect bullion transactions to be handled.</span></p>
         <div class="how-layout">
           <div class="gk-carousel gk-carousel--how" id="how-carousel" data-gk-carousel data-gk-carousel-loop data-gk-autoplay-ms="8000" data-gk-autoplay-inview data-gk-autoplay-dwell-ms="1000" role="region" aria-roledescription="carousel" data-carousel-label-es="Pasos del proceso de compra GOLDKOIN" data-carousel-label-en="GOLDKOIN purchase steps" aria-label="Pasos del proceso de compra GOLDKOIN">
             <div class="gk-carousel-viewport" id="carousel-vp-how" tabindex="0" data-aria-viewport-es="Pasos: usa flechas o desliza en móvil" data-aria-viewport-en="Steps: use arrows or swipe on mobile" aria-label="Pasos: usa flechas o desliza en móvil">
@@ -1443,8 +1540,8 @@
                     <span class="step-icon" aria-hidden="true">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="4" height="6" rx="1"/><rect x="10" y="10" width="4" height="10" rx="1"/><rect x="16" y="6" width="4" height="14" rx="1"/></svg>
                     </span>
-                    <strong><span class="gk-es">Elige el peso</span><span class="gk-en">Choose weight</span></strong>
-                    <p><span class="gk-es">Selecciona de 5 g a 100 g. Confirmamos metal, prima y envío en un solo total antes del pago.</span><span class="gk-en">Select 5g–100g. We confirm metal, premium, and shipping in one total before you pay.</span></p>
+                    <strong><span class="gk-es">Elige el gramaje</span><span class="gk-en">Choose the weight</span></strong>
+                    <p><span class="gk-es">Selecciona entre 5 g, 10 g, 30 g y 50 g. Confirmamos valor del oro, margen comercial, empaque y envío en un solo total antes del pago.</span><span class="gk-en">Select 5g, 10g, 30g, or 50g. We confirm metal value, commercial spread, packaging, and insured delivery in one written total before payment.</span></p>
                   </div>
                 </figure>
                 <figure class="gk-carousel-slide how-step-slide">
@@ -1452,8 +1549,8 @@
                     <span class="step-icon" aria-hidden="true">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V8a5 5 0 0110 0v3"/></svg>
                     </span>
-                    <strong><span class="gk-es">Cierra tu precio</span><span class="gk-en">Lock your price</span></strong>
-                    <p><span class="gk-es">El total del pedido queda fijado al pagar—sin ajustes sorpresa después.</span><span class="gk-en">Your order total is fixed at checkout—no surprise adjustments after you commit.</span></p>
+                    <strong><span class="gk-es">Cierra tu precio</span><span class="gk-en">Confirm your price</span></strong>
+                    <p><span class="gk-es">El total del pedido queda fijado al pagar—sin ajustes sorpresa después.</span><span class="gk-en">Your order total is confirmed before payment, with no surprise adjustments after you commit.</span></p>
                   </div>
                 </figure>
                 <figure class="gk-carousel-slide how-step-slide">
@@ -1462,7 +1559,7 @@
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="M6 15h4M14 15h2"/></svg>
                     </span>
                     <strong><span class="gk-es">Paga con seguridad</span><span class="gk-en">Pay securely</span></strong>
-                    <p><span class="gk-es">Transferencia bancaria, ACH o tarjeta cuando esté disponible. Los pedidos de alto valor pueden requerir comprobaciones estándar de fraude o identidad—habitual en lingotes.</span><span class="gk-en">Bank wire, ACH, or card where available. High-value orders may require standard fraud or identity checks—common in bullion.</span></p>
+                    <p><span class="gk-es">Transferencia bancaria, ACH o tarjeta cuando esté disponible. Los pedidos de alto valor pueden requerir comprobaciones estándar de fraude o identidad—habitual en lingotes.</span><span class="gk-en">Bank wire, ACH, or card when available. Higher-value bullion orders may require standard fraud-prevention or identity checks before fulfillment.</span></p>
                   </div>
                 </figure>
                 <figure class="gk-carousel-slide how-step-slide">
@@ -1470,8 +1567,8 @@
                     <span class="step-icon" aria-hidden="true">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v11H1z"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
                     </span>
-                    <strong><span class="gk-es">Enviamos asegurado</span><span class="gk-en">We ship insured</span></strong>
-                    <p><span class="gk-es">Caja exterior discreta, seguro de tránsito completo, seguimiento y avisos por correo al despachar.</span><span class="gk-en">Discreet outer carton, full transit insurance, tracking, and email updates at dispatch.</span></p>
+                    <strong><span class="gk-es">Enviamos asegurado</span><span class="gk-en">Insured dispatch</span></strong>
+                    <p><span class="gk-es">Caja exterior discreta, seguro de tránsito completo, seguimiento y avisos por correo al despachar.</span><span class="gk-en">Discreet outer carton, insured transit, tracking, and email updates once the order is prepared for shipment.</span></p>
                   </div>
                 </figure>
                 <figure class="gk-carousel-slide how-step-slide">
@@ -1479,8 +1576,8 @@
                     <span class="step-icon" aria-hidden="true">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/></svg>
                     </span>
-                    <strong><span class="gk-es">Firma y revisión</span><span class="gk-en">Sign &amp; inspect</span></strong>
-                    <p><span class="gk-es">Firma de adulto cuando corresponda. Revisa el envío al recibirlo y contáctanos de inmediato si algo no cuadra.</span><span class="gk-en">Adult signature where required. Examine the shipment on arrival and contact us immediately if anything looks wrong.</span></p>
+                    <strong><span class="gk-es">Firma y revisión</span><span class="gk-en">Sign and inspect</span></strong>
+                    <p><span class="gk-es">Firma de adulto cuando corresponda. Revisa el envío al recibirlo y contáctanos de inmediato si algo no cuadra.</span><span class="gk-en">Adult signature may be required. Inspect the package at delivery and contact us promptly if packaging, serial details, or documentation do not match.</span></p>
                   </div>
                 </figure>
               </div>
@@ -1497,39 +1594,39 @@
     </section>
 
     <section class="wrap" id="trust">
-      <p class="section-kicker"><span class="gk-es">Confianza</span><span class="gk-en">Trust</span></p>
-      <h2 class="font-display"><span class="gk-es">Lo que más preguntan los compradores</span><span class="gk-en">What buyers ask first</span></h2>
+      <p class="section-kicker"><span class="gk-es">Confianza</span><span class="gk-en">Confidence</span></p>
+      <h2 class="font-display"><span class="gk-es">Lo que más preguntan los compradores</span><span class="gk-en">What bullion buyers ask first</span></h2>
       <div class="grid-3" style="margin-top:1rem;">
         <div class="card card-accent">
           <div class="trust-card-img" aria-hidden="true">
             <img src="assets/hero-sovereign-50g.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async" />
           </div>
           <h3 class="font-display"><span class="gk-es">Autenticidad</span><span class="gk-en">Authenticity</span></h3>
-          <p><span class="gk-es">Los Sovereign se envían en embalaje anti-manipulación con holograma y código QR. Las fichas de producto indican qué confirma cada elemento para que puedas verificar al recibir.</span><span class="gk-en">Sovereign bars ship in tamper-evident packaging with holographic and QR security features. Listing pages describe exactly what each mark confirms so you can verify on delivery.</span></p>
+          <p><span class="gk-es">Los Sovereign se envían en embalaje anti-manipulación con holograma y código QR para que puedas revisar señales visibles de autenticidad al recibir. Recomendamos inspeccionar el paquete antes de abrirlo, conservar la factura y tomar fotografías si observas señales de manipulación. La numeración del lingote, el gramaje y la información del empaque ayudan a confirmar que la pieza entregada corresponde a la compra registrada.</span><span class="gk-en">Sovereign bars ship in tamper-evident packaging with holographic and QR security features so buyers can review visible authenticity signals at delivery. We recommend inspecting the package before opening it, keeping the invoice, and taking photos if tampering is suspected. Bar numbering, weight, and package details help confirm that the delivered item matches the recorded order.</span></p>
         </div>
         <div class="card card-accent">
           <div class="trust-card-img" aria-hidden="true">
             <img src="assets/logo.jpg" alt="" width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <h3 class="font-display"><span class="gk-es">Con quién compras</span><span class="gk-en">Who you are buying from</span></h3>
-          <p><span class="gk-es">Tu compra es con <strong>GOLDKOIN, LLC</strong>, sociedad de responsabilidad limitada de Florida. El nombre GOLDKOIN en el lingote coincide con la entidad de tu factura.</span><span class="gk-en">Your sale is with <strong>GOLDKOIN, LLC</strong>, a Florida limited liability company. The GOLDKOIN name on the bar matches the entity on your invoice.</span></p>
+          <p><span class="gk-es">Tu compra es con <strong>GOLDKOIN, LLC</strong>, sociedad de responsabilidad limitada de Florida. El nombre GOLDKOIN en el lingote coincide con la entidad de tu factura. Esto permite mantener trazabilidad comercial entre pedido, pago, documentación y producto entregado. Para operaciones de mayor valor pueden aplicarse validaciones habituales de identidad, prevención de fraude y cumplimiento, tal como ocurre con distribuidores formales de metales preciosos.</span><span class="gk-en">Your sale is with <strong>GOLDKOIN, LLC</strong>, a Florida limited liability company. The GOLDKOIN name on the bar matches the entity on your invoice, helping maintain commercial traceability across order, payment, documentation, and delivered product. Higher-value orders may require standard identity, fraud-prevention, and compliance checks, as expected from formal precious-metals dealers.</span></p>
         </div>
         <div class="card card-accent">
           <div class="trust-card-img" aria-hidden="true">
             <img src="assets/gallery-01-bar-studio.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async" />
           </div>
           <h3 class="font-display"><span class="gk-es">Recompra</span><span class="gk-en">Buyback</span></h3>
-          <p><span class="gk-es">Si hay programa de recompra, publicaremos condiciones y diferenciales aquí. Mientras tanto, escríbenos para opciones de liquidación—preferimos una respuesta clara a una promesa vaga.</span><span class="gk-en">Repurchase programs, spreads, and holding periods will be posted here when available. Until then, contact us for liquidation options—we prefer an honest answer over a vague promise.</span></p>
+          <p><span class="gk-es">Podemos evaluar recompras caso por caso sobre lingotes GOLDKOIN con empaque intacto, factura o comprobante de compra, serie verificable y validación de autenticidad. El precio de recompra se calcula con base en la cotización vigente del oro, menos el diferencial comercial aplicable, costos de verificación, manejo y forma de liquidación. No garantizamos recompra automática: cada operación queda sujeta a disponibilidad de mercado, cumplimiento KYC/AML y revisión física del producto.</span><span class="gk-en">We can evaluate buybacks case by case for GOLDKOIN bars with intact packaging, invoice or proof of purchase, verifiable serial, and authenticity validation. Buyback pricing is based on the current gold quote, less the applicable commercial spread, verification costs, handling, and settlement method. Automatic buyback is not guaranteed; each transaction is subject to market availability, KYC/AML compliance, and physical product review.</span></p>
         </div>
       </div>
     </section>
 
     <section class="wrap" id="shipping">
       <p class="section-kicker"><span class="gk-es">Logística</span><span class="gk-en">Logistics</span></p>
-      <h2 class="font-display"><span class="gk-es">Envío y seguro</span><span class="gk-en">Shipping &amp; insurance</span></h2>
+      <h2 class="font-display"><span class="gk-es">Envío y seguro</span><span class="gk-en">Insured shipping</span></h2>
       <p class="section-lead" style="margin-bottom:0;">
         <span class="gk-es">Cada pedido viaja totalmente asegurado desde nuestras instalaciones hasta tu dirección. El embalaje exterior es neutro—sin marcas de lingotes en la caja. Mira la <a href="#gallery">galería de producto</a> para ver cómo van empacados por dentro.</span>
-        <span class="gk-en">Every order ships fully insured from our vault to your door. Outer packaging is plain—no bullion branding on the box. See the <a href="#gallery">product gallery</a> for how bars are packed inside.</span>
+        <span class="gk-en">Every order is prepared for insured transit to the confirmed delivery address. Outer packaging is discreet, with no gold or bullion wording on the box. See the <a href="#gallery">product gallery</a> for interior packaging details.</span>
       </p>
       <div class="split-panel wide-img" style="margin-top:1.25rem;">
         <div>
@@ -1545,19 +1642,19 @@
                   <div class="gk-slide-pic">
                     <img src="assets/ship-03-in-hand.jpg" data-alt-es="Presentación Sovereign sellada lista para embalaje exterior discreto y envío asegurado" data-alt-en="Sealed Sovereign presentation ready for discreet outer packing and insured dispatch" alt="Presentación Sovereign sellada lista para embalaje exterior discreto y envío asegurado" width="1200" height="1600" loading="lazy" decoding="async" />
                   </div>
-                  <figcaption><strong><span class="gk-es">1 · Preparación para envío</span><span class="gk-en">1 · Packed for transit</span></strong> <span class="gk-es">La pieza viaja en su presentación de ensayo antes de introducirse en la caja exterior neutra—sin texto sobre oro en el exterior.</span><span class="gk-en">Product stays in assay presentation before it goes into a plain outer carton—no bullion wording on the outside.</span></figcaption>
+                  <figcaption><strong><span class="gk-es">1 · Preparación para envío</span><span class="gk-en">1 · Packed for transit</span></strong> <span class="gk-es">La pieza viaja en su empaque de autenticación antes de introducirse en la caja exterior neutra—sin texto sobre oro en el exterior.</span><span class="gk-en">The bar remains in its authentication packaging before being placed in a plain outer carton with no bullion wording outside.</span></figcaption>
                 </figure>
                 <figure class="gk-carousel-slide">
                   <div class="gk-slide-pic">
                     <img src="assets/gallery-03-case-navy.jpg" data-alt-es="Estuche minorista Sovereign con seguridad holográfica—protección interior en el paquete" data-alt-en="Sovereign retail case with holographic security—inner protection inside the parcel" alt="Estuche minorista Sovereign con seguridad holográfica—protección interior en el paquete" width="1200" height="1600" loading="lazy" decoding="async" />
                   </div>
-                  <figcaption><strong><span class="gk-es">2 · Protección interior</span><span class="gk-en">2 · Inner protection</span></strong> <span class="gk-es">Estuche acolchado y elementos anti-manipulación como describimos en logística—el seguro cubre el trayecto hasta la entrega.</span><span class="gk-en">Padded case and tamper-evident features as noted in logistics—coverage applies in transit through delivery.</span></figcaption>
+                  <figcaption><strong><span class="gk-es">2 · Protección interior</span><span class="gk-en">2 · Inner protection</span></strong> <span class="gk-es">Estuche acolchado y elementos anti-manipulación como describimos en logística—el seguro cubre el trayecto hasta la entrega.</span><span class="gk-en">Padded interior protection and tamper-evident features support insured transit through delivery.</span></figcaption>
                 </figure>
                 <figure class="gk-carousel-slide">
                   <div class="gk-slide-pic">
                     <img src="assets/ship-02-bar-reference.jpg" data-alt-es="Referencia de grabados y serie del lingote para cotejar con factura al recibir" data-alt-en="Bar markings and serial reference to match your invoice at receipt" alt="Referencia de grabados y serie del lingote para cotejar con factura al recibir" width="1200" height="1200" loading="lazy" decoding="async" />
                   </div>
-                  <figcaption><strong><span class="gk-es">3 · Entrega y verificación</span><span class="gk-en">3 · Delivery &amp; verification</span></strong> <span class="gk-es">Coteja serie y marcas con tu factura al abrir el paquete interior; firma de adulto cuando el transportista lo exija.</span><span class="gk-en">Match serial and stamps to your invoice when you open the inner package; adult signature when the carrier requires it.</span></figcaption>
+                  <figcaption><strong><span class="gk-es">3 · Entrega y verificación</span><span class="gk-en">3 · Delivery and verification</span></strong> <span class="gk-es">Coteja serie y marcas con tu factura al abrir el paquete interior; firma de adulto cuando el transportista lo exija.</span><span class="gk-en">Match serial number, markings, and weight against your invoice after opening the inner package; adult signature may be required.</span></figcaption>
                 </figure>
               </div>
             </div>
@@ -1565,20 +1662,20 @@
         </div>
         <div class="grid-2" style="margin-top:0;">
           <div class="card">
-            <h3 class="font-display"><span class="gk-es">Transportistas y firma</span><span class="gk-en">Carriers &amp; signature</span></h3>
-            <p><span class="gk-es">Grandes transportistas con seguimiento completo. Los envíos de alto valor suelen exigir firma de un adulto. Los apartados postales pueden tener restricciones—lo confirmamos en el checkout.</span><span class="gk-en">Major carriers with full tracking. High-value shipments typically require an adult signature. PO boxes may be limited by carrier rules—we confirm at checkout.</span></p>
+            <h3 class="font-display"><span class="gk-es">Transportistas y firma</span><span class="gk-en">Carriers and signature</span></h3>
+            <p><span class="gk-es">Grandes compañías especializadas en el manejo de valores son nuestro complemento para una entrega con seguimiento confiable. Los envíos de alto valor suelen exigir firma de un adulto. Si tu dirección tiene restricciones de entrega, te lo informamos antes de confirmar el pedido.</span><span class="gk-en">Specialized value-logistics companies support reliable tracked delivery. High-value shipments typically require an adult signature. If your address has delivery restrictions, we disclose them before confirming the order.</span></p>
           </div>
           <div class="card">
             <h3 class="font-display"><span class="gk-es">Seguro</span><span class="gk-en">Insurance</span></h3>
-            <p><span class="gk-es">La cobertura aplica en tránsito hasta la entrega según transportista y aseguradora. Revisa el paquete al recibirlo; los daños visibles deben reportarse de inmediato.</span><span class="gk-en">Coverage applies in transit up to delivery per carrier and underwriter terms. Review completed delivery promptly; claims for visible damage must be reported right away.</span></p>
+            <p><span class="gk-es">La cobertura aplica en tránsito hasta la entrega según transportista y aseguradora. Revisa el paquete al recibirlo; los daños visibles deben reportarse de inmediato.</span><span class="gk-en">Coverage applies during transit according to carrier and insurer terms. Inspect the package at delivery; visible damage or irregularities should be reported immediately.</span></p>
           </div>
           <div class="card">
             <h3 class="font-display"><span class="gk-es">Entrega discreta</span><span class="gk-en">Discreet delivery</span></h3>
-            <p><span class="gk-es">Sin texto sobre oro en el exterior. Por dentro, la presentación Sovereign va acolchada para proteger tarjeta de ensayo y lingote.</span><span class="gk-en">No gold wording on the outside of the box. Inside, the Sovereign presentation is padded to protect the assay card and bar.</span></p>
+            <p><span class="gk-es">Sin texto sobre oro en el exterior. Por dentro, la presentación Sovereign va acolchada para proteger el empaque de autenticación y el lingote.</span><span class="gk-en">No gold or bullion wording appears on the outside of the box. Inside, the Sovereign presentation is padded to protect the authentication packaging and bar.</span></p>
           </div>
           <div class="card">
             <h3 class="font-display"><span class="gk-es">Plazos de envío</span><span class="gk-en">Fulfillment timing</span></h3>
-            <p><span class="gk-es">La mayoría de pedidos salen en los días hábiles indicados tras el pago efectivo. Verificación del pago o volatilidad del mercado pueden añadir un breve retraso—te avisamos si ocurre.</span><span class="gk-en">Most orders ship within stated business days after cleared payment. Payment verification or market volatility can occasionally add a short delay—we communicate if that happens.</span></p>
+            <p><span class="gk-es">La mayoría de pedidos salen en los días hábiles indicados tras el pago efectivo. Verificación del pago o volatilidad del mercado pueden añadir un breve retraso—te avisamos si ocurre.</span><span class="gk-en">Most orders ship within the stated business-day window after cleared payment. Payment verification, compliance checks, or market volatility may affect timing; we communicate if that occurs.</span></p>
           </div>
         </div>
       </div>
@@ -1588,63 +1685,63 @@
       <p class="section-kicker"><span class="gk-es">Cumplimiento</span><span class="gk-en">Compliance</span></p>
       <h2 class="font-display">GOLDKOIN, LLC · Florida</h2>
       <p class="section-lead">
-        <span class="gk-es"><strong>GOLDKOIN, LLC</strong> es una sociedad de responsabilidad limitada constituida en Florida ante la División de Corporaciones (Sunbiz), con agente registrado en dirección física dentro del estado. Según el tipo y volumen de operaciones, pueden aplicar normas federales AML, reportes de titularidad efectiva y licencias de compraventa en Florida—operamos alineados con el asesoramiento profesional de nuestro modelo de negocio.</span>
-        <span class="gk-en"><strong>GOLDKOIN, LLC</strong> is a Florida limited liability company on file with the Division of Corporations (Sunbiz), with a registered agent at a physical in-state address. Depending on transaction types and volumes, federal AML rules, beneficial ownership reporting, and Florida secondhand-dealer licensing may apply—we operate consistent with professional guidance for our business model.</span>
+        <span class="gk-es"><strong>GOLDKOIN, LLC</strong> es una sociedad de responsabilidad limitada constituida en Florida ante la División de Corporaciones (Sunbiz), con agente registrado en dirección física dentro del estado. Para el comprador, esto significa una contraparte comercial identificable, documentación emitida por la empresa y procesos de revisión acordes con una operación formal de metales preciosos.</span>
+        <span class="gk-en"><strong>GOLDKOIN, LLC</strong> is a Florida limited liability company on file with the Division of Corporations (Sunbiz), with a registered agent at a physical in-state address. For buyers, this means an identifiable commercial counterparty, company-issued documentation, and review processes consistent with a formal precious-metals business.</span>
       </p>
       <div class="grid-3">
         <div class="card">
           <h3 class="font-display"><span class="gk-es">Antilavado / FinCEN</span><span class="gk-en">AML / FinCEN</span></h3>
-          <p><span class="gk-es">Por encima de ciertos umbrales pueden exigirse políticas escritas, función de cumplimiento, formación y revisión independiente. La diligencia debida puede aplicarse a pedidos de mayor riesgo.</span><span class="gk-en">Written policies, compliance leadership, training, and independent review may be required when volume thresholds are met. Customer due diligence can apply to higher-risk orders.</span></p>
+          <p><span class="gk-es">En pedidos de mayor valor podemos solicitar información adicional para validar identidad, prevenir fraude y cumplir controles financieros aplicables. Si se requiere algún documento, te explicamos el motivo y el alcance antes de continuar.</span><span class="gk-en">For higher-value orders, we may request additional information to validate identity, prevent fraud, and satisfy applicable financial controls. If any document is required, we explain the reason and scope before moving forward.</span></p>
         </div>
         <div class="card">
           <h3 class="font-display"><span class="gk-es">Impuesto sobre ventas</span><span class="gk-en">Sales tax</span></h3>
-          <p><span class="gk-es">Florida puede eximir lingotes de inversión que cumplan requisitos; carritos mixtos y otros estados varían. El impuesto se muestra en el checkout—esta página no sustituye asesoría fiscal.</span><span class="gk-en">Florida may exempt qualifying investment bullion bars; mixed carts and other states differ. Display tax in checkout—do not rely on this marketing page for tax advice.</span></p>
+          <p><span class="gk-es">El tratamiento de impuestos puede variar según el producto, el destino y las normas aplicables. Si corresponde impuesto sobre ventas o alguna exención, se informa antes de confirmar el pedido para que conozcas el total completo.</span><span class="gk-en">Tax treatment can vary by product, destination, and applicable rules. If sales tax or an exemption applies, it is disclosed before order confirmation so you know the full total.</span></p>
         </div>
         <div class="card">
-          <h3 class="font-display"><span class="gk-es">Representación</span><span class="gk-en">Representation</span></h3>
-          <p><span class="gk-es">Importación y representación de marca desde Colombia se rigen por contratos privados. La relación de venta al consumidor en EE. UU. es con GOLDKOIN, LLC.</span><span class="gk-en">Import and brand representation from Colombia are governed by private contracts. The consumer relationship for U.S. retail sales is with GOLDKOIN, LLC.</span></p>
+          <h3 class="font-display"><span class="gk-es">Representación</span><span class="gk-en">Seller of record</span></h3>
+          <p><span class="gk-es">La relación de venta al consumidor en Estados Unidos es con <strong>GOLDKOIN, LLC</strong>. Tu factura, comunicación comercial y soporte posterior a la compra se gestionan bajo esa entidad.</span><span class="gk-en">The U.S. consumer sales relationship is with <strong>GOLDKOIN, LLC</strong>. Your invoice, commercial communication, and post-purchase support are handled under that entity.</span></p>
         </div>
       </div>
     </section>
 
     <section class="wrap" id="verify">
-      <p class="section-kicker"><span class="gk-es">Digital</span><span class="gk-en">Digital</span></p>
-      <h2 class="font-display"><span class="gk-es">Verificación y GOLDAPP</span><span class="gk-en">Verification &amp; GOLDAPP</span></h2>
+      <p class="section-kicker"><span class="gk-es">Digital</span><span class="gk-en">Digital layer</span></p>
+      <h2 class="font-display"><span class="gk-es">Verificación y GOLDAPP</span><span class="gk-en">Verification and GOLDAPP</span></h2>
       <div class="split-panel" style="margin-top:1rem;">
         <figure class="panel-photo">
-          <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Código QR y holograma GOLDAPP en embalaje de ensayo Sovereign para verificación del producto" data-alt-en="QR code and GOLDAPP hologram on Sovereign assay packaging for product verification" alt="Código QR y holograma GOLDAPP en embalaje de ensayo Sovereign para verificación del producto" width="800" height="1000" loading="lazy" decoding="async" />
-          <figcaption><span class="gk-es">Escanea el QR y revisa el sello holográfico—los mismos elementos que en la <a href="#gallery">galería completa</a>.</span><span class="gk-en">Scan the QR and inspect the holographic seal—the same features shown in the <a href="#gallery">full gallery</a>.</span></figcaption>
+          <img src="assets/hero-sovereign-50g.jpg" data-alt-es="Código QR y holograma GOLDAPP en empaque de autenticación Sovereign para verificación del producto" data-alt-en="QR code and GOLDAPP hologram on Sovereign assay packaging for product verification" alt="Código QR y holograma GOLDAPP en empaque de autenticación Sovereign para verificación del producto" width="800" height="1000" loading="lazy" decoding="async" />
+          <figcaption><span class="gk-es">GOLDAPP está pensada para dar al cliente una referencia digital del lingote: consulta de datos del producto, apoyo en verificación, trazabilidad de la pieza y comunicación más rápida con soporte.</span><span class="gk-en">GOLDAPP is designed to give customers a digital reference for the bar: product data lookup, verification support, item traceability, and faster communication with support.</span></figcaption>
         </figure>
         <div>
           <p class="section-lead" style="margin-bottom:0.75rem;">
-            <span class="gk-es">Los elementos de seguridad GOLDAPP van integrados en el embalaje Sovereign para que puedas confirmar los datos del producto al recibirlo. Las fichas indicarán qué devuelve exactamente la lectura (por ejemplo consulta de certificado o registro en la app).</span>
-            <span class="gk-en">GOLDAPP security elements are integrated into Sovereign packaging so you can confirm product data at receipt. Listing pages will state exactly what the scan returns (for example certificate lookup or registration in the app).</span>
+            <span class="gk-es">GOLDAPP complementa el empaque Sovereign: al escanear el QR, el cliente puede consultar información asociada al producto, conservar una referencia digital para sus registros y facilitar futuras solicitudes de soporte, validación o recompra. Esta capa digital ayuda a conectar el lingote físico, su serie, su documentación comercial y la atención posterior a la compra.</span>
+            <span class="gk-en">GOLDAPP complements Sovereign packaging: by scanning the QR, customers can access product-related information, keep a digital reference for their records, and streamline future support, validation, or buyback requests. This digital layer helps connect the physical bar, its serial, commercial documentation, and post-purchase service.</span>
           </p>
-          <p style="font-size:0.85rem;color:var(--muted);margin:0;"><span class="gk-es">¿Dudas sobre un lingote concreto? Escríbenos a <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> con la serie y fotos del paquete intacto.</span><span class="gk-en">Questions about a specific bar? Email <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> with your serial and photos of the intact package.</span></p>
+          <p style="font-size:0.85rem;color:var(--muted);margin:0;"><span class="gk-es">¿Dudas sobre un lingote concreto? Escríbenos a <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> con la serie y fotos del paquete intacto.</span><span class="gk-en">Questions about a specific bar? Email <a href="mailto:sales@goldkoin.co">sales@goldkoin.co</a> with the serial number and photos of the intact package.</span></p>
         </div>
       </div>
     </section>
 
     <section class="wrap" id="faq">
       <p class="section-kicker">FAQ</p>
-      <h2 class="font-display"><span class="gk-es">Preguntas frecuentes</span><span class="gk-en">Common questions</span></h2>
+      <h2 class="font-display"><span class="gk-es">Preguntas frecuentes</span><span class="gk-en">Frequently asked questions</span></h2>
       <div class="faq-layout" style="margin-top:1rem;">
         <figure class="faq-aside">
           <img src="assets/gallery-03b-case-dark.jpg" data-alt-es="Estuche minorista Serie Sovereign con QR y seguridad holográfica" data-alt-en="Sovereign Series retail assay case with QR and holographic security" alt="Estuche minorista Serie Sovereign con QR y seguridad holográfica" width="600" height="800" loading="lazy" decoding="async" />
-          <figcaption><span class="gk-es">Acabados Sovereign en punto de venta—mismo lingote, distintas presentaciones para coleccionar.</span><span class="gk-en">Sovereign retail finishes—same bar, presentation options you can collect.</span></figcaption>
+          <figcaption><span class="gk-es">Acabados Sovereign en punto de venta—mismo lingote, distintas presentaciones para coleccionar.</span><span class="gk-en">Sovereign retail finishes: the same bar standard with presentation options for collection-ready packaging.</span></figcaption>
         </figure>
         <div>
           <details class="faq">
             <summary><span class="gk-es">¿Qué pureza tienen los lingotes Sovereign?</span><span class="gk-en">What purity are Sovereign Series bars?</span></summary>
-            <p><span class="gk-es">Cada lingote es de <strong>oro fino .9999</strong> (cuatro nueves). Peso, pureza y serie están grabados en el metal y repetidos en la tarjeta de ensayo.</span><span class="gk-en">Each bar is struck from <strong>.9999 fine gold</strong> (four nines). Weight, purity, and serial are stamped on the bar and repeated on the assay card.</span></p>
+            <p><span class="gk-es">Cada lingote tiene <strong>99.99% de pureza</strong>. Gramaje, pureza y serie están grabados en el metal y repetidos en el empaque de autenticación.</span><span class="gk-en">Each bar has <strong>99.99% purity</strong>. Weight, purity, and serial number are marked on the bar and repeated on the authentication packaging.</span></p>
           </details>
           <details class="faq">
             <summary><span class="gk-es">¿Por qué un lingote más pequeño cuesta más por gramo?</span><span class="gk-en">Why does a smaller bar cost more per gram?</span></summary>
-            <p><span class="gk-es">Acuñación, embalaje de ensayo y autenticación se reparten entre menos gramos. Cotizamos precio por gramo con transparencia para comparar tamaños con criterio.</span><span class="gk-en">Minting, assay packaging, and authentication are spread across fewer grams. We quote transparent price-per-gram so you can compare sizes fairly.</span></p>
+            <p><span class="gk-es">Acuñación, empaque de autenticación, verificación y logística se reparten entre menos gramos. Por eso los formatos pequeños pueden tener un precio final por gramo más alto que los gramajes grandes.</span><span class="gk-en">Minting, authentication packaging, verification, and logistics are spread across fewer grams. That is why smaller formats may carry a higher final price per gram than larger bars.</span></p>
           </details>
           <details class="faq">
             <summary><span class="gk-es">¿Envían fuera de Florida?</span><span class="gk-en">Do you ship outside Florida?</span></summary>
-            <p><span class="gk-es">Los destinos admitidos figuran en las condiciones de venta en el checkout. Algunos estados o códigos postales pueden estar restringidos por ley o por la paquetería—lo indicamos antes del pago.</span><span class="gk-en">Approved destinations are listed in our terms of sale at checkout. Some states or ZIP codes may be restricted by law or carrier rules—we disclose that before you pay.</span></p>
+            <p><span class="gk-es">Sí, sujeto a disponibilidad logística y normas aplicables por destino. Algunos estados, direcciones o códigos postales pueden tener restricciones legales o de transporte; si aplica alguna limitación, te lo informamos antes de confirmar el pedido.</span><span class="gk-en">Yes, subject to logistics availability and applicable destination rules. Some states, addresses, or ZIP codes may have legal or carrier restrictions; if any limitation applies, we disclose it before confirming the order.</span></p>
           </details>
           <details class="faq">
             <summary><span class="gk-es">¿GOLDKOIN da asesoramiento de inversión?</span><span class="gk-en">Is GOLDKOIN giving investment advice?</span></summary>
@@ -1660,50 +1757,47 @@
       <div class="split-story" style="margin-top:0.5rem;">
         <figure class="panel-photo" style="margin:0;">
           <img src="assets/gallery-04-brand-desk.jpg" data-alt-es="Escritorio GOLDKOIN precious metals con lingote Serie Sovereign y material de marca" data-alt-en="GOLDKOIN precious metals desk with Sovereign Series gold bar and brand materials" alt="Escritorio GOLDKOIN precious metals con lingote Serie Sovereign y material de marca" width="1600" height="1000" loading="lazy" decoding="async" />
-          <figcaption><span class="gk-es">Operación minorista en Miami con el nivel de presentación que esperan los coleccionistas.</span><span class="gk-en">Miami-based retail execution with the presentation standards collectors expect.</span></figcaption>
+          <figcaption><span class="gk-es">Operación minorista en Miami con el nivel de presentación que esperan los coleccionistas.</span><span class="gk-en">Miami-based bullion retail with the product presentation serious buyers expect.</span></figcaption>
         </figure>
         <div>
           <p class="section-lead" style="margin-bottom:0.75rem;">
-            <span class="gk-es">GOLDKOIN acerca un abastecimiento de nivel institucional a compradores privados que buscan <strong>lingotes .9999 en formato compacto</strong>, precios claros y un embalaje que puedes revisar el día que llega. La Serie Sovereign es nuestra línea insignia—pesos de 5 g a 100 g, un mismo estándar de calidad.</span>
-            <span class="gk-en">GOLDKOIN brings institution-grade sourcing to private buyers who want <strong>small-format .9999 bars</strong>, clear pricing, and packaging they can inspect the day it arrives. The Sovereign Series is our flagship retail line—minted weights from 5g to 100g, one consistent quality standard.</span>
+            <span class="gk-es">GOLDKOIN acerca un abastecimiento de nivel institucional a compradores privados que buscan <strong>lingotes de 99.99% de pureza en formato compacto</strong>, precios claros y un embalaje que puedes revisar el día que llega. La Serie Sovereign es nuestra línea insignia: gramajes de 5 g, 10 g, 30 g y 50 g con un mismo estándar de calidad.</span>
+            <span class="gk-en">GOLDKOIN brings institution-grade sourcing to private buyers who want <strong>small-format bars with 99.99% purity</strong>, clear pricing, and packaging they can inspect the day it arrives. The Sovereign Series is our flagship retail line—minted weights of 5g, 10g, 30g, and 50g, one consistent quality standard.</span>
           </p>
-          <p style="font-size:0.88rem;color:var(--muted);margin:0;"><span class="gk-es">Priorizamos respuestas rápidas, envío asegurado y documentación coherente con el nombre del lingote: <strong>GOLDKOIN, LLC</strong>.</span><span class="gk-en">We focus on fast answers, insured shipping, and paperwork that matches the name on the bar: <strong>GOLDKOIN, LLC</strong>.</span></p>
+          <p style="font-size:0.88rem;color:var(--muted);margin:0;"><span class="gk-es">Priorizamos respuestas rápidas, envío asegurado y documentación coherente con el nombre del lingote: <strong>GOLDKOIN, LLC</strong>.</span><span class="gk-en">We prioritize responsive service, insured shipping, and documentation that matches the name on the bar: <strong>GOLDKOIN, LLC</strong>.</span></p>
         </div>
       </div>
     </section>
 
     <section class="wrap" id="policies">
       <p class="section-kicker"><span class="gk-es">Legal</span><span class="gk-en">Legal</span></p>
-      <h2 class="font-display"><span class="gk-es">Políticas</span><span class="gk-en">Policies</span></h2>
+      <h2 class="font-display"><span class="gk-es">Políticas</span><span class="gk-en">Purchase policies</span></h2>
       <div class="policy-block card" style="padding:1.5rem;">
         <h3 class="font-display"><span class="gk-es">Privacidad</span><span class="gk-en">Privacy</span></h3>
-        <p><span class="gk-es">Nuestra política de privacidad completa describirá qué datos personales recogemos para pedidos y cumplimiento, cuánto los conservamos, uso de cookies y cómo contactarnos sobre datos. El enlace a la versión vigente aparecerá aquí antes del lanzamiento del checkout.</span><span class="gk-en">Our full privacy policy will describe what personal data we collect for orders and compliance, how long we retain it, cookie use, and how to reach us for data questions. A link to the executed policy will appear here before live checkout.</span></p>
+        <p><span class="gk-es">Usamos la información del cliente para responder cotizaciones, preparar pedidos, coordinar pagos, cumplir verificaciones aplicables y dar soporte posterior a la compra. Tratamos los datos con propósito comercial definido y limitamos su uso a la operación, cumplimiento y comunicación relacionada con GOLDKOIN.</span><span class="gk-en">We use customer information to respond to quote requests, prepare orders, coordinate payments, complete applicable checks, and provide post-purchase support. Data is handled for defined commercial purposes and limited to operations, compliance, and GOLDKOIN-related communication.</span></p>
         <h3 class="font-display"><span class="gk-es">Condiciones de venta</span><span class="gk-en">Terms of sale</span></h3>
-        <p><span class="gk-es">Las condiciones cubrirán aceptación del pedido, bloqueo de precio, liquidación del pago, cancelaciones, transferencia de riesgo en el envío, fuerza mayor, limitación de responsabilidad y ley aplicable en Florida. El cliente recibe la versión vigente al comprar.</span><span class="gk-en">Terms of sale will cover order acceptance, price locks, payment clearance, cancellations, shipping risk transfer, force majeure, limitation of liability, and governing law in Florida. Customers receive the active version at purchase.</span></p>
+        <p><span class="gk-es">Antes de pagar, confirmamos por escrito el gramaje, cantidad, precio total, forma de pago, destino de envío y condiciones aplicables. Una vez aceptado el pedido, la operación queda sujeta a disponibilidad, pago efectivo, validaciones requeridas y términos comerciales emitidos para esa compra.</span><span class="gk-en">Before payment, we confirm the weight, quantity, total price, payment method, shipping destination, and applicable conditions in writing. Once the order is accepted, the transaction is subject to availability, cleared payment, required checks, and the commercial terms issued for that purchase.</span></p>
         <h3 class="font-display">AML &amp; KYC</h3>
-        <p><span class="gk-es">Cuando las normas federales o bancarias exijan identificación o diligencia reforzada, solo recogeremos lo que la norma demande y lo explicaremos por escrito. El aviso definitivo se publicará junto al flujo de venta en producción.</span><span class="gk-en">Where federal or banking rules require identification or enhanced due diligence, we will collect only what the regulations demand and explain the process in writing. The final notice will be published with our go-live sales flow.</span></p>
+        <p><span class="gk-es">En compras de mayor valor o con señales de riesgo, podemos solicitar identificación, comprobantes o información adicional. Estas verificaciones protegen al cliente, reducen fraude y ayudan a mantener una operación transparente de metales preciosos.</span><span class="gk-en">For higher-value purchases or risk signals, we may request identification, supporting documents, or additional information. These checks protect customers, reduce fraud, and help maintain a transparent precious-metals operation.</span></p>
       </div>
     </section>
 
     <section class="wrap" id="contact">
       <p class="section-kicker"><span class="gk-es">Contacto</span><span class="gk-en">Contact</span></p>
       <h2 class="font-display"><span class="gk-es">Disponibilidad o cotización</span><span class="gk-en">Request availability or a quote</span></h2>
-      <p class="section-lead"><span class="gk-es">Indica qué peso Sovereign te interesa, a dónde debe enviarse y cómo prefieres pagar—te respondemos con disponibilidad y cotización por escrito.</span><span class="gk-en">Tell us which Sovereign weight you want, where it should ship, and how you prefer to pay—we reply with availability and a written quote.</span></p>
+      <p class="section-lead"><span class="gk-es">Indica qué gramaje Sovereign te interesa entre 5 g, 10 g, 30 g y 50 g, a dónde debe enviarse y cómo prefieres pagar—te respondemos con disponibilidad y cotización por escrito.</span><span class="gk-en">Tell us which Sovereign weight you are considering, the delivery destination, quantity, and preferred payment method. We reply with availability and a written quote.</span></p>
       <div class="grid-2" style="align-items:start;">
         <form class="contact-form card card-accent" id="contact-form" novalidate>
-          <div class="contact-visual">
-            <img src="assets/gallery-04b-brand-desk-alt.jpg" alt="" width="800" height="400" loading="lazy" decoding="async" />
-          </div>
           <label for="c-name"><span class="gk-es">Nombre</span><span class="gk-en">Name</span></label>
           <input id="c-name" name="name" type="text" autocomplete="name" required />
           <label for="c-email"><span class="gk-es">Correo electrónico</span><span class="gk-en">Email</span></label>
           <input id="c-email" name="email" type="email" autocomplete="email" required />
-          <label for="c-weight"><span class="gk-es">Peso de interés</span><span class="gk-en">Weight interest</span></label>
-          <input id="c-weight" name="weight" type="text" data-ph-es="p. ej. Sovereign 50 g" data-ph-en="e.g. 50g Sovereign" placeholder="p. ej. Sovereign 50 g" />
+          <label for="c-weight"><span class="gk-es">Gramaje de interés</span><span class="gk-en">Weight of interest</span></label>
+          <input id="c-weight" name="weight" type="text" data-ph-es="p. ej. Sovereign 30 g o 50 g" data-ph-en="e.g. 30g or 50g Sovereign" placeholder="p. ej. Sovereign 30 g o 50 g" />
           <label for="c-msg"><span class="gk-es">Mensaje</span><span class="gk-en">Message</span></label>
-          <textarea id="c-msg" name="message" required data-ph-es="Estado de envío, cantidad, forma de pago preferida…" data-ph-en="Shipping state, quantity, preferred payment method…" placeholder="Estado de envío, cantidad, forma de pago preferida…"></textarea>
+          <textarea id="c-msg" name="message" required data-ph-es="Estado de envío, cantidad, forma de pago preferida…" data-ph-en="Delivery state, quantity, preferred payment method..." placeholder="Estado de envío, cantidad, forma de pago preferida…"></textarea>
           <button type="submit" class="btn btn-gold"><span class="gk-es">Enviar mensaje</span><span class="gk-en">Send message</span></button>
-          <p style="font-size:0.72rem;color:var(--muted);margin:0.75rem 0 0;"><span class="gk-es">Al enviar se abre tu correo dirigido a <strong>sales@goldkoin.co</strong> con los datos rellenados.</span><span class="gk-en">Submitting opens your email app addressed to <strong>sales@goldkoin.co</strong> with your details filled in.</span></p>
+          <p style="font-size:0.72rem;color:var(--muted);margin:0.75rem 0 0;"><span class="gk-es">Al enviar tu solicitud, recibiremos los datos necesarios para responder con disponibilidad, precio confirmado y pasos de compra.</span><span class="gk-en">When you submit your request, we receive the details needed to reply with availability, confirmed pricing, and next purchase steps.</span></p>
         </form>
         <div class="card">
           <h3 class="font-display">GOLDKOIN, LLC</h3>
@@ -1717,8 +1811,8 @@
     <div class="cta-band">
       <div class="wrap">
         <h2 class="font-display"><span class="gk-es">Incorpora oro Sovereign a tu patrimonio</span><span class="gk-en">Add Sovereign gold to your holdings</span></h2>
-        <p><span class="gk-es">Compara pesos, revisa la galería y escríbenos para una cotización firme—entrega asegurada con un distribuidor registrado en Florida.</span><span class="gk-en">Compare weights, review the gallery, and contact us for a firm quote—insured delivery from a Florida-registered dealer.</span></p>
-        <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver pesos</span><span class="gk-en">Browse weights</span></a>
+        <p><span class="gk-es">Compara gramajes, revisa la galería y escríbenos para una cotización firme—entrega asegurada con un distribuidor registrado en Florida.</span><span class="gk-en">Compare bar weights, review the gallery, and contact us for a written quote with insured delivery from a Florida-registered dealer.</span></p>
+        <a class="btn btn-gold" href="#shop"><span class="gk-es">Ver gramajes</span><span class="gk-en">Browse weights</span></a>
       </div>
     </div>
   </main>
@@ -1755,10 +1849,9 @@
         </div>
       </div>
       <p class="legal">
-        <span class="gk-es">Los metales preciosos conllevan riesgo de mercado. GOLDKOIN, LLC no ofrece asesoramiento de inversión, fiscal ni legal. Nada en esta página constituye oferta vinculante; los pedidos quedan sujetos a las condiciones de venta por escrito. Las relaciones de suministro con socios internacionales se rigen por acuerdos comerciales independientes.</span>
+        <span class="gk-es">Los metales preciosos conllevan riesgo de mercado. GOLDKOIN, LLC no ofrece asesoramiento de inversión, fiscal ni legal. La información publicada ayuda al cliente a entender el producto y el proceso de compra; cada pedido queda sujeto a disponibilidad, verificación, pago efectivo y condiciones de venta confirmadas por escrito.</span>
         <span class="gk-en">Precious metals involve market risk. GOLDKOIN, LLC does not provide investment, tax, or legal advice.
-        Nothing here creates a binding offer; orders require acceptance under your written terms of sale.
-        Supply relationships with international partners are governed by separate commercial agreements.</span>
+        Published information helps customers understand the product and purchase process; each order is subject to availability, verification, cleared payment, and written sales terms.</span>
       </p>
       <p class="foot-credit">
         <a href="https://thebiznessgeek.com" target="_blank" rel="noopener noreferrer">Designed by The Bizness Geek</a>
@@ -2092,7 +2185,7 @@
           var body;
           var subject;
           if (uiLang === 'es') {
-            body = 'Nombre: ' + name + '\nCorreo: ' + email + '\nPeso de interés: ' + weight + '\n\n' + message;
+            body = 'Nombre: ' + name + '\nCorreo: ' + email + '\nGramaje de interés: ' + weight + '\n\n' + message;
             subject = 'Consulta GOLDKOIN Sovereign';
           } else {
             body = 'Name: ' + name + '\nEmail: ' + email + '\nWeight interest: ' + weight + '\n\n' + message;

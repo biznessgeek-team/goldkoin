@@ -8,3 +8,4 @@ _snapshots/
 *.pre-xfade.mp4
 *.pre-50gtrim2.mp4
 *.prproj
+.vercel
